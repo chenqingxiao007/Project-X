@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02EB336D1E499E7A009D7EC1 /* ZQHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EB336C1E499E7A009D7EC1 /* ZQHomeController.m */; };
+		02EB33701E499ED9009D7EC1 /* ZQTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EB336F1E499ED9009D7EC1 /* ZQTabbarController.m */; };
 		070C9D8C1E4874F300BD3A54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9D8B1E4874F300BD3A54 /* main.m */; };
 		070C9D8F1E4874F300BD3A54 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9D8E1E4874F300BD3A54 /* AppDelegate.m */; };
 		070C9D921E4874F300BD3A54 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9D911E4874F300BD3A54 /* ViewController.m */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02EB336B1E499E7A009D7EC1 /* ZQHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQHomeController.h; sourceTree = "<group>"; };
+		02EB336C1E499E7A009D7EC1 /* ZQHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQHomeController.m; sourceTree = "<group>"; };
+		02EB336E1E499ED9009D7EC1 /* ZQTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTabbarController.h; sourceTree = "<group>"; };
+		02EB336F1E499ED9009D7EC1 /* ZQTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQTabbarController.m; sourceTree = "<group>"; };
 		070C9D871E4874F300BD3A54 /* Project-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		070C9D8B1E4874F300BD3A54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		070C9D8D1E4874F300BD3A54 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -103,6 +109,10 @@
 			children = (
 				070C9D8D1E4874F300BD3A54 /* AppDelegate.h */,
 				070C9D8E1E4874F300BD3A54 /* AppDelegate.m */,
+				02EB336E1E499ED9009D7EC1 /* ZQTabbarController.h */,
+				02EB336F1E499ED9009D7EC1 /* ZQTabbarController.m */,
+				02EB336B1E499E7A009D7EC1 /* ZQHomeController.h */,
+				02EB336C1E499E7A009D7EC1 /* ZQHomeController.m */,
 				070C9D901E4874F300BD3A54 /* ViewController.h */,
 				070C9D911E4874F300BD3A54 /* ViewController.m */,
 				070C9D931E4874F300BD3A54 /* Main.storyboard */,
@@ -275,8 +285,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				070C9D921E4874F300BD3A54 /* ViewController.m in Sources */,
+				02EB336D1E499E7A009D7EC1 /* ZQHomeController.m in Sources */,
 				070C9D8F1E4874F300BD3A54 /* AppDelegate.m in Sources */,
 				070C9D8C1E4874F300BD3A54 /* main.m in Sources */,
+				02EB33701E499ED9009D7EC1 /* ZQTabbarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +522,7 @@
 				070C9DB61E4874F300BD3A54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		070C9DB71E4874F300BD3A54 /* Build configuration list for PBXNativeTarget "Project-XTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +531,7 @@
 				070C9DB91E4874F300BD3A54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		070C9DBA1E4874F300BD3A54 /* Build configuration list for PBXNativeTarget "Project-XUITests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +540,7 @@
 				070C9DBC1E4874F300BD3A54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

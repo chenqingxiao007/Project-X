@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ZQTabbarController.h"
+#import "ZQHomeController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.rootViewController = [ZQTabbarController new];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+    [self setupNavBar];
     return YES;
 }
 
@@ -46,6 +53,13 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
+#pragma mark - setupNavBar
+- (void)setupNavBar{
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
+    UINavigationBar *bar = [UINavigationBar appearance];
+    bar.barTintColor = [UIColor redColor];//导航栏颜色
+    bar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};//导航栏字体颜色
+}
 
 @end
