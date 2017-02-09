@@ -27,9 +27,21 @@
                                    kTitleKey:@"首页",
                                    kImgKey:@"",
                                    kSelImgKey:@""},
+                                 @{kClassKey:@"ZQMessageController",
+                                   kTitleKey:@"消息",
+                                   kImgKey:@"",
+                                   kSelImgKey:@""},
+                                 @{kClassKey:@"ZQAddController",
+                                   kTitleKey:@"添加",
+                                   kImgKey:@"",
+                                   kSelImgKey:@""},
+                                 @{kClassKey:@"ZQDiscoverController",
+                                   kTitleKey:@"发现",
+                                   kImgKey:@"",
+                                   kSelImgKey:@""},
                                  @{
-                                   kClassKey:@"ViewController",
-                                   kTitleKey:@"其他",
+                                   kClassKey:@"ZQMyController",
+                                   kTitleKey:@"我的",
                                    kImgKey:@"",
                                    kSelImgKey:@""}
                                  ];

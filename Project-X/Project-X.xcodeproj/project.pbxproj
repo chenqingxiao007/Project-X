@@ -7,10 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02EB336D1E499E7A009D7EC1 /* ZQHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EB336C1E499E7A009D7EC1 /* ZQHomeController.m */; };
-		02EB33701E499ED9009D7EC1 /* ZQTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EB336F1E499ED9009D7EC1 /* ZQTabbarController.m */; };
 		070C9D8C1E4874F300BD3A54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9D8B1E4874F300BD3A54 /* main.m */; };
-		070C9D8F1E4874F300BD3A54 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9D8E1E4874F300BD3A54 /* AppDelegate.m */; };
 		070C9D921E4874F300BD3A54 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9D911E4874F300BD3A54 /* ViewController.m */; };
 		070C9D951E4874F300BD3A54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070C9D931E4874F300BD3A54 /* Main.storyboard */; };
 		070C9D971E4874F300BD3A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 070C9D961E4874F300BD3A54 /* Assets.xcassets */; };
@@ -18,6 +15,13 @@
 		070C9DA51E4874F300BD3A54 /* Project_XTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9DA41E4874F300BD3A54 /* Project_XTests.m */; };
 		070C9DB01E4874F300BD3A54 /* Project_XUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9DAF1E4874F300BD3A54 /* Project_XUITests.m */; };
 		24289AFCF5E6FCA2609FCFA0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E613750C5D8EE3DDF68FF9 /* libPods.a */; };
+		45A43E931E4C06E000C64CE2 /* ZQTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43E911E4C06E000C64CE2 /* ZQTabbarController.m */; };
+		45A43E961E4C06EC00C64CE2 /* ZQHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43E941E4C06EC00C64CE2 /* ZQHomeController.m */; };
+		45A43E991E4C070600C64CE2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43E971E4C070600C64CE2 /* AppDelegate.m */; };
+		45A43E9F1E4C07A300C64CE2 /* ZQDiscoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43E9E1E4C07A300C64CE2 /* ZQDiscoverController.m */; };
+		45A43EA21E4C07C200C64CE2 /* ZQAddController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43EA11E4C07C200C64CE2 /* ZQAddController.m */; };
+		45A43EA51E4C07DE00C64CE2 /* ZQMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43EA41E4C07DE00C64CE2 /* ZQMessageController.m */; };
+		45A43EA81E4C08AB00C64CE2 /* ZQMyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43EA71E4C08AB00C64CE2 /* ZQMyController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,14 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02EB336B1E499E7A009D7EC1 /* ZQHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQHomeController.h; sourceTree = "<group>"; };
-		02EB336C1E499E7A009D7EC1 /* ZQHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQHomeController.m; sourceTree = "<group>"; };
-		02EB336E1E499ED9009D7EC1 /* ZQTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTabbarController.h; sourceTree = "<group>"; };
-		02EB336F1E499ED9009D7EC1 /* ZQTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQTabbarController.m; sourceTree = "<group>"; };
 		070C9D871E4874F300BD3A54 /* Project-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		070C9D8B1E4874F300BD3A54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		070C9D8D1E4874F300BD3A54 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		070C9D8E1E4874F300BD3A54 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		070C9D901E4874F300BD3A54 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		070C9D911E4874F300BD3A54 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		070C9D941E4874F300BD3A54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +57,20 @@
 		070C9DAF1E4874F300BD3A54 /* Project_XUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Project_XUITests.m; sourceTree = "<group>"; };
 		070C9DB11E4874F300BD3A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10E613750C5D8EE3DDF68FF9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		45A43E911E4C06E000C64CE2 /* ZQTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQTabbarController.m; sourceTree = "<group>"; };
+		45A43E921E4C06E000C64CE2 /* ZQTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTabbarController.h; sourceTree = "<group>"; };
+		45A43E941E4C06EC00C64CE2 /* ZQHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQHomeController.m; sourceTree = "<group>"; };
+		45A43E951E4C06EC00C64CE2 /* ZQHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQHomeController.h; sourceTree = "<group>"; };
+		45A43E971E4C070600C64CE2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		45A43E981E4C070600C64CE2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		45A43E9D1E4C07A300C64CE2 /* ZQDiscoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQDiscoverController.h; sourceTree = "<group>"; };
+		45A43E9E1E4C07A300C64CE2 /* ZQDiscoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQDiscoverController.m; sourceTree = "<group>"; };
+		45A43EA01E4C07C200C64CE2 /* ZQAddController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQAddController.h; sourceTree = "<group>"; };
+		45A43EA11E4C07C200C64CE2 /* ZQAddController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQAddController.m; sourceTree = "<group>"; };
+		45A43EA31E4C07DE00C64CE2 /* ZQMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQMessageController.h; sourceTree = "<group>"; };
+		45A43EA41E4C07DE00C64CE2 /* ZQMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQMessageController.m; sourceTree = "<group>"; };
+		45A43EA61E4C08AB00C64CE2 /* ZQMyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQMyController.h; sourceTree = "<group>"; };
+		45A43EA71E4C08AB00C64CE2 /* ZQMyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQMyController.m; sourceTree = "<group>"; };
 		5D01B4622FEF9E495EEA4ACB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		65B4D4705B209899C4A1BAF3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,18 +126,9 @@
 		070C9D891E4874F300BD3A54 /* Project-X */ = {
 			isa = PBXGroup;
 			children = (
-				070C9D8D1E4874F300BD3A54 /* AppDelegate.h */,
-				070C9D8E1E4874F300BD3A54 /* AppDelegate.m */,
-				02EB336E1E499ED9009D7EC1 /* ZQTabbarController.h */,
-				02EB336F1E499ED9009D7EC1 /* ZQTabbarController.m */,
-				02EB336B1E499E7A009D7EC1 /* ZQHomeController.h */,
-				02EB336C1E499E7A009D7EC1 /* ZQHomeController.m */,
+				45A43E731E4C060900C64CE2 /* Classes */,
 				070C9D901E4874F300BD3A54 /* ViewController.h */,
 				070C9D911E4874F300BD3A54 /* ViewController.m */,
-				070C9D931E4874F300BD3A54 /* Main.storyboard */,
-				070C9D961E4874F300BD3A54 /* Assets.xcassets */,
-				070C9D981E4874F300BD3A54 /* LaunchScreen.storyboard */,
-				070C9D9B1E4874F300BD3A54 /* Info.plist */,
 				070C9D8A1E4874F300BD3A54 /* Supporting Files */,
 			);
 			path = "Project-X";
@@ -134,6 +137,10 @@
 		070C9D8A1E4874F300BD3A54 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				070C9D931E4874F300BD3A54 /* Main.storyboard */,
+				070C9D961E4874F300BD3A54 /* Assets.xcassets */,
+				070C9D981E4874F300BD3A54 /* LaunchScreen.storyboard */,
+				070C9D9B1E4874F300BD3A54 /* Info.plist */,
 				070C9D8B1E4874F300BD3A54 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -163,6 +170,259 @@
 				10E613750C5D8EE3DDF68FF9 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45A43E731E4C060900C64CE2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				45A43E781E4C060900C64CE2 /* Common */,
+				45A43E841E4C060900C64CE2 /* Main */,
+				45A43E741E4C060900C64CE2 /* Add */,
+				45A43E7C1E4C060900C64CE2 /* Discover */,
+				45A43E801E4C060900C64CE2 /* Home */,
+				45A43E881E4C060900C64CE2 /* Message */,
+				45A43E8C1E4C060900C64CE2 /* My */,
+				45A43E901E4C060900C64CE2 /* Other */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		45A43E741E4C060900C64CE2 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				45A43E751E4C060900C64CE2 /* Controller */,
+				45A43E761E4C060900C64CE2 /* Model */,
+				45A43E771E4C060900C64CE2 /* View */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		45A43E751E4C060900C64CE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				45A43EA01E4C07C200C64CE2 /* ZQAddController.h */,
+				45A43EA11E4C07C200C64CE2 /* ZQAddController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		45A43E761E4C060900C64CE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		45A43E771E4C060900C64CE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		45A43E781E4C060900C64CE2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				45A43E791E4C060900C64CE2 /* Controller */,
+				45A43E7A1E4C060900C64CE2 /* Model */,
+				45A43E7B1E4C060900C64CE2 /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		45A43E791E4C060900C64CE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		45A43E7A1E4C060900C64CE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		45A43E7B1E4C060900C64CE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		45A43E7C1E4C060900C64CE2 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				45A43E7D1E4C060900C64CE2 /* Controller */,
+				45A43E7E1E4C060900C64CE2 /* Model */,
+				45A43E7F1E4C060900C64CE2 /* View */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		45A43E7D1E4C060900C64CE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				45A43E9D1E4C07A300C64CE2 /* ZQDiscoverController.h */,
+				45A43E9E1E4C07A300C64CE2 /* ZQDiscoverController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		45A43E7E1E4C060900C64CE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		45A43E7F1E4C060900C64CE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		45A43E801E4C060900C64CE2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				45A43E811E4C060900C64CE2 /* Controller */,
+				45A43E821E4C060900C64CE2 /* Model */,
+				45A43E831E4C060900C64CE2 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		45A43E811E4C060900C64CE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				45A43E941E4C06EC00C64CE2 /* ZQHomeController.m */,
+				45A43E951E4C06EC00C64CE2 /* ZQHomeController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		45A43E821E4C060900C64CE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		45A43E831E4C060900C64CE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		45A43E841E4C060900C64CE2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				45A43E851E4C060900C64CE2 /* Controller */,
+				45A43E861E4C060900C64CE2 /* Model */,
+				45A43E871E4C060900C64CE2 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		45A43E851E4C060900C64CE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				45A43E921E4C06E000C64CE2 /* ZQTabbarController.h */,
+				45A43E911E4C06E000C64CE2 /* ZQTabbarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		45A43E861E4C060900C64CE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		45A43E871E4C060900C64CE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		45A43E881E4C060900C64CE2 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				45A43E891E4C060900C64CE2 /* Controller */,
+				45A43E8A1E4C060900C64CE2 /* Model */,
+				45A43E8B1E4C060900C64CE2 /* View */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		45A43E891E4C060900C64CE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				45A43EA31E4C07DE00C64CE2 /* ZQMessageController.h */,
+				45A43EA41E4C07DE00C64CE2 /* ZQMessageController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		45A43E8A1E4C060900C64CE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		45A43E8B1E4C060900C64CE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		45A43E8C1E4C060900C64CE2 /* My */ = {
+			isa = PBXGroup;
+			children = (
+				45A43E8D1E4C060900C64CE2 /* Controller */,
+				45A43E8E1E4C060900C64CE2 /* Model */,
+				45A43E8F1E4C060900C64CE2 /* View */,
+			);
+			path = My;
+			sourceTree = "<group>";
+		};
+		45A43E8D1E4C060900C64CE2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				45A43EA61E4C08AB00C64CE2 /* ZQMyController.h */,
+				45A43EA71E4C08AB00C64CE2 /* ZQMyController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		45A43E8E1E4C060900C64CE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		45A43E8F1E4C060900C64CE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		45A43E901E4C060900C64CE2 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				45A43E971E4C070600C64CE2 /* AppDelegate.m */,
+				45A43E981E4C070600C64CE2 /* AppDelegate.h */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		E6AA54A7E01AF52EDFB8ABA9 /* Pods */ = {
@@ -359,11 +619,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45A43E9F1E4C07A300C64CE2 /* ZQDiscoverController.m in Sources */,
 				070C9D921E4874F300BD3A54 /* ViewController.m in Sources */,
-				02EB336D1E499E7A009D7EC1 /* ZQHomeController.m in Sources */,
-				070C9D8F1E4874F300BD3A54 /* AppDelegate.m in Sources */,
+				45A43E961E4C06EC00C64CE2 /* ZQHomeController.m in Sources */,
+				45A43EA21E4C07C200C64CE2 /* ZQAddController.m in Sources */,
+				45A43EA51E4C07DE00C64CE2 /* ZQMessageController.m in Sources */,
+				45A43E931E4C06E000C64CE2 /* ZQTabbarController.m in Sources */,
 				070C9D8C1E4874F300BD3A54 /* main.m in Sources */,
-				02EB33701E499ED9009D7EC1 /* ZQTabbarController.m in Sources */,
+				45A43EA81E4C08AB00C64CE2 /* ZQMyController.m in Sources */,
+				45A43E991E4C070600C64CE2 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
