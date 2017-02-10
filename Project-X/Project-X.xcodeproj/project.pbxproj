@@ -14,6 +14,7 @@
 		070C9D9A1E4874F300BD3A54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070C9D981E4874F300BD3A54 /* LaunchScreen.storyboard */; };
 		070C9DA51E4874F300BD3A54 /* Project_XTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9DA41E4874F300BD3A54 /* Project_XTests.m */; };
 		070C9DB01E4874F300BD3A54 /* Project_XUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9DAF1E4874F300BD3A54 /* Project_XUITests.m */; };
+		070C9DCA1E4D9B5000BD3A54 /* ZQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9DC91E4D9B5000BD3A54 /* ZQLoginViewController.m */; };
 		24289AFCF5E6FCA2609FCFA0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E613750C5D8EE3DDF68FF9 /* libPods.a */; };
 		45A43E931E4C06E000C64CE2 /* ZQTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43E911E4C06E000C64CE2 /* ZQTabbarController.m */; };
 		45A43E961E4C06EC00C64CE2 /* ZQHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43E941E4C06EC00C64CE2 /* ZQHomeController.m */; };
@@ -56,6 +57,9 @@
 		070C9DAB1E4874F300BD3A54 /* Project-XUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Project-XUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		070C9DAF1E4874F300BD3A54 /* Project_XUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Project_XUITests.m; sourceTree = "<group>"; };
 		070C9DB11E4874F300BD3A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		070C9DC81E4D9B5000BD3A54 /* ZQLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQLoginViewController.h; sourceTree = "<group>"; };
+		070C9DC91E4D9B5000BD3A54 /* ZQLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQLoginViewController.m; sourceTree = "<group>"; };
+		070C9DCB1E4D9BD200BD3A54 /* Project-X-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Project-X-Prefix.pch"; sourceTree = "<group>"; };
 		10E613750C5D8EE3DDF68FF9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		45A43E911E4C06E000C64CE2 /* ZQTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQTabbarController.m; sourceTree = "<group>"; };
 		45A43E921E4C06E000C64CE2 /* ZQTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTabbarController.h; sourceTree = "<group>"; };
@@ -142,6 +146,7 @@
 				070C9D981E4874F300BD3A54 /* LaunchScreen.storyboard */,
 				070C9D9B1E4874F300BD3A54 /* Info.plist */,
 				070C9D8B1E4874F300BD3A54 /* main.m */,
+				070C9DCB1E4D9BD200BD3A54 /* Project-X-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -177,6 +182,8 @@
 		070C9DC51E4D9A8C00BD3A54 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				070C9DC81E4D9B5000BD3A54 /* ZQLoginViewController.h */,
+				070C9DC91E4D9B5000BD3A54 /* ZQLoginViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -403,6 +410,7 @@
 		070C9D7F1E4874F300BD3A54 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ZQ;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "陈擎霄";
 				TargetAttributes = {
@@ -526,6 +534,7 @@
 				45A43E9F1E4C07A300C64CE2 /* ZQDiscoverController.m in Sources */,
 				070C9D921E4874F300BD3A54 /* ViewController.m in Sources */,
 				45A43E961E4C06EC00C64CE2 /* ZQHomeController.m in Sources */,
+				070C9DCA1E4D9B5000BD3A54 /* ZQLoginViewController.m in Sources */,
 				45A43EA21E4C07C200C64CE2 /* ZQAddController.m in Sources */,
 				45A43EA51E4C07DE00C64CE2 /* ZQMessageController.m in Sources */,
 				45A43E931E4C06E000C64CE2 /* ZQTabbarController.m in Sources */,
@@ -682,6 +691,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LKLUL3G769;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Project-X/Project-X-Prefix.pch";
 				INFOPLIST_FILE = "Project-X/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -697,6 +707,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LKLUL3G769;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Project-X/Project-X-Prefix.pch";
 				INFOPLIST_FILE = "Project-X/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
