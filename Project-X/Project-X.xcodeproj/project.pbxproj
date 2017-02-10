@@ -164,6 +164,37 @@
 			path = "Project-XUITests";
 			sourceTree = "<group>";
 		};
+		070C9DC41E4D9A8C00BD3A54 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				070C9DC51E4D9A8C00BD3A54 /* Controller */,
+				070C9DC61E4D9A8C00BD3A54 /* Model */,
+				070C9DC71E4D9A8C00BD3A54 /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		070C9DC51E4D9A8C00BD3A54 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		070C9DC61E4D9A8C00BD3A54 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		070C9DC71E4D9A8C00BD3A54 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		34388C0E267100423AF067EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,7 +206,7 @@
 		45A43E731E4C060900C64CE2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				45A43E781E4C060900C64CE2 /* Common */,
+				070C9DC41E4D9A8C00BD3A54 /* Common */,
 				45A43E841E4C060900C64CE2 /* Main */,
 				45A43E741E4C060900C64CE2 /* Add */,
 				45A43E7C1E4C060900C64CE2 /* Discover */,
@@ -191,8 +222,6 @@
 			isa = PBXGroup;
 			children = (
 				45A43E751E4C060900C64CE2 /* Controller */,
-				45A43E761E4C060900C64CE2 /* Model */,
-				45A43E771E4C060900C64CE2 /* View */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -206,57 +235,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		45A43E761E4C060900C64CE2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		45A43E771E4C060900C64CE2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		45A43E781E4C060900C64CE2 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				45A43E791E4C060900C64CE2 /* Controller */,
-				45A43E7A1E4C060900C64CE2 /* Model */,
-				45A43E7B1E4C060900C64CE2 /* View */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		45A43E791E4C060900C64CE2 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		45A43E7A1E4C060900C64CE2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		45A43E7B1E4C060900C64CE2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		45A43E7C1E4C060900C64CE2 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
 				45A43E7D1E4C060900C64CE2 /* Controller */,
-				45A43E7E1E4C060900C64CE2 /* Model */,
-				45A43E7F1E4C060900C64CE2 /* View */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -270,26 +252,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		45A43E7E1E4C060900C64CE2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		45A43E7F1E4C060900C64CE2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		45A43E801E4C060900C64CE2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				45A43E811E4C060900C64CE2 /* Controller */,
-				45A43E821E4C060900C64CE2 /* Model */,
-				45A43E831E4C060900C64CE2 /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -303,26 +269,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		45A43E821E4C060900C64CE2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		45A43E831E4C060900C64CE2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		45A43E841E4C060900C64CE2 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				45A43E851E4C060900C64CE2 /* Controller */,
-				45A43E861E4C060900C64CE2 /* Model */,
-				45A43E871E4C060900C64CE2 /* View */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -336,26 +286,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		45A43E861E4C060900C64CE2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		45A43E871E4C060900C64CE2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		45A43E881E4C060900C64CE2 /* Message */ = {
 			isa = PBXGroup;
 			children = (
 				45A43E891E4C060900C64CE2 /* Controller */,
-				45A43E8A1E4C060900C64CE2 /* Model */,
-				45A43E8B1E4C060900C64CE2 /* View */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -369,26 +303,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		45A43E8A1E4C060900C64CE2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		45A43E8B1E4C060900C64CE2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		45A43E8C1E4C060900C64CE2 /* My */ = {
 			isa = PBXGroup;
 			children = (
 				45A43E8D1E4C060900C64CE2 /* Controller */,
-				45A43E8E1E4C060900C64CE2 /* Model */,
-				45A43E8F1E4C060900C64CE2 /* View */,
 			);
 			path = My;
 			sourceTree = "<group>";
@@ -400,20 +318,6 @@
 				45A43EA71E4C08AB00C64CE2 /* ZQMyController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		45A43E8E1E4C060900C64CE2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		45A43E8F1E4C060900C64CE2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		45A43E901E4C060900C64CE2 /* Other */ = {
