@@ -1,8 +1,24 @@
 PODS:
+  - AFNetworking (3.0.4):
+    - AFNetworking/NSURLSession (= 3.0.4)
+    - AFNetworking/Reachability (= 3.0.4)
+    - AFNetworking/Security (= 3.0.4)
+    - AFNetworking/Serialization (= 3.0.4)
+    - AFNetworking/UIKit (= 3.0.4)
+  - AFNetworking/NSURLSession (3.0.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.0.4)
+  - AFNetworking/Security (3.0.4)
+  - AFNetworking/Serialization (3.0.4)
+  - AFNetworking/UIKit (3.0.4):
+    - AFNetworking/NSURLSession
   - Masonry (0.6.4)
   - WeiboSDK (3.1.4)
 
 DEPENDENCIES:
+  - AFNetworking (~> 3.0.4)
   - Masonry (~> 0.6.4)
   - WeiboSDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
 
@@ -16,9 +32,10 @@ CHECKOUT OPTIONS:
     :git: https://github.com/sinaweibosdk/weibo_ios_sdk.git
 
 SPEC CHECKSUMS:
+  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   WeiboSDK: bceab625ec59b7039ba721cc4ba9f5868804f63e
 
-PODFILE CHECKSUM: a065770841e16587a76c40e75a36805ed2c19ed7
+PODFILE CHECKSUM: f0f2949bfc53d748a90a8747a879638dc20da1d8
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0

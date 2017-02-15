@@ -7,8 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ZQTabbarController.h"
-#import "ZQHomeController.h"
+#import "ZQLoginViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -18,12 +17,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [ZQTabbarController new];
+    //注册微博appkey
+    [WeiboSDK enableDebugMode:YES];
+    [WeiboSDK registerApp:kWBAppKey];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    
+    ZQLoginViewController *oauth = [[ZQLoginViewController alloc] init];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:oauth];
     [self setupNavBar];
+    
+
     return YES;
 }
 
@@ -61,5 +65,13 @@
     bar.barTintColor = [UIColor redColor];//导航栏颜色
     bar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};//导航栏字体颜色
 }
-
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+    {
+        return [WeiboSDK handleOpenURL:url delegate:self];
+    }
+    
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+    {
+        return [WeiboSDK handleOpenURL:url delegate:self ];
+    }
 @end
