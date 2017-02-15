@@ -1,3 +1,9 @@
 
 platform :ios, ‘8.0’
+target ‘Project-X’ do
+
 pod 'Masonry', '~> 0.6.4'
+
+pod "WeiboSDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
+
+end
