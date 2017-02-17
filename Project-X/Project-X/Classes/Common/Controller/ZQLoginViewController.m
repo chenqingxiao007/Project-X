@@ -8,7 +8,10 @@
 
 #import "ZQLoginViewController.h"
 #import "WeiboSDK.h"
+#import "ZQNetWorkHelper.h"
+
 @interface ZQLoginViewController ()<UIWebViewDelegate>
+
 @property (nonatomic, weak) UIWebView *webView;
 
 @end
@@ -64,7 +67,6 @@
             NSString *code = [urlString substringFromIndex:(range.location + range.length)];
             
             // 给新浪发送POST请求获取access_token
-            AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
             
             NSMutableDictionary *paramenters = [NSMutableDictionary dictionary];
             paramenters[@"client_id"] = kWBAppKey;
@@ -73,16 +75,14 @@
             paramenters[@"code"] = code;
             paramenters[@"redirect_uri"] = kRedirectURI;
             NSString *postUrl = @"https://api.weibo.com/oauth2/access_token";
-            [manager POST:postUrl parameters:paramenters.mutableCopy progress:^(NSProgress * _Nonnull uploadProgress) {
-                //
-                NSLog(@"*****");
-            } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                //
-                NSLog(@"授权成功");
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                //
-                NSLog(@"授权失败");
+            
+            [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypePost url:postUrl params:paramenters success:^(id responseObject) {
+                NSLog(@"%@",responseObject);
+            } failure:^(NSError *error) {
+                NSLog(@"%@",error);
             }];
+            
+            
         }else{
             NSLog(@"走了这");
         }
