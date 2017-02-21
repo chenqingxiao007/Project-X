@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		024DC1191E5C21F200405561 /* ZQAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 024DC1181E5C21F200405561 /* ZQAccount.m */; };
+		024DC11C1E5C222400405561 /* ZQAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 024DC11B1E5C222400405561 /* ZQAccountTool.m */; };
 		070C9D8C1E4874F300BD3A54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9D8B1E4874F300BD3A54 /* main.m */; };
 		070C9D921E4874F300BD3A54 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9D911E4874F300BD3A54 /* ViewController.m */; };
 		070C9D951E4874F300BD3A54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070C9D931E4874F300BD3A54 /* Main.storyboard */; };
@@ -45,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		024DC1171E5C21F200405561 /* ZQAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQAccount.h; sourceTree = "<group>"; };
+		024DC1181E5C21F200405561 /* ZQAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQAccount.m; sourceTree = "<group>"; };
+		024DC11A1E5C222400405561 /* ZQAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQAccountTool.h; sourceTree = "<group>"; };
+		024DC11B1E5C222400405561 /* ZQAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQAccountTool.m; sourceTree = "<group>"; };
 		070C9D871E4874F300BD3A54 /* Project-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		070C9D8B1E4874F300BD3A54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		070C9D901E4874F300BD3A54 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -111,6 +117,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		024DC1151E5C21C600405561 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				024DC1171E5C21F200405561 /* ZQAccount.h */,
+				024DC1181E5C21F200405561 /* ZQAccount.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		024DC1161E5C21C600405561 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		070C9D7E1E4874F300BD3A54 = {
 			isa = PBXGroup;
 			children = (
@@ -179,8 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				070C9DC51E4D9A8C00BD3A54 /* Controller */,
-				070C9DC61E4D9A8C00BD3A54 /* Model */,
-				070C9DC71E4D9A8C00BD3A54 /* View */,
+				024DC1151E5C21C600405561 /* Model */,
+				024DC1161E5C21C600405561 /* View */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -194,20 +216,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		070C9DC61E4D9A8C00BD3A54 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		070C9DC71E4D9A8C00BD3A54 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		07F40F2C1E56D62C008338A2 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +223,8 @@
 				07F40F311E56D735008338A2 /* ZQNetWorkHelper.m */,
 				07F40F331E56D871008338A2 /* ZQBaseRequest.h */,
 				07F40F341E56D871008338A2 /* ZQBaseRequest.m */,
+				024DC11A1E5C222400405561 /* ZQAccountTool.h */,
+				024DC11B1E5C222400405561 /* ZQAccountTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -549,6 +559,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				024DC11C1E5C222400405561 /* ZQAccountTool.m in Sources */,
 				45A43E9F1E4C07A300C64CE2 /* ZQDiscoverController.m in Sources */,
 				070C9D921E4874F300BD3A54 /* ViewController.m in Sources */,
 				45A43E961E4C06EC00C64CE2 /* ZQHomeController.m in Sources */,
@@ -559,6 +570,7 @@
 				070C9D8C1E4874F300BD3A54 /* main.m in Sources */,
 				45A43EA81E4C08AB00C64CE2 /* ZQMyController.m in Sources */,
 				07F40F351E56D871008338A2 /* ZQBaseRequest.m in Sources */,
+				024DC1191E5C21F200405561 /* ZQAccount.m in Sources */,
 				07F40F321E56D735008338A2 /* ZQNetWorkHelper.m in Sources */,
 				45A43E991E4C070600C64CE2 /* AppDelegate.m in Sources */,
 			);

@@ -9,7 +9,9 @@
 #import "ZQLoginViewController.h"
 #import "WeiboSDK.h"
 #import "ZQNetWorkHelper.h"
-
+#import "ZQTabbarController.h"
+#import "ZQAccount.h"
+#import "ZQAccountTool.h"
 @interface ZQLoginViewController ()<UIWebViewDelegate>
 
 @property (nonatomic, weak) UIWebView *webView;
@@ -78,6 +80,18 @@
             
             [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypePost url:postUrl params:paramenters success:^(id responseObject) {
                 NSLog(@"%@",responseObject);
+                ZQAccount *account = [ZQAccount accountWithDic:responseObject];
+                NSLog(@"account : %@",account);
+                NSLog(@"access_token : %@",account.access_token);
+
+                // 2.保存到沙盒
+                [[ZQAccountTool shareAccountTool] saveAccount:account];
+                dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC));
+                dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+                        self.view.window.rootViewController = [[ZQTabbarController alloc]init];
+                });
+                NSLog(@"登录成功");
+                
             } failure:^(NSError *error) {
                 NSLog(@"%@",error);
             }];

@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "ZQLoginViewController.h"
+#import "ZQTabbarController.h"
+#import "ZQAccountTool.h"
+
 @interface AppDelegate ()
 
 @end
@@ -18,20 +21,32 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     //注册微博appkey
-    [WeiboSDK enableDebugMode:YES];
-    [WeiboSDK registerApp:kWBAppKey];
+    [self setupWeibo];
+   
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    ZQLoginViewController *oauth = [[ZQLoginViewController alloc] init];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:oauth];
+    
+    //设置控制器为Window的根控制器
+    if([ZQAccountTool shareAccountTool].account){
+        // 用户已经授权过
+        ZQTabbarController *tabBarVC = [[ZQTabbarController alloc] init];
+        self.window.rootViewController = tabBarVC;
+    }else{
+        // 未授权加载授权页面
+        ZQLoginViewController *oauthVC = [[ZQLoginViewController alloc] init];
+        self.window.rootViewController = oauthVC;
+    }
+
     [self setupNavBar];
     
-
     return YES;
 }
 
-
+- (void)setupWeibo{
+    [WeiboSDK enableDebugMode:YES];
+    [WeiboSDK registerApp:kWBAppKey];
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
