@@ -88,7 +88,8 @@
                 [[ZQAccountTool shareAccountTool] saveAccount:account];
                 dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC));
                 dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-                        self.view.window.rootViewController = [[ZQTabbarController alloc]init];
+                    ZQTabbarController *tabBarVc = [[ZQTabbarController alloc]init];
+                    [[UIApplication sharedApplication].delegate window].rootViewController = tabBarVc;
                 });
                 NSLog(@"登录成功");
                 
