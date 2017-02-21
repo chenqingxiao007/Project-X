@@ -8,12 +8,39 @@
 
 #import "ZQBaseRequest.h"
 
+@interface ZQBaseRequest ()
+
+@property (nonatomic, strong) NSMutableDictionary *params;
+
+@end
+
 
 @implementation ZQBaseRequest
 
 
 
+- (instancetype)init {
+    if (self = [super init]) {
+        NSString *baseUrl = [self baseUrl];
+    }
+    return self;
+}
 
+- (NSMutableDictionary *)pathParam {
+    if (nil == _params) {
+        _params = [NSMutableDictionary dictionaryWithCapacity:0];
+    }
+    return _params;
+
+}
+
+- (NSString *)baseUrl {
+    return @"";
+}
+
+- (NSString *)methodType {
+    return @"";
+}
 
 
 @end

@@ -19,6 +19,7 @@
 		070C9DCA1E4D9B5000BD3A54 /* ZQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9DC91E4D9B5000BD3A54 /* ZQLoginViewController.m */; };
 		07F40F321E56D735008338A2 /* ZQNetWorkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F311E56D735008338A2 /* ZQNetWorkHelper.m */; };
 		07F40F351E56D871008338A2 /* ZQBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F341E56D871008338A2 /* ZQBaseRequest.m */; };
+		07F40F391E56E701008338A2 /* ZQOauthRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F381E56E701008338A2 /* ZQOauthRequest.m */; };
 		45A43E931E4C06E000C64CE2 /* ZQTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43E911E4C06E000C64CE2 /* ZQTabbarController.m */; };
 		45A43E961E4C06EC00C64CE2 /* ZQHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43E941E4C06EC00C64CE2 /* ZQHomeController.m */; };
 		45A43E991E4C070600C64CE2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43E971E4C070600C64CE2 /* AppDelegate.m */; };
@@ -72,6 +73,8 @@
 		07F40F311E56D735008338A2 /* ZQNetWorkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQNetWorkHelper.m; sourceTree = "<group>"; };
 		07F40F331E56D871008338A2 /* ZQBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQBaseRequest.h; sourceTree = "<group>"; };
 		07F40F341E56D871008338A2 /* ZQBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQBaseRequest.m; sourceTree = "<group>"; };
+		07F40F371E56E701008338A2 /* ZQOauthRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQOauthRequest.h; sourceTree = "<group>"; };
+		07F40F381E56E701008338A2 /* ZQOauthRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQOauthRequest.m; sourceTree = "<group>"; };
 		24A9900B465FDCA77EC5331F /* Pods-Project-X.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-X.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project-X/Pods-Project-X.release.xcconfig"; sourceTree = "<group>"; };
 		45A43E911E4C06E000C64CE2 /* ZQTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQTabbarController.m; sourceTree = "<group>"; };
 		45A43E921E4C06E000C64CE2 /* ZQTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTabbarController.h; sourceTree = "<group>"; };
@@ -200,6 +203,7 @@
 		070C9DC41E4D9A8C00BD3A54 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				07F40F361E56E6E4008338A2 /* Requset */,
 				070C9DC51E4D9A8C00BD3A54 /* Controller */,
 				024DC1151E5C21C600405561 /* Model */,
 				024DC1161E5C21C600405561 /* View */,
@@ -227,6 +231,15 @@
 				024DC11B1E5C222400405561 /* ZQAccountTool.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		07F40F361E56E6E4008338A2 /* Requset */ = {
+			isa = PBXGroup;
+			children = (
+				07F40F371E56E701008338A2 /* ZQOauthRequest.h */,
+				07F40F381E56E701008338A2 /* ZQOauthRequest.m */,
+			);
+			path = Requset;
 			sourceTree = "<group>";
 		};
 		2D491521DEAA88015E13C4DD /* Frameworks */ = {
@@ -561,6 +574,7 @@
 			files = (
 				024DC11C1E5C222400405561 /* ZQAccountTool.m in Sources */,
 				45A43E9F1E4C07A300C64CE2 /* ZQDiscoverController.m in Sources */,
+				07F40F391E56E701008338A2 /* ZQOauthRequest.m in Sources */,
 				070C9D921E4874F300BD3A54 /* ViewController.m in Sources */,
 				45A43E961E4C06EC00C64CE2 /* ZQHomeController.m in Sources */,
 				070C9DCA1E4D9B5000BD3A54 /* ZQLoginViewController.m in Sources */,

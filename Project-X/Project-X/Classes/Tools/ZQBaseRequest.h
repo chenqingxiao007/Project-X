@@ -11,5 +11,19 @@
 @interface ZQBaseRequest : NSObject
 
 
+@property (nonatomic, strong, readonly) NSMutableDictionary *params;
+
+@property (nonatomic, strong, readonly) NSString *url;
+
+@property (nonatomic, copy, readonly) NSString *methodType;
+
+
+/// baseURL
+- (NSString *)baseUrl;
+/// 请求类型
+- (NSString *)methodType;
+/// 请求参数
+- (NSMutableDictionary *)pathParam;
+
 
 @end
