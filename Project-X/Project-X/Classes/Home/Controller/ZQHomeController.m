@@ -7,6 +7,10 @@
 //
 
 #import "ZQHomeController.h"
+#import "ZQAccount.h"
+#import "ZQAccountTool.h"
+#import "ZQNetWorkHelper.h"
+#import "ZQUserMessage.h"
 
 @interface ZQHomeController ()
 
@@ -18,21 +22,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    [self getUsers];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)getUsers{
+    ZQAccount *account = [ZQAccountTool shareAccountTool].account;
+    if (account) {
+        NSDictionary *paramenters = @{@"access_token":account.access_token,
+                                      @"uid":account.uid};
+        [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypeGet url:getUsers params:paramenters success:^(id responseObject) {
+            //
+            NSLog(@"responseObject%@",responseObject);
+            ZQUserMessage *userMessage = [ZQUserMessage mj_objectWithKeyValues:responseObject];
+            NSLog(@"userMessage%@",userMessage.WBdescription);
+            NSLog(@"%@",userMessage.screen_name);
+        } failure:^(NSError *error) {
+            //
+            NSLog(@"失败了");
+        }];
+        
+    }
+    
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

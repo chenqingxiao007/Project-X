@@ -7,11 +7,11 @@
 //
 
 #import "ZQLoginViewController.h"
-#import "WeiboSDK.h"
 #import "ZQNetWorkHelper.h"
 #import "ZQTabbarController.h"
 #import "ZQAccount.h"
 #import "ZQAccountTool.h"
+#import "ZQUserMessage.h"
 @interface ZQLoginViewController ()<UIWebViewDelegate, CAAnimationDelegate>
 
 @property (nonatomic, weak) UIWebView *webView;
@@ -112,6 +112,9 @@
         [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypeGet url:getUsers params:paramenters success:^(id responseObject) {
             //
             NSLog(@"responseObject%@",responseObject);
+         
+            ZQUserMessage *userMessage = [ZQUserMessage mj_objectWithKeyValues:responseObject];
+            NSLog(@"userMessage%@",userMessage.screen_name);
         } failure:^(NSError *error) {
             //
             NSLog(@"失败了");

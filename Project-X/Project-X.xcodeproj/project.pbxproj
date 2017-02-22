@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0213DAC51E5D674500FB9D48 /* ZQUrlString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0213DAC41E5D674500FB9D48 /* ZQUrlString.m */; };
+		0213DAD11E5D75C400FB9D48 /* ZQUserMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0213DAD01E5D75C400FB9D48 /* ZQUserMessage.m */; };
+		0213DAD81E5D8A4200FB9D48 /* ZQCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0213DAD71E5D8A4200FB9D48 /* ZQCellModel.m */; };
 		024DC1191E5C21F200405561 /* ZQAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 024DC1181E5C21F200405561 /* ZQAccount.m */; };
 		024DC11C1E5C222400405561 /* ZQAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 024DC11B1E5C222400405561 /* ZQAccountTool.m */; };
 		070C9D8C1E4874F300BD3A54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9D8B1E4874F300BD3A54 /* main.m */; };
@@ -51,6 +53,10 @@
 /* Begin PBXFileReference section */
 		0213DAC31E5D674500FB9D48 /* ZQUrlString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQUrlString.h; sourceTree = "<group>"; };
 		0213DAC41E5D674500FB9D48 /* ZQUrlString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQUrlString.m; sourceTree = "<group>"; };
+		0213DACF1E5D75C400FB9D48 /* ZQUserMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQUserMessage.h; sourceTree = "<group>"; };
+		0213DAD01E5D75C400FB9D48 /* ZQUserMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQUserMessage.m; sourceTree = "<group>"; };
+		0213DAD61E5D8A4200FB9D48 /* ZQCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQCellModel.h; sourceTree = "<group>"; };
+		0213DAD71E5D8A4200FB9D48 /* ZQCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQCellModel.m; sourceTree = "<group>"; };
 		024DC1171E5C21F200405561 /* ZQAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQAccount.h; sourceTree = "<group>"; };
 		024DC1181E5C21F200405561 /* ZQAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQAccount.m; sourceTree = "<group>"; };
 		024DC11A1E5C222400405561 /* ZQAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQAccountTool.h; sourceTree = "<group>"; };
@@ -126,6 +132,8 @@
 		0213DAC01E5D656900FB9D48 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0213DAD61E5D8A4200FB9D48 /* ZQCellModel.h */,
+				0213DAD71E5D8A4200FB9D48 /* ZQCellModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,11 +154,20 @@
 			path = UrlStr;
 			sourceTree = "<group>";
 		};
+		0213DAD21E5D772500FB9D48 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		024DC1151E5C21C600405561 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				024DC1171E5C21F200405561 /* ZQAccount.h */,
 				024DC1181E5C21F200405561 /* ZQAccount.m */,
+				0213DACF1E5D75C400FB9D48 /* ZQUserMessage.h */,
+				0213DAD01E5D75C400FB9D48 /* ZQUserMessage.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -357,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				45A43E851E4C060900C64CE2 /* Controller */,
+				0213DAD21E5D772500FB9D48 /* Model */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -607,6 +625,8 @@
 				070C9D921E4874F300BD3A54 /* ViewController.m in Sources */,
 				45A43E961E4C06EC00C64CE2 /* ZQHomeController.m in Sources */,
 				070C9DCA1E4D9B5000BD3A54 /* ZQLoginViewController.m in Sources */,
+				0213DAD81E5D8A4200FB9D48 /* ZQCellModel.m in Sources */,
+				0213DAD11E5D75C400FB9D48 /* ZQUserMessage.m in Sources */,
 				45A43EA21E4C07C200C64CE2 /* ZQAddController.m in Sources */,
 				45A43EA51E4C07DE00C64CE2 /* ZQMessageController.m in Sources */,
 				45A43E931E4C06E000C64CE2 /* ZQTabbarController.m in Sources */,

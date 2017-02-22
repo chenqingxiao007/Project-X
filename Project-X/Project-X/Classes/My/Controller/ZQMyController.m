@@ -9,16 +9,83 @@
 
 #import "ZQMyController.h"
 #import "ZQAccountTool.h"
-@interface ZQMyController ()
+#import "ZQCellModel.h"
 
+@interface ZQMyController ()<UITableViewDelegate, UITableViewDataSource>
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSArray *dataArray;
 @end
 
 @implementation ZQMyController
 
+- (NSArray *)dataArray{
+    if (_dataArray == nil) {
+        //数组嵌套数组 嵌套再字典
+        _dataArray = @[
+                       @[@{
+                             @"title":@"",
+                             @"icon":@"",
+                             @"introduce":@""
+                             }],
+                       @[@{
+                             @"title":@"新的好友",
+                             @"icon":@"",
+                             @"introduce":@""
+                             }],
+                       @[@{
+                             @"title":@"我的相册",
+                             @"icon":@"",
+                             @"introduce":@""
+                             },
+                         @{
+                             @"title":@"我的赞",
+                             @"icon":@"",
+                             @"introduce":@""
+                             }],
+                       @[@{
+                             @"title":@"微博钱包",
+                             @"icon":@"",
+                             @"introduce":@""
+                             },
+                        @{
+                             @"title":@"微博运动",
+                             @"icon":@"",
+                             @"introduce":@""
+                             }],
+                       @[@{
+                             @"title":@"粉丝服务",
+                             @"icon":@"",
+                             @"introduce":@""
+                             },
+                         @{
+                             @"title":@"粉丝头条",
+                             @"icon":@"",
+                             @"introduce":@""
+                             }],
+
+                       @[@{
+                             @"title":@"草稿箱",
+                             @"icon":@"",
+                             @"introduce":@""
+                             }],
+                       @[
+                           @{
+                               @"title":@"更多",
+                               @"icon":@"",
+                               @"introduce":@""
+                               }]
+                               ];
+    }
+    return _dataArray;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     //导航栏添加按钮
     [self NavAddButton];
+    //添加tableView
+    [self setupTableView];
+    //设置我的页面cell数据
+    
 }
 - (void)NavAddButton{
 
@@ -36,14 +103,47 @@
 - (void)addFriendBtnClick{
     NSLog(@"点击添加好友");
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setupTableView{
+    UITableView *tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStyleGrouped];
+    self.tableView = tableView;
+    [self.view addSubview:tableView];
+    tableView.delegate = self;
+    tableView.dataSource = self;
 }
-*/
+
+
+#pragma mark - tableView数据源代理方法
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.dataArray.count;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    NSArray *array = self.dataArray[section];
+    return array.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *cellId = @"cellID";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+        cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;//箭头
+    }
+    NSDictionary *dict = self.dataArray[indexPath.section][indexPath.row];
+    ZQCellModel *cellModel = [ZQCellModel mj_objectWithKeyValues:dict];
+    cell.textLabel.text = cellModel.title;
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 8;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 2;
+}
+
 
 @end
