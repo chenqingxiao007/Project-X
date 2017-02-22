@@ -78,10 +78,10 @@
 #pragma mark - setupNavBar
 - (void)setupNavBar{
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    
     UINavigationBar *bar = [UINavigationBar appearance];
-    bar.barTintColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navigationbar_background"]];//导航栏颜色
-    bar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor blackColor]};//导航栏字体颜色
+    bar.tintColor = [UIColor blackColor];
+    bar.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navigationbar_background"]];
+        
 }
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
     {

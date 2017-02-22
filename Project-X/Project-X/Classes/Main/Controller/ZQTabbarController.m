@@ -55,6 +55,7 @@
         item.image = [UIImage imageNamed:dict[kImgKey]];
         item.selectedImage = [[UIImage imageNamed:dict[kSelImgKey]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];//去除蒙版
         [item setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor blackColor]} forState:UIControlStateSelected];//选中颜色
+
         [self addChildViewController:nav];
     }];
 

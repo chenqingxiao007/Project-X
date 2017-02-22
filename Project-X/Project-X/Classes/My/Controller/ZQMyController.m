@@ -17,14 +17,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    NSString *uid = [ZQAccountTool shareAccountTool].account.uid;
-    NSLog(@"uid%@",uid);
+    //导航栏添加按钮
+    [self NavAddButton];
 }
+- (void)NavAddButton{
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc]initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(setBtnClick)];
+
+    self.navigationItem.rightBarButtonItem = rightBarItem;
+}
+//点击设置
+- (void)setBtnClick{
+    NSLog(@"点击设置");
 }
 
 /*
