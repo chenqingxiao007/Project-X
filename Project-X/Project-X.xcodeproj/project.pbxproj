@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0213DAC51E5D674500FB9D48 /* ZQUrlString.m in Sources */ = {isa = PBXBuildFile; fileRef = 0213DAC41E5D674500FB9D48 /* ZQUrlString.m */; };
 		0213DAD11E5D75C400FB9D48 /* ZQUserMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0213DAD01E5D75C400FB9D48 /* ZQUserMessage.m */; };
 		0213DAD81E5D8A4200FB9D48 /* ZQCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0213DAD71E5D8A4200FB9D48 /* ZQCellModel.m */; };
 		024DC1191E5C21F200405561 /* ZQAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 024DC1181E5C21F200405561 /* ZQAccount.m */; };
@@ -23,6 +22,8 @@
 		07F40F321E56D735008338A2 /* ZQNetWorkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F311E56D735008338A2 /* ZQNetWorkHelper.m */; };
 		07F40F351E56D871008338A2 /* ZQBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F341E56D871008338A2 /* ZQBaseRequest.m */; };
 		07F40F391E56E701008338A2 /* ZQOauthRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F381E56E701008338A2 /* ZQOauthRequest.m */; };
+		4504A6061E5DE53C00E6DBDA /* ZQUrlString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4504A6051E5DE53C00E6DBDA /* ZQUrlString.m */; };
+		4504A6091E5DE56600E6DBDA /* ZQImageNameString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4504A6081E5DE56600E6DBDA /* ZQImageNameString.m */; };
 		45A43E931E4C06E000C64CE2 /* ZQTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43E911E4C06E000C64CE2 /* ZQTabbarController.m */; };
 		45A43E961E4C06EC00C64CE2 /* ZQHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43E941E4C06EC00C64CE2 /* ZQHomeController.m */; };
 		45A43E991E4C070600C64CE2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43E971E4C070600C64CE2 /* AppDelegate.m */; };
@@ -51,8 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0213DAC31E5D674500FB9D48 /* ZQUrlString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQUrlString.h; sourceTree = "<group>"; };
-		0213DAC41E5D674500FB9D48 /* ZQUrlString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQUrlString.m; sourceTree = "<group>"; };
 		0213DACF1E5D75C400FB9D48 /* ZQUserMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQUserMessage.h; sourceTree = "<group>"; };
 		0213DAD01E5D75C400FB9D48 /* ZQUserMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQUserMessage.m; sourceTree = "<group>"; };
 		0213DAD61E5D8A4200FB9D48 /* ZQCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQCellModel.h; sourceTree = "<group>"; };
@@ -85,6 +84,10 @@
 		07F40F371E56E701008338A2 /* ZQOauthRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQOauthRequest.h; sourceTree = "<group>"; };
 		07F40F381E56E701008338A2 /* ZQOauthRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQOauthRequest.m; sourceTree = "<group>"; };
 		24A9900B465FDCA77EC5331F /* Pods-Project-X.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project-X.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project-X/Pods-Project-X.release.xcconfig"; sourceTree = "<group>"; };
+		4504A6041E5DE53C00E6DBDA /* ZQUrlString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQUrlString.h; sourceTree = "<group>"; };
+		4504A6051E5DE53C00E6DBDA /* ZQUrlString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQUrlString.m; sourceTree = "<group>"; };
+		4504A6071E5DE56600E6DBDA /* ZQImageNameString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQImageNameString.h; sourceTree = "<group>"; };
+		4504A6081E5DE56600E6DBDA /* ZQImageNameString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQImageNameString.m; sourceTree = "<group>"; };
 		45A43E911E4C06E000C64CE2 /* ZQTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQTabbarController.m; sourceTree = "<group>"; };
 		45A43E921E4C06E000C64CE2 /* ZQTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTabbarController.h; sourceTree = "<group>"; };
 		45A43E941E4C06EC00C64CE2 /* ZQHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQHomeController.m; sourceTree = "<group>"; };
@@ -143,15 +146,6 @@
 			children = (
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		0213DAC21E5D671F00FB9D48 /* UrlStr */ = {
-			isa = PBXGroup;
-			children = (
-				0213DAC31E5D674500FB9D48 /* ZQUrlString.h */,
-				0213DAC41E5D674500FB9D48 /* ZQUrlString.m */,
-			);
-			path = UrlStr;
 			sourceTree = "<group>";
 		};
 		0213DAD21E5D772500FB9D48 /* Model */ = {
@@ -246,7 +240,6 @@
 		070C9DC41E4D9A8C00BD3A54 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				0213DAC21E5D671F00FB9D48 /* UrlStr */,
 				07F40F361E56E6E4008338A2 /* Requset */,
 				070C9DC51E4D9A8C00BD3A54 /* Controller */,
 				024DC1151E5C21C600405561 /* Model */,
@@ -303,9 +296,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4504A6031E5DE50D00E6DBDA /* PublickString */ = {
+			isa = PBXGroup;
+			children = (
+				4504A6041E5DE53C00E6DBDA /* ZQUrlString.h */,
+				4504A6051E5DE53C00E6DBDA /* ZQUrlString.m */,
+				4504A6071E5DE56600E6DBDA /* ZQImageNameString.h */,
+				4504A6081E5DE56600E6DBDA /* ZQImageNameString.m */,
+			);
+			path = PublickString;
+			sourceTree = "<group>";
+		};
 		45A43E731E4C060900C64CE2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4504A6031E5DE50D00E6DBDA /* PublickString */,
 				07F40F2C1E56D62C008338A2 /* Tools */,
 				070C9DC41E4D9A8C00BD3A54 /* Common */,
 				45A43E841E4C060900C64CE2 /* Main */,
@@ -622,6 +627,7 @@
 				024DC11C1E5C222400405561 /* ZQAccountTool.m in Sources */,
 				45A43E9F1E4C07A300C64CE2 /* ZQDiscoverController.m in Sources */,
 				07F40F391E56E701008338A2 /* ZQOauthRequest.m in Sources */,
+				4504A6091E5DE56600E6DBDA /* ZQImageNameString.m in Sources */,
 				070C9D921E4874F300BD3A54 /* ViewController.m in Sources */,
 				45A43E961E4C06EC00C64CE2 /* ZQHomeController.m in Sources */,
 				070C9DCA1E4D9B5000BD3A54 /* ZQLoginViewController.m in Sources */,
@@ -630,11 +636,11 @@
 				45A43EA21E4C07C200C64CE2 /* ZQAddController.m in Sources */,
 				45A43EA51E4C07DE00C64CE2 /* ZQMessageController.m in Sources */,
 				45A43E931E4C06E000C64CE2 /* ZQTabbarController.m in Sources */,
+				4504A6061E5DE53C00E6DBDA /* ZQUrlString.m in Sources */,
 				070C9D8C1E4874F300BD3A54 /* main.m in Sources */,
 				45A43EA81E4C08AB00C64CE2 /* ZQMyController.m in Sources */,
 				07F40F351E56D871008338A2 /* ZQBaseRequest.m in Sources */,
 				024DC1191E5C21F200405561 /* ZQAccount.m in Sources */,
-				0213DAC51E5D674500FB9D48 /* ZQUrlString.m in Sources */,
 				07F40F321E56D735008338A2 /* ZQNetWorkHelper.m in Sources */,
 				45A43E991E4C070600C64CE2 /* AppDelegate.m in Sources */,
 			);
