@@ -8,7 +8,7 @@
 //
 
 #import "ZQMyController.h"
-
+#import "ZQAccountTool.h"
 @interface ZQMyController ()
 
 @end
@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSString *uid = [ZQAccountTool shareAccountTool].account.uid;
+    NSLog(@"uid%@",uid);
 }
 
 - (void)didReceiveMemoryWarning {
