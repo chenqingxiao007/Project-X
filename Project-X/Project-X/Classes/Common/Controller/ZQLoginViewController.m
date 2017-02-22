@@ -66,15 +66,12 @@
             
             // 给新浪发送POST请求获取access_token
             
-            NSMutableDictionary *paramenters = [NSMutableDictionary dictionary];
-            paramenters[@"client_id"] = kWBAppKey;
-            paramenters[@"client_secret"] = kWBAppSecret;
-            paramenters[@"grant_type"] = @"authorization_code";
-            paramenters[@"code"] = code;
-            paramenters[@"redirect_uri"] = kRedirectURI;
-            NSString *postUrl = @"https://api.weibo.com/oauth2/access_token";
-            
-            [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypePost url:postUrl params:paramenters success:^(id responseObject) {
+            NSDictionary *paramenters = @{@"client_id":kWBAppKey,
+                                   @"client_secret":kWBAppSecret,
+                                   @"grant_type":@"authorization_code",
+                                   @"code":code,
+                                   @"redirect_uri":kRedirectURI};
+            [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypePost url:oauthUrl params:paramenters success:^(id responseObject) {
                 
                 ZQAccount *account = [ZQAccount accountWithDic:responseObject];
 
@@ -92,7 +89,8 @@
                 
                 ZQTabbarController *tabBarVC = [[ZQTabbarController alloc] init];
                 [[UIApplication sharedApplication].delegate window].rootViewController = tabBarVC;
-                
+                //登录成功 获取用户信息
+                [self getUsers];
                 NSLog(@"登录成功");
                 
             } failure:^(NSError *error) {
@@ -106,5 +104,20 @@
         return YES;
     }
     
+- (void)getUsers{
+    ZQAccount *account = [ZQAccountTool shareAccountTool].account;
+    if (account) {
+        NSDictionary *paramenters = @{@"access_token":account.access_token,
+                                      @"uid":account.uid};
+        [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypeGet url:getUsers params:paramenters success:^(id responseObject) {
+            //
+            NSLog(@"responseObject%@",responseObject);
+        } failure:^(NSError *error) {
+            //
+            NSLog(@"失败了");
+        }];
 
+    }
+    
+}
 @end

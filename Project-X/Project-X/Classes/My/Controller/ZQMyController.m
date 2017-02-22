@@ -23,14 +23,19 @@
 - (void)NavAddButton{
 
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc]initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(setBtnClick)];
-
     self.navigationItem.rightBarButtonItem = rightBarItem;
+    
+    UIBarButtonItem *leftBarItem = [[UIBarButtonItem alloc]initWithTitle:@"添加好友" style:UIBarButtonItemStylePlain target:self action:@selector(addFriendBtnClick)];
+    self.navigationItem.leftBarButtonItem = leftBarItem;
 }
 //点击设置
 - (void)setBtnClick{
     NSLog(@"点击设置");
 }
-
+//点击添加好友
+- (void)addFriendBtnClick{
+    NSLog(@"点击添加好友");
+}
 /*
 #pragma mark - Navigation
 
