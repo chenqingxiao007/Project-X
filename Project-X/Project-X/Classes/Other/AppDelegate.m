@@ -34,8 +34,11 @@
         self.window.rootViewController = tabBarVC;
     }else{
         // 未授权加载授权页面
-        ZQLoginViewController *oauthVC = [[ZQLoginViewController alloc] init];
-        self.window.rootViewController = oauthVC;
+        ZQLoginViewController *loginVC = [[ZQLoginViewController alloc] init];
+
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        
+        self.window.rootViewController = nav;
     }
 
     [self setupNavBar];

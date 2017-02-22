@@ -12,7 +12,7 @@
 #import "ZQTabbarController.h"
 #import "ZQAccount.h"
 #import "ZQAccountTool.h"
-@interface ZQLoginViewController ()<UIWebViewDelegate>
+@interface ZQLoginViewController ()<UIWebViewDelegate, CAAnimationDelegate>
 
 @property (nonatomic, weak) UIWebView *webView;
 
@@ -56,15 +56,11 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
     {
-
-        NSLog(@"RequestURL: %@", request.URL);
-        
         // 获取code后
         NSString *urlString = request.URL.absoluteString;
         NSRange range = [urlString rangeOfString:@"code="];
         
         if (range.length) {
-            [self.webView removeFromSuperview];
             
             NSString *code = [urlString substringFromIndex:(range.location + range.length)];
             
@@ -79,28 +75,34 @@
             NSString *postUrl = @"https://api.weibo.com/oauth2/access_token";
             
             [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypePost url:postUrl params:paramenters success:^(id responseObject) {
-                NSLog(@"%@",responseObject);
+                
                 ZQAccount *account = [ZQAccount accountWithDic:responseObject];
-                NSLog(@"account : %@",account);
-                NSLog(@"access_token : %@",account.access_token);
 
                 // 2.保存到沙盒
                 [[ZQAccountTool shareAccountTool] saveAccount:account];
-                dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC));
-                dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-                    ZQTabbarController *tabBarVc = [[ZQTabbarController alloc]init];
-                    [[UIApplication sharedApplication].delegate window].rootViewController = tabBarVc;
-                });
+                
+                CATransition *transition = [CATransition animation];
+                transition.duration = 1.0f;
+                transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+                transition.type = @"pageCurl";
+                transition.subtype = kCATransitionFromRight;
+                transition.delegate = self;
+                
+                [[UIApplication sharedApplication].keyWindow.layer addAnimation:transition forKey:nil];
+                
+                ZQTabbarController *tabBarVC = [[ZQTabbarController alloc] init];
+                [[UIApplication sharedApplication].delegate window].rootViewController = tabBarVC;
+                
                 NSLog(@"登录成功");
                 
             } failure:^(NSError *error) {
                 NSLog(@"%@",error);
             }];
             
-            
         }else{
             NSLog(@"走了这");
         }
+
         return YES;
     }
     
