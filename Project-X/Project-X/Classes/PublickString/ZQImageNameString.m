@@ -36,4 +36,7 @@ NSString *const my_more = @"my_more";
 
 NSString *const my_commonUser = @"my_commonUser";
 NSString *const my_membership = @"my_membership";
+
+NSString *const my_yellowarrow = @"my_yellowarrow";
+NSString *const my_grayarrow = @"my_grayarrow";
 @end

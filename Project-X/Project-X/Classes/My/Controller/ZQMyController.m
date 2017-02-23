@@ -9,9 +9,11 @@
 
 #import "ZQMyController.h"
 #import "ZQCellModel.h"
-
+#import "ZQMyHeaderCell.h"
 @interface ZQMyController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UITableViewCell *cell;
+
 @property (nonatomic, strong) NSArray *dataArray;
 @end
 
@@ -128,27 +130,42 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellId = @"cellID";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-        cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;//箭头
+    if (indexPath.section == 0) {
+        ZQMyHeaderCell *cell = [ZQMyHeaderCell cellWithTableView:tableView];
+        cell.userMessage = UserMessage;
+        self.cell = cell;
+    }else{
+        static NSString *cellId = @"cellID";
+        
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+        if (cell == nil) {
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+            cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;//箭头
+        }
+        NSDictionary *dict = self.dataArray[indexPath.section][indexPath.row];
+        ZQCellModel *cellModel = [ZQCellModel mj_objectWithKeyValues:dict];
+        cell.textLabel.text = cellModel.title;
+        cell.imageView.image = [UIImage imageNamed:cellModel.icon];
+        cell.detailTextLabel.text = cellModel.introduce;
+        self.cell = cell;
     }
-    NSDictionary *dict = self.dataArray[indexPath.section][indexPath.row];
-    ZQCellModel *cellModel = [ZQCellModel mj_objectWithKeyValues:dict];
-    cell.textLabel.text = cellModel.title;
-    cell.imageView.image = [UIImage imageNamed:cellModel.icon];
-    cell.detailTextLabel.text = cellModel.introduce;
-    return cell;
+    return self.cell;
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 8;
+    return 6;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 2;
 }
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        return 140;
+    }else{
+        return 50;
+    }
+}
 @end

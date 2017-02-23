@@ -55,4 +55,9 @@ extern NSString *const my_commonUser;
 //**会员用户图标*/
 extern NSString *const my_membership;
 
+//**黄色箭头图标*/
+extern NSString *const my_yellowarrow;
+//**灰色箭头图标*/
+extern NSString *const my_grayarrow;
+
 @end
