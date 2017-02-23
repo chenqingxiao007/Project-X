@@ -10,7 +10,44 @@
 
 @interface ZQImageNameString : NSObject
 
+#pragma mark -- tabBar icon
+
+//**首页*/
+extern NSString *const tabbar_home;
+extern NSString *const tabbar_home_selected;
+//**消息*/
+extern NSString *const tabbar_message_center;
+extern NSString *const tabbar_message_center_selected;
+//**添加加号*/
+extern NSString *const tabbar_compose_icon_add;
+//**添加背景*/
+extern NSString *const tabbar_compose_button;
+extern NSString *const tabbar_compose_button_highlighted;
+//**发现*/
+extern NSString *const tabbar_discover;
+extern NSString *const tabbar_discover_selected;
+//**我*/
+extern NSString *const tabbar_profile;
+extern NSString *const tabbar_profile_selected;
+
 #pragma mark -- my模块
 //**新的好友*/
 extern NSString *const my_friend;
+//**我的相册*/
+extern NSString *const my_album;
+//**我的赞*/
+extern NSString *const my_praise;
+//**微博钱包*/
+extern NSString *const my_purse;
+//**微博运动*/
+extern NSString *const my_sport;
+//**粉丝服务*/
+extern NSString *const my_fansServe;
+//**粉丝头条*/
+extern NSString *const my_fansTrend;
+//**草稿箱*/
+extern NSString *const my_draft;
+//**更多*/
+extern NSString *const my_more;
+
 @end

@@ -25,25 +25,25 @@
     NSArray *childItemsArray = @[
                                  @{kClassKey:@"ZQHomeController",
                                    kTitleKey:@"首页",
-                                   kImgKey:@"tabbar_home",
-                                   kSelImgKey:@"tabbar_home_selected"},
+                                   kImgKey:tabbar_home,
+                                   kSelImgKey:tabbar_home_selected},
                                  @{kClassKey:@"ZQMessageController",
                                    kTitleKey:@"消息",
-                                   kImgKey:@"tabbar_message_center",
-                                   kSelImgKey:@"tabbar_message_center_selected"},
+                                   kImgKey:tabbar_message_center,
+                                   kSelImgKey:tabbar_message_center_selected},
                                  @{kClassKey:@"ZQAddController",
                                    kTitleKey:@"添加",
                                    kImgKey:@"",
                                    kSelImgKey:@""},
                                  @{kClassKey:@"ZQDiscoverController",
                                    kTitleKey:@"发现",
-                                   kImgKey:@"tabbar_discover",
-                                   kSelImgKey:@"tabbar_discover_selected"},
+                                   kImgKey:tabbar_discover,
+                                   kSelImgKey:tabbar_discover_selected},
                                  @{
                                    kClassKey:@"ZQMyController",
                                    kTitleKey:@"我的",
-                                   kImgKey:@"tabbar_profile",
-                                   kSelImgKey:@"tabbar_profile_selected"}
+                                   kImgKey:tabbar_profile,
+                                   kSelImgKey:tabbar_profile_selected}
                                  ];
     
     [childItemsArray enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL *stop){

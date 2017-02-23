@@ -29,49 +29,49 @@
                              }],
                        @[@{
                              @"title":@"新的好友",
-                             @"icon":@"",
+                             @"icon":my_friend,
                              @"introduce":@""
                              }],
                        @[@{
                              @"title":@"我的相册",
-                             @"icon":@"",
+                             @"icon":my_album,
                              @"introduce":@""
                              },
                          @{
                              @"title":@"我的赞",
-                             @"icon":@"",
+                             @"icon":my_praise,
                              @"introduce":@""
                              }],
                        @[@{
                              @"title":@"微博钱包",
-                             @"icon":@"",
-                             @"introduce":@""
+                             @"icon":my_purse,
+                             @"introduce":@"白拿5000元旅游基金"
                              },
                         @{
                              @"title":@"微博运动",
-                             @"icon":@"",
+                             @"icon":my_sport,
                              @"introduce":@""
                              }],
                        @[@{
                              @"title":@"粉丝服务",
-                             @"icon":@"",
+                             @"icon":my_fansServe,
                              @"introduce":@""
                              },
                          @{
                              @"title":@"粉丝头条",
-                             @"icon":@"",
+                             @"icon":my_fansTrend,
                              @"introduce":@""
                              }],
 
                        @[@{
                              @"title":@"草稿箱",
-                             @"icon":@"",
+                             @"icon":my_draft,
                              @"introduce":@""
                              }],
                        @[
                            @{
                                @"title":@"更多",
-                               @"icon":@"",
+                               @"icon":my_more,
                                @"introduce":@""
                                }]
                                ];
@@ -134,7 +134,8 @@
     NSDictionary *dict = self.dataArray[indexPath.section][indexPath.row];
     ZQCellModel *cellModel = [ZQCellModel mj_objectWithKeyValues:dict];
     cell.textLabel.text = cellModel.title;
-    
+    cell.imageView.image = [UIImage imageNamed:cellModel.icon];
+    cell.detailTextLabel.text = cellModel.introduce;
     return cell;
 }
 
