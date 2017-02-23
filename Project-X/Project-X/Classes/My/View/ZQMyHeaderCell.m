@@ -7,6 +7,7 @@
 //
 
 #import "ZQMyHeaderCell.h"
+#import "SDWebImageManager.h"
 
 @implementation ZQMyHeaderCell
 
@@ -46,12 +47,11 @@
         //添加昵称
         self.label_name = [[UILabel alloc]init];
         self.label_name.font = [UIFont systemFontOfSize:15];
-        self.label_name.numberOfLines = 2;
         [self addSubview:self.label_name];
-        
+
         //添加简介
         self.label_description = [[UILabel alloc]init];
-        self.label_description.font = [UIFont systemFontOfSize:12];
+        self.label_description.font = [UIFont systemFontOfSize:13];
         self.label_description.textColor = [UIColor grayColor];
         [self addSubview:self.label_description];
     }
@@ -65,6 +65,8 @@
         make.left.equalTo(self).offset(10);
         make.size.mas_equalTo(CGSizeMake(60,60));
     }];
+    self.imageView_proflie.layer.masksToBounds =YES;
+    self.imageView_proflie.layer.cornerRadius =30;
     
     //箭头frame
     [self.imageView_yellowArrow mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -74,12 +76,13 @@
     }];
     
     //用户是否认证label frame
-    [self.label_verified mas_makeConstraints:^(MASConstraintMaker *make) {
+    CGFloat verifiedLabelWidth = CGRectGetWidth(self.label_verified.frame);
+    [self.label_verified mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.imageView_yellowArrow);
         make.right.equalTo(self.imageView_yellowArrow.mas_left).offset(-2);
-        make.width.mas_lessThanOrEqualTo(50);
+        make.width.mas_equalTo(verifiedLabelWidth);
     }];
-    
+
     //用户是否认证图标 frame
     [self.imageView_verified mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.label_verified);
@@ -92,13 +95,28 @@
         make.bottom.equalTo(self.imageView_proflie.mas_centerY).offset(-2);
         make.left.equalTo(self.imageView_proflie.mas_right).offset(10);
         make.right.equalTo(self.imageView_verified.mas_left).offset(-10);
-//        make.width.lessThanOrEqualTo(self.label_verified.superview);
-//        make.height.mas_equalTo(20);
+    }];
+
+    //简介frame
+    [self.label_description mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.imageView_proflie.mas_centerY).offset(2);
+        make.left.equalTo(self.imageView_proflie.mas_right).offset(10);
+        make.right.equalTo(self.imageView_verified.mas_left).offset(-10);
     }];
 }
 - (void)setUserMessage:(ZQUserMessage *)userMessage{
     if (userMessage) {
-        self.imageView_proflie.image = [UIImage imageNamed:my_friend];
+        NSURL *imageDownUrl = [NSURL URLWithString:userMessage.profile_image_url];
+        [[SDWebImageManager sharedManager]downloadImageWithURL:imageDownUrl options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+            //下载进度
+        } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+            if (image) {
+                self.imageView_proflie.image = image;
+            }
+            if (error) {
+                NSLog(@"%@",error);
+            }
+        }];
 #pragma mark --  判断是否有消息  暂时用箭头 不需要红色原点
         self.imageView_yellowArrow.image = [UIImage imageNamed:my_yellowarrow];
         if (userMessage.verified == 0) {
@@ -110,18 +128,9 @@
             self.label_verified.text = @"认证用户";
             self.imageView_verified.image = [UIImage imageNamed:my_membership];
         }
-        
-        //用户是否认证label frame
         [self.label_verified sizeToFit];
-        CGFloat verifiedLabelWidth = CGRectGetWidth(self.label_verified.frame);
-        [self.label_verified mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.equalTo(self.imageView_yellowArrow);
-            make.right.equalTo(self.imageView_yellowArrow.mas_left).offset(-2);
-            make.width.mas_equalTo(verifiedLabelWidth);
-        }];
-        
         self.label_name.text = userMessage.screen_name;
-        self.label_name.text = @"我是一个很长的字符我是一个很长的字符我是一个很长的字符我是一个很长的字符我是一个很长的字符";
+        self.label_description.text = [NSString stringWithFormat:@"简介%@",userMessage.WBdescription];
     }
 }
 
