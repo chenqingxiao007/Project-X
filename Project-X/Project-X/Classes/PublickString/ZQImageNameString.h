@@ -50,4 +50,9 @@ extern NSString *const my_draft;
 //**更多*/
 extern NSString *const my_more;
 
+//**普通用户图标*/
+extern NSString *const my_commonUser;
+//**会员用户图标*/
+extern NSString *const my_membership;
+
 @end

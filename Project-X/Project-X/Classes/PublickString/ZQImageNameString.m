@@ -34,4 +34,6 @@ NSString *const my_fansTrend = @"my_fansTrend";
 NSString *const my_draft = @"my_draft";
 NSString *const my_more = @"my_more";
 
+NSString *const my_commonUser = @"my_commonUser";
+NSString *const my_membership = @"my_membership";
 @end

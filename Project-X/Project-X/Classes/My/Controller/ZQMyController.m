@@ -8,7 +8,6 @@
 //
 
 #import "ZQMyController.h"
-#import "ZQAccountTool.h"
 #import "ZQCellModel.h"
 
 @interface ZQMyController ()<UITableViewDelegate, UITableViewDataSource>
