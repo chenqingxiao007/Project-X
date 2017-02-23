@@ -46,6 +46,7 @@
         //添加昵称
         self.label_name = [[UILabel alloc]init];
         self.label_name.font = [UIFont systemFontOfSize:15];
+        self.label_name.numberOfLines = 2;
         [self addSubview:self.label_name];
         
         //添加简介
@@ -76,7 +77,7 @@
     [self.label_verified mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.imageView_yellowArrow);
         make.right.equalTo(self.imageView_yellowArrow.mas_left).offset(-2);
-        make.width.lessThanOrEqualTo(self.label_verified.superview);
+        make.width.mas_lessThanOrEqualTo(50);
     }];
     
     //用户是否认证图标 frame
@@ -87,13 +88,12 @@
     }];
 
     //用户昵称 frame
-    
     [self.label_name mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.imageView_proflie.mas_centerY).offset(-2);
         make.left.equalTo(self.imageView_proflie.mas_right).offset(10);
         make.right.equalTo(self.imageView_verified.mas_left).offset(-10);
 //        make.width.lessThanOrEqualTo(self.label_verified.superview);
-        make.height.mas_equalTo(20);
+//        make.height.mas_equalTo(20);
     }];
 }
 - (void)setUserMessage:(ZQUserMessage *)userMessage{
@@ -109,9 +109,19 @@
             //认证用户
             self.label_verified.text = @"认证用户";
             self.imageView_verified.image = [UIImage imageNamed:my_membership];
-
         }
+        
+        //用户是否认证label frame
+        [self.label_verified sizeToFit];
+        CGFloat verifiedLabelWidth = CGRectGetWidth(self.label_verified.frame);
+        [self.label_verified mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.imageView_yellowArrow);
+            make.right.equalTo(self.imageView_yellowArrow.mas_left).offset(-2);
+            make.width.mas_equalTo(verifiedLabelWidth);
+        }];
+        
         self.label_name.text = userMessage.screen_name;
+        self.label_name.text = @"我是一个很长的字符我是一个很长的字符我是一个很长的字符我是一个很长的字符我是一个很长的字符";
     }
 }
 
