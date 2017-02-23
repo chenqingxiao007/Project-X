@@ -11,7 +11,7 @@
 
 @implementation ZQGlobleMessage
 //全局变量
-static ZQGlobleMessage *_instance = nil;
+static id _instance = nil;
 
 //单例方法
 + (ZQGlobleMessage *)shareInstence{
@@ -23,9 +23,6 @@ static ZQGlobleMessage *_instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _instance = [super allocWithZone:zone];
-        if (!_instance.userMessage) {
-            _instance.userMessage = [[ZQUserMessage alloc]init];
-        }
     });
     return _instance;
 }
@@ -35,9 +32,6 @@ static ZQGlobleMessage *_instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _instance = [super init];
-        if (!_instance.userMessage) {
-            _instance.userMessage = [[ZQUserMessage alloc]init];
-        }
     });
     return _instance;
 }

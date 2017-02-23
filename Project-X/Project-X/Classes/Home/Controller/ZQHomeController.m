@@ -22,29 +22,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    [self getUsers];
     
 }
 
-- (void)getUsers{
-    ZQAccount *account = [ZQAccountTool shareAccountTool].account;
-    if (account) {
-        NSDictionary *paramenters = @{@"access_token":account.access_token,
-                                      @"uid":account.uid};
-        [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypeGet url:getUsers params:paramenters success:^(id responseObject) {
-            //
-            NSLog(@"responseObject%@",responseObject);
-            ZQUserMessage *userMessage = [ZQUserMessage mj_objectWithKeyValues:responseObject];
-            NSLog(@"userMessage%@",userMessage.WBdescription);
-            NSLog(@"%@",userMessage.screen_name);
-        } failure:^(NSError *error) {
-            //
-            NSLog(@"失败了");
-        }];
-        
-    }
-    
-}
+
 
 
 

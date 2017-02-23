@@ -114,6 +114,19 @@
             NSLog(@"responseObject%@",responseObject);
          
             ZQUserMessage *userMessage = [ZQUserMessage mj_objectWithKeyValues:responseObject];
+            //存储
+            NSData *userMessageData = [NSKeyedArchiver archivedDataWithRootObject:userMessage];
+            [[NSUserDefaults standardUserDefaults] setObject:userMessageData forKey:@"theuserMessage"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            //获取
+            //获得保存数据
+            NSData *getuserMessageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"theuserMessage"];
+            
+            
+            //转成模型获取数据
+            ZQUserMessage *getuserMessage =   [NSKeyedUnarchiver unarchiveObjectWithData:getuserMessageData];
+            UserMessage = getuserMessage;
             NSLog(@"userMessage%@",userMessage.screen_name);
         } failure:^(NSError *error) {
             //

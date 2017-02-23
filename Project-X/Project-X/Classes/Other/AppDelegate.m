@@ -32,6 +32,13 @@
         // 用户已经授权过
         ZQTabbarController *tabBarVC = [[ZQTabbarController alloc] init];
         self.window.rootViewController = tabBarVC;
+        
+        //获得保存数据
+        NSData *getuserMessageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"theuserMessage"];
+        //转成模型获取数据
+        ZQUserMessage *getuserMessage =   [NSKeyedUnarchiver unarchiveObjectWithData:getuserMessageData];
+        UserMessage = getuserMessage;
+
     }else{
         // 未授权加载授权页面
         ZQLoginViewController *loginVC = [[ZQLoginViewController alloc] init];

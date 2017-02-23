@@ -15,6 +15,7 @@
 #import "ZQUrlString.h"
 #import "MJExtension.h"
 #import "ZQImageNameString.h"
+#import "ZQGlobleMessage.h"
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 //**微博AppKey*/
@@ -22,5 +23,6 @@
 #define kRedirectURI @"https://api.weibo.com/oauth2/default.html"
 #define kWBAppSecret @"1e08b74ba22601247921a6eb0c208ae7"
 
-
+#define GlobleMessage [ZQGlobleMessage shareInstence]
+#define UserMessage GlobleMessage.userMessage
 #endif /* Project_X_Prefix_pch */

@@ -10,7 +10,7 @@
 #import "ZQUserMessage.h"
 @interface ZQGlobleMessage : NSObject
 //**全局用户信息类*/
-@property (nonatomic, copy) ZQUserMessage *userMessage;
+@property (nonatomic, strong) ZQUserMessage *userMessage;
 
 + (ZQGlobleMessage *)shareInstence;
 @end
