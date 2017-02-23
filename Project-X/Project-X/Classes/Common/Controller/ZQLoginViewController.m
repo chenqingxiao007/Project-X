@@ -11,7 +11,6 @@
 #import "ZQTabbarController.h"
 #import "ZQAccount.h"
 #import "ZQAccountTool.h"
-#import "ZQUserMessage.h"
 @interface ZQLoginViewController ()<UIWebViewDelegate, CAAnimationDelegate>
 
 @property (nonatomic, weak) UIWebView *webView;

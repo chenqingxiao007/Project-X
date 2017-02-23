@@ -21,7 +21,7 @@
 //**微博AppKey*/
 #define kWBAppKey @"3832862104"
 #define kRedirectURI @"https://api.weibo.com/oauth2/default.html"
-#define kWBAppSecret @"1e08b74ba22601247921a6eb0c208ae7"
+#define kWBAppSecret @"9960128e13524858599950707c7192ba"
 
 #define GlobleMessage [ZQGlobleMessage shareInstence]
 #define UserMessage GlobleMessage.userMessage

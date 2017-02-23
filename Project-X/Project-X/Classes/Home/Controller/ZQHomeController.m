@@ -10,7 +10,6 @@
 #import "ZQAccount.h"
 #import "ZQAccountTool.h"
 #import "ZQNetWorkHelper.h"
-#import "ZQUserMessage.h"
 
 @interface ZQHomeController ()
 
