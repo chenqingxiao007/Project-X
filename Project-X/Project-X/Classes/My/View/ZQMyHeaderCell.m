@@ -42,6 +42,17 @@
         //添加是否认证图标
         self.imageView_verified = [[UIImageView alloc]init];
         [self addSubview:self.imageView_verified];
+        
+        //添加昵称
+        self.label_name = [[UILabel alloc]init];
+        self.label_name.font = [UIFont systemFontOfSize:15];
+        [self addSubview:self.label_name];
+        
+        //添加简介
+        self.label_description = [[UILabel alloc]init];
+        self.label_description.font = [UIFont systemFontOfSize:12];
+        self.label_description.textColor = [UIColor grayColor];
+        [self addSubview:self.label_description];
     }
     return self;
 }
@@ -49,33 +60,41 @@
     [super layoutSubviews];
     //头像frame
     [self.imageView_proflie mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self).with.offset(10);
-        make.left.equalTo(self).with.offset(10);
+        make.top.equalTo(self).offset(10);
+        make.left.equalTo(self).offset(10);
         make.size.mas_equalTo(CGSizeMake(60,60));
     }];
     
     //箭头frame
     [self.imageView_yellowArrow mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.imageView_proflie);
-        make.right.equalTo(self).with.offset(-10);
+        make.right.equalTo(self).offset(-10);
         make.size.mas_equalTo(CGSizeMake(12,12));
     }];
     
     //用户是否认证label frame
     [self.label_verified mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.imageView_yellowArrow);
-        make.right.equalTo(self.imageView_yellowArrow).with.offset(-10);
+        make.right.equalTo(self.imageView_yellowArrow.mas_left).offset(-2);
         make.width.lessThanOrEqualTo(self.label_verified.superview);
     }];
     
     //用户是否认证图标 frame
     [self.imageView_verified mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.label_verified);
-        make.right.equalTo(self.label_verified).with.offset(-10);
+        make.right.equalTo(self.label_verified.mas_left).offset(-2);
         make.size.mas_offset(CGSizeMake(25, 25));
     }];
 
-
+    //用户昵称 frame
+    
+    [self.label_name mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.imageView_proflie.mas_centerY).offset(-2);
+        make.left.equalTo(self.imageView_proflie.mas_right).offset(10);
+        make.right.equalTo(self.imageView_verified.mas_left).offset(-10);
+//        make.width.lessThanOrEqualTo(self.label_verified.superview);
+        make.height.mas_equalTo(20);
+    }];
 }
 - (void)setUserMessage:(ZQUserMessage *)userMessage{
     if (userMessage) {
@@ -92,6 +111,7 @@
             self.imageView_verified.image = [UIImage imageNamed:my_membership];
 
         }
+        self.label_name.text = userMessage.screen_name;
     }
 }
 
