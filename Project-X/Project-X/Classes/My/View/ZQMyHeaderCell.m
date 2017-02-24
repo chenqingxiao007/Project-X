@@ -54,6 +54,26 @@
         self.label_description.font = [UIFont systemFontOfSize:13];
         self.label_description.textColor = [UIColor grayColor];
         [self addSubview:self.label_description];
+        
+        //添加中间灰色View
+        self.garyView = [[UIView alloc]init];
+        self.garyView.backgroundColor = [UIColor colorWithHexString:@"EFF1F0"];
+        [self addSubview:self.garyView];
+        
+        //添加微博btn
+        self.button_favourites = [[ZQMyHeaderBtn alloc]init];
+        self.button_favourites.bottomMessage = @"微博";
+        [self addSubview:self.button_favourites];
+        
+        //添加关注
+        self.button_friends = [[ZQMyHeaderBtn alloc]init];
+        self.button_friends.bottomMessage = @"关注";
+        [self addSubview:self.button_friends];
+        
+        //添加关注
+        self.button_followers = [[ZQMyHeaderBtn alloc]init];
+        self.button_followers.bottomMessage = @"粉丝";
+        [self addSubview:self.button_followers];
     }
     return self;
 }
@@ -103,6 +123,39 @@
         make.left.equalTo(self.imageView_proflie.mas_right).offset(10);
         make.right.equalTo(self.imageView_verified.mas_left).offset(-10);
     }];
+    
+    //中间View frame
+    [self.garyView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(0);
+        make.right.equalTo(self).offset(0);
+        make.top.equalTo(self.imageView_proflie.mas_bottom).offset(10);
+        make.height.mas_equalTo(1);
+    }];
+    
+    //微博 Btn frame
+    [self.button_favourites mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.garyView.mas_bottom).offset(0);
+        make.bottom.equalTo(self.mas_bottom);
+        make.left.equalTo(self.mas_left);
+        make.width.equalTo(self.mas_width).multipliedBy(0.33);
+    }];
+    //关注 Btn frame
+    [self.button_friends mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.mas_centerX);
+        make.top.equalTo(self.garyView.mas_bottom).offset(0);
+        make.bottom.equalTo(self.mas_bottom);
+        make.width.equalTo(self.button_favourites.mas_width);
+    }];
+    //粉丝 Btn frame
+    [self.button_followers mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.garyView.mas_bottom).offset(0);
+        make.bottom.equalTo(self.mas_bottom);
+        make.right.equalTo(self.mas_right);
+        make.width.equalTo(self.button_favourites);
+    }];
+
+    
+    
 }
 - (void)setUserMessage:(ZQUserMessage *)userMessage{
     if (userMessage) {
@@ -131,6 +184,13 @@
         [self.label_verified sizeToFit];
         self.label_name.text = userMessage.screen_name;
         self.label_description.text = [NSString stringWithFormat:@"简介%@",userMessage.WBdescription];
+        
+        //微博
+        self.button_favourites.topMessage = [NSString stringWithFormat:@"%ld",(long)userMessage.favourites_count];
+        //关注
+        self.button_friends.topMessage = [NSString stringWithFormat:@"%ld",(long)userMessage.friends_count];
+        //粉丝
+        self.button_followers.topMessage = [NSString stringWithFormat:@"%ld",(long)userMessage.followers_count];
     }
 }
 

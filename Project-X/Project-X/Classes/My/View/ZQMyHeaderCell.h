@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZQMyHeaderBtn.h"
 @interface ZQMyHeaderCell : UITableViewCell
 @property (strong, nonatomic) ZQUserMessage *userMessage;
 //**头像*/
@@ -24,15 +25,17 @@
 @property (nonatomic, strong) UIImageView *imageView_redMessage;
 @property (nonatomic, strong) UIImageView *imageView_yellowArrow;
 
+//**中间间隔灰色view*/
+@property (nonatomic, strong) UIView *garyView;
 
 //**微博*/
-@property (nonatomic, strong) UIButton *button_favourites;
+@property (nonatomic, strong) ZQMyHeaderBtn *button_favourites;
 
 //**关注*/
-@property (nonatomic, strong) UIButton *button_friends;
+@property (nonatomic, strong) ZQMyHeaderBtn *button_friends;
 
 //**粉丝*/
-@property (nonatomic, strong) UIButton *button_followers;
+@property (nonatomic, strong) ZQMyHeaderBtn *button_followers;
 
 
 //外界获取自定义的cell
