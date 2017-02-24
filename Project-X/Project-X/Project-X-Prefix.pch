@@ -25,6 +25,7 @@
 
 #define GlobleMessage [ZQGlobleMessage shareInstence]
 #define UserMessage GlobleMessage.userMessage
+#define Acount [ZQAccountTool shareAccountTool].account //授权成功获取的信息
 
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
