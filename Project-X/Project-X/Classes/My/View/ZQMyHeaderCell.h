@@ -22,8 +22,7 @@
 //**是否认证认证用户*/
 @property (nonatomic, strong) UIImageView *imageView_verified;
 @property (nonatomic, strong) UILabel *label_verified;
-@property (nonatomic, strong) UIImageView *imageView_redMessage;
-@property (nonatomic, strong) UIImageView *imageView_yellowArrow;
+@property (nonatomic, strong) UIImageView *imageView_arrow;
 
 //**中间间隔灰色view*/
 @property (nonatomic, strong) UIView *garyView;

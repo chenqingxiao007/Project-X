@@ -10,6 +10,7 @@
 #import "ZQMyController.h"
 #import "ZQCellModel.h"
 #import "ZQMyHeaderCell.h"
+#import "ZQMyCell.h"
 @interface ZQMyController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UITableViewCell *cell;
@@ -51,17 +52,17 @@
                         @{
                              @"title":@"微博运动",
                              @"icon":my_sport,
-                             @"introduce":@""
+                             @"introduce":@"每天10000步，你达标了吗？"
                              }],
                        @[@{
                              @"title":@"粉丝服务",
                              @"icon":my_fansServe,
-                             @"introduce":@""
+                             @"introduce":@"写文章、发评论、转粉丝"
                              },
                          @{
                              @"title":@"粉丝头条",
                              @"icon":my_fansTrend,
-                             @"introduce":@""
+                             @"introduce":@"推广博文及账号的利器"
                              }],
 
                        @[@{
@@ -73,7 +74,7 @@
                            @{
                                @"title":@"更多",
                                @"icon":my_more,
-                               @"introduce":@""
+                               @"introduce":@"收藏"
                                }]
                                ];
     }
@@ -136,18 +137,11 @@
         cell.userMessage = UserMessage;
         self.cell = cell;
     }else{
-        static NSString *cellId = @"cellID";
-        
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-            cell.accessoryType =UITableViewCellAccessoryDisclosureIndicator;//箭头
-        }
+
         NSDictionary *dict = self.dataArray[indexPath.section][indexPath.row];
         ZQCellModel *cellModel = [ZQCellModel mj_objectWithKeyValues:dict];
-        cell.textLabel.text = cellModel.title;
-        cell.imageView.image = [UIImage imageNamed:cellModel.icon];
-        cell.detailTextLabel.text = cellModel.introduce;
+        ZQMyCell *cell = [ZQMyCell cellWithTableView:tableView];
+        cell.cellModel = cellModel;
         self.cell = cell;
     }
     return self.cell;

@@ -31,8 +31,8 @@
         [self addSubview:self.imageView_proflie];
         
         //添加箭头
-        self.imageView_yellowArrow = [[UIImageView alloc]init];
-        [self addSubview:self.imageView_yellowArrow];
+        self.imageView_arrow = [[UIImageView alloc]init];
+        [self addSubview:self.imageView_arrow];
         
         //添加是否是认证用户文字
         self.label_verified = [[UILabel alloc]init];
@@ -89,7 +89,7 @@
     self.imageView_proflie.layer.cornerRadius =30;
     
     //箭头frame
-    [self.imageView_yellowArrow mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.imageView_arrow mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.imageView_proflie);
         make.right.equalTo(self).offset(-10);
         make.size.mas_equalTo(CGSizeMake(12,12));
@@ -98,14 +98,14 @@
     //用户是否认证label frame
     CGFloat verifiedLabelWidth = CGRectGetWidth(self.label_verified.frame);
     [self.label_verified mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.imageView_yellowArrow);
-        make.right.equalTo(self.imageView_yellowArrow.mas_left).offset(-2);
+        make.centerY.equalTo(self.imageView_arrow.mas_centerY);
+        make.right.equalTo(self.imageView_arrow.mas_left).offset(-2);
         make.width.mas_equalTo(verifiedLabelWidth);
     }];
 
     //用户是否认证图标 frame
     [self.imageView_verified mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.label_verified);
+        make.centerY.equalTo(self.label_verified.mas_centerY);
         make.right.equalTo(self.label_verified.mas_left).offset(-2);
         make.size.mas_offset(CGSizeMake(25, 25));
     }];
@@ -126,15 +126,15 @@
     
     //中间View frame
     [self.garyView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(0);
-        make.right.equalTo(self).offset(0);
+        make.left.equalTo(self);
+        make.right.equalTo(self);
         make.top.equalTo(self.imageView_proflie.mas_bottom).offset(10);
         make.height.mas_equalTo(1);
     }];
     
     //微博 Btn frame
     [self.button_favourites mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.garyView.mas_bottom).offset(0);
+        make.top.equalTo(self.garyView.mas_bottom);
         make.bottom.equalTo(self.mas_bottom);
         make.left.equalTo(self.mas_left);
         make.width.equalTo(self.mas_width).multipliedBy(0.33);
@@ -142,13 +142,13 @@
     //关注 Btn frame
     [self.button_friends mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.mas_centerX);
-        make.top.equalTo(self.garyView.mas_bottom).offset(0);
+        make.top.equalTo(self.garyView.mas_bottom);
         make.bottom.equalTo(self.mas_bottom);
         make.width.equalTo(self.button_favourites.mas_width);
     }];
     //粉丝 Btn frame
     [self.button_followers mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.garyView.mas_bottom).offset(0);
+        make.top.equalTo(self.garyView.mas_bottom);
         make.bottom.equalTo(self.mas_bottom);
         make.right.equalTo(self.mas_right);
         make.width.equalTo(self.button_favourites);
@@ -171,7 +171,7 @@
             }
         }];
 #pragma mark --  判断是否有消息  暂时用箭头 不需要红色原点
-        self.imageView_yellowArrow.image = [UIImage imageNamed:my_yellowarrow];
+        self.imageView_arrow.image = [UIImage imageNamed:my_yellowarrow];
         if (userMessage.verified == 0) {
             //普通用户
             self.label_verified.text = @"普通用户";
