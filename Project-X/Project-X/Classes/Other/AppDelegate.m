@@ -28,7 +28,7 @@
     [self.window makeKeyAndVisible];
     
     //设置控制器为Window的根控制器
-    if([ZQAccountTool shareAccountTool].account){
+    if(Acount){
         // 用户已经授权过
         ZQTabbarController *tabBarVC = [[ZQTabbarController alloc] init];
         self.window.rootViewController = tabBarVC;

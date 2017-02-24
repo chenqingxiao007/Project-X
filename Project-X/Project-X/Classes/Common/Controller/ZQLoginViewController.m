@@ -104,10 +104,10 @@
     }
     
 - (void)getUsers{
-    ZQAccount *account = [ZQAccountTool shareAccountTool].account;
-    if (account) {
-        NSDictionary *paramenters = @{@"access_token":account.access_token,
-                                      @"uid":account.uid};
+    
+    if (Acount) {
+        NSDictionary *paramenters = @{@"access_token":Acount.access_token,
+                                      @"uid":Acount.uid};
         [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypeGet url:getUsers params:paramenters success:^(id responseObject) {
             //
             NSLog(@"responseObject%@",responseObject);
