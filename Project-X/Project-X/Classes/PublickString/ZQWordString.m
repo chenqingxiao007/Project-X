@@ -17,11 +17,18 @@ NSString *const tabbar_message_centerW = @"消息";
 NSString *const tabbar_add = @"添加";
 NSString *const tabbar_discoverW = @"发现";
 NSString *const tabbar_profileW = @"我";
+
 #pragma mark --my模块模块
 //导航栏item
 NSString *const my_nav_leftItem = @"添加好友";
 NSString *const my_nav_rightItem = @"设置";
 //cell的title
+NSString *const my_cell_favourites = @"微博";
+NSString *const my_cell_friends = @"关注";
+NSString *const my_cell_followers = @"粉丝";
+NSString *const my_cell_verifiedYES = @"认证用户";
+NSString *const my_cell_verifiedNO = @"普通用户";
+
 NSString *const my_cell_firstTitle = @"新的好友";
 NSString *const my_cell_firstIntroduce = @"";
 

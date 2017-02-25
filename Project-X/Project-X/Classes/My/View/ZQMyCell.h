@@ -7,15 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ZQCellModel.h"
+@class ZQCellModel;
 @interface ZQMyCell : UITableViewCell
 
 @property (strong, nonatomic) ZQCellModel *cellModel;
-
-@property (nonatomic, strong) UIImageView *imageView_icon;
-@property (nonatomic, strong) UILabel *label_title;
-@property (nonatomic, strong) UILabel *label_detail;
-@property (nonatomic, strong) UIImageView *imageView_arrow;
 
 //外界获取自定义的cell
 + (instancetype)cellWithTableView:(UITableView *)tableView;

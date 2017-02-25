@@ -29,6 +29,12 @@ extern NSString *const tabbar_profileW;
 extern NSString *const my_nav_leftItem;
 extern NSString *const my_nav_rightItem;
 //cell的title
+extern NSString *const my_cell_favourites;
+extern NSString *const my_cell_friends;
+extern NSString *const my_cell_followers;
+extern NSString *const my_cell_verifiedYES;
+extern NSString *const my_cell_verifiedNO;
+
 extern NSString *const my_cell_firstTitle;
 extern NSString *const my_cell_firstIntroduce;
 

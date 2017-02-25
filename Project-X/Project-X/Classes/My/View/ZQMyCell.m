@@ -7,7 +7,14 @@
 //
 
 #import "ZQMyCell.h"
+#import "ZQCellModel.h"
 
+@interface ZQMyCell()
+@property (nonatomic, strong) UIImageView *imageView_icon;
+@property (nonatomic, strong) UILabel *label_title;
+@property (nonatomic, strong) UILabel *label_detail;
+@property (nonatomic, strong) UIImageView *imageView_arrow;
+@end
 @implementation ZQMyCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView{
@@ -16,7 +23,6 @@
     ZQMyCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
         cell = [[ZQMyCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-        
     }
     return cell;
 }
@@ -60,7 +66,6 @@
     }];
     
     //3.arrow
-
     [self.imageView_arrow mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.mas_centerY);
         make.right.equalTo(self).offset(-10);
@@ -72,7 +77,6 @@
         make.centerY.equalTo(self.mas_centerY);
         make.left.equalTo(self.label_title.mas_right).offset(10);
         make.right.mas_equalTo(self.imageView_arrow.mas_left).offset(-10);
-
     }];
 }
 

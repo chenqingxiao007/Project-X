@@ -9,6 +9,22 @@
 #import "ZQMyHeaderCell.h"
 #import "SDWebImageManager.h"
 
+@interface ZQMyHeaderCell ()
+//**头像*/
+@property (nonatomic, strong) UIImageView *imageView_proflie;
+//**用户昵称*/
+@property (nonatomic, strong) UILabel *label_name;
+//**自我描述*/
+@property (nonatomic, strong) UILabel *label_description;
+//**是否认证认证用户*/
+@property (nonatomic, strong) UIImageView *imageView_verified;
+@property (nonatomic, strong) UILabel *label_verified;
+@property (nonatomic, strong) UIImageView *imageView_arrow;
+//**中间间隔灰色view*/
+@property (nonatomic, strong) UIView *garyView;
+
+
+@end
 @implementation ZQMyHeaderCell
 
 
@@ -28,6 +44,8 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         // 添加头像
         self.imageView_proflie = [[UIImageView alloc]init];
+        //头像添加点击事件
+        [self.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickImageView:)]];
         [self addSubview:self.imageView_proflie];
         
         //添加箭头
@@ -62,11 +80,11 @@
         [self addSubview:self.garyView];
         
         //添加微博btn
-        self.button_favourites = [self addButtonWithMessage:@"微博"];
+        self.button_favourites = [self addButtonWithMessage:my_cell_favourites];
         //添加关注
-        self.button_friends = [self addButtonWithMessage:@"关注"];
+        self.button_friends = [self addButtonWithMessage:my_cell_friends];
         //添加关注
-        self.button_followers = [self addButtonWithMessage:@"粉丝"];
+        self.button_followers = [self addButtonWithMessage:my_cell_followers];
     }
     return self;
 }
@@ -167,11 +185,11 @@
         self.imageView_arrow.image = [UIImage imageNamed:my_yellowarrow];
         if (userMessage.verified == 0) {
             //普通用户
-            self.label_verified.text = @"普通用户";
+            self.label_verified.text = my_cell_verifiedNO;
             self.imageView_verified.image = [UIImage imageNamed:my_commonUser];
         }else{
             //认证用户
-            self.label_verified.text = @"认证用户";
+            self.label_verified.text = my_cell_verifiedYES;
             self.imageView_verified.image = [UIImage imageNamed:my_membership];
         }
         [self.label_verified sizeToFit];
@@ -197,12 +215,18 @@
 //添加按钮
 - (ZQMyHeaderBtn *)addButtonWithMessage:(NSString *)bottomMessage{
     ZQMyHeaderBtn *btn = [[ZQMyHeaderBtn alloc]init];
-    btn.bottomMessage = @"微博";
+    btn.bottomMessage = bottomMessage;
     btn.topColor = [UIColor firstWordColor];
     btn.bottomColor = [UIColor thirdWordColor];
     btn.topFont = Third_font;
     btn.bottomFont = Third_font;
     [self addSubview:btn];
     return btn;
+}
+//clickImageView
+- (void)clickImageView{
+    if (self.clipsToBounds) {
+        self.ImageCliclBlock();
+    }
 }
 @end

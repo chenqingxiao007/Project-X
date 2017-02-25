@@ -8,35 +8,19 @@
 
 #import <UIKit/UIKit.h>
 #import "ZQMyHeaderBtn.h"
+
 @interface ZQMyHeaderCell : UITableViewCell
+//点击头像回调blog
+@property (nonatomic, copy) void(^ImageCliclBlock)();
+
 @property (strong, nonatomic) ZQUserMessage *userMessage;
-//**头像*/
-@property (nonatomic, strong) UIImageView *imageView_proflie;
-
-//**用户昵称*/
-@property (nonatomic, strong) UILabel *label_name;
-
-//**自我描述*/
-@property (nonatomic, strong) UILabel *label_description;
-
-//**是否认证认证用户*/
-@property (nonatomic, strong) UIImageView *imageView_verified;
-@property (nonatomic, strong) UILabel *label_verified;
-@property (nonatomic, strong) UIImageView *imageView_arrow;
-
-//**中间间隔灰色view*/
-@property (nonatomic, strong) UIView *garyView;
 
 //**微博*/
 @property (nonatomic, strong) ZQMyHeaderBtn *button_favourites;
-
 //**关注*/
 @property (nonatomic, strong) ZQMyHeaderBtn *button_friends;
-
 //**粉丝*/
 @property (nonatomic, strong) ZQMyHeaderBtn *button_followers;
-
-
 //外界获取自定义的cell
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 @end

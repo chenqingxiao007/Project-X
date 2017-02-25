@@ -137,6 +137,18 @@
     if (indexPath.section == 0) {
         ZQMyHeaderCell *cell = [ZQMyHeaderCell cellWithTableView:tableView];
         cell.userMessage = UserMessage;
+        cell.ImageCliclBlock = ^{
+            NSLog(@"点击图片");
+        };
+        cell.button_favourites.HeaderBtnBlock = ^{
+            NSLog(@"点击微博");
+        };
+        cell.button_followers.HeaderBtnBlock = ^{
+            NSLog(@"点击粉丝");
+        };
+        cell.button_friends.HeaderBtnBlock = ^{
+            NSLog(@"点击关注");
+        };
         self.cell = cell;
     }else{
 
