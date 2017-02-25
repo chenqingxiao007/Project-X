@@ -17,5 +17,7 @@
 @property (strong, nonatomic) NSString *bottomMessage;
 @property (strong, nonatomic) UIColor *topColor;//默认黑色
 @property (strong, nonatomic) UIColor *bottomColor;//默认灰色
+@property (strong, nonatomic) UIFont *bottomFont;//默认灰色
+@property (strong, nonatomic) UIFont *topFont;//默认灰色
 
 @end

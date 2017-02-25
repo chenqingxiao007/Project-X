@@ -25,7 +25,12 @@
 - (void)setTopMessage:(NSString *)topMessage{
     self.label_top.text = topMessage;
 }
-
+- (void)setTopFont:(UIFont *)topFont{
+    self.label_top.font = topFont;
+}
+- (void)setBottomFont:(UIFont *)bottomFont{
+    self.label_bottom.font = bottomFont;
+}
 ////init
 - (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
@@ -34,13 +39,13 @@
         self.label_top = [[UILabel alloc]init];
         self.label_top.textAlignment = NSTextAlignmentCenter;
         self.label_top.textColor = self.topColor;
-        self.label_top.font = [UIFont systemFontOfSize:13];
+        self.label_top.font = self.topFont;
         [self addSubview:self.label_top];
         
         self.label_bottom = [[UILabel alloc]init];
         self.label_bottom.textAlignment = NSTextAlignmentCenter;
         self.label_bottom.textColor = self.bottomColor;
-        self.label_bottom.font = [UIFont systemFontOfSize:13];
+        self.label_bottom.font = self.bottomFont;
         [self addSubview:self.label_bottom];
     }
     return self;

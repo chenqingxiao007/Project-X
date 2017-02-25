@@ -97,9 +97,11 @@
 - (void)NavAddButton{
 
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc]initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(setBtnClick)];
+    rightBarItem.tintColor = [UIColor secondWordColor];
     self.navigationItem.rightBarButtonItem = rightBarItem;
     
     UIBarButtonItem *leftBarItem = [[UIBarButtonItem alloc]initWithTitle:@"添加好友" style:UIBarButtonItemStylePlain target:self action:@selector(addFriendBtnClick)];
+    leftBarItem.tintColor = [UIColor secondWordColor];
     self.navigationItem.leftBarButtonItem = leftBarItem;
 }
 //点击设置

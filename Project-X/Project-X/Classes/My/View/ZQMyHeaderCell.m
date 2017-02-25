@@ -37,7 +37,7 @@
         //添加是否是认证用户文字
         self.label_verified = [[UILabel alloc]init];
         self.label_verified.textColor = [UIColor orangeWordColor];
-        self.label_verified.font = [UIFont systemFontOfSize:12];
+        self.label_verified.font = Second_font;
         [self addSubview:self.label_verified];
         
         //添加是否认证图标
@@ -46,13 +46,13 @@
         
         //添加昵称
         self.label_name = [[UILabel alloc]init];
-        self.label_name.font = [UIFont systemFontOfSize:15];
+        self.label_name.font = First_font;
         self.label_name.textColor = [UIColor firstWordColor];
         [self addSubview:self.label_name];
 
         //添加简介
         self.label_description = [[UILabel alloc]init];
-        self.label_description.font = [UIFont systemFontOfSize:13];
+        self.label_description.font = Third_font;
         self.label_description.textColor = [UIColor thirdWordColor];
         [self addSubview:self.label_description];
         
@@ -200,6 +200,8 @@
     btn.bottomMessage = @"微博";
     btn.topColor = [UIColor firstWordColor];
     btn.bottomColor = [UIColor thirdWordColor];
+    btn.topFont = Third_font;
+    btn.bottomFont = Third_font;
     [self addSubview:btn];
     return btn;
 }

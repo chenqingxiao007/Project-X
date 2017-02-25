@@ -29,11 +29,11 @@
         
         self.label_title = [[UILabel alloc]init];
         self.label_title.textColor = [UIColor secondWordColor];
-        self.label_title.font = [UIFont systemFontOfSize:15];
+        self.label_title.font = First_font;
         [self addSubview:self.label_title];
         
         self.label_detail = [[UILabel alloc]init];
-        self.label_detail.font = [UIFont systemFontOfSize:12];
+        self.label_detail.font = Small_font;
         self.label_detail.textColor = [UIColor thirdWordColor];
         [self addSubview:self.label_detail];
         
