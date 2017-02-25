@@ -29,6 +29,7 @@
 		07F40F391E56E701008338A2 /* ZQOauthRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F381E56E701008338A2 /* ZQOauthRequest.m */; };
 		4504A6061E5DE53C00E6DBDA /* ZQUrlString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4504A6051E5DE53C00E6DBDA /* ZQUrlString.m */; };
 		4504A6091E5DE56600E6DBDA /* ZQImageNameString.m in Sources */ = {isa = PBXBuildFile; fileRef = 4504A6081E5DE56600E6DBDA /* ZQImageNameString.m */; };
+		454BDFB11E61D9A00099C14A /* ZQWordString.m in Sources */ = {isa = PBXBuildFile; fileRef = 454BDFB01E61D9A00099C14A /* ZQWordString.m */; };
 		45A43E931E4C06E000C64CE2 /* ZQTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43E911E4C06E000C64CE2 /* ZQTabbarController.m */; };
 		45A43E961E4C06EC00C64CE2 /* ZQHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43E941E4C06EC00C64CE2 /* ZQHomeController.m */; };
 		45A43E991E4C070600C64CE2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A43E971E4C070600C64CE2 /* AppDelegate.m */; };
@@ -103,6 +104,8 @@
 		4504A6051E5DE53C00E6DBDA /* ZQUrlString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQUrlString.m; sourceTree = "<group>"; };
 		4504A6071E5DE56600E6DBDA /* ZQImageNameString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQImageNameString.h; sourceTree = "<group>"; };
 		4504A6081E5DE56600E6DBDA /* ZQImageNameString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQImageNameString.m; sourceTree = "<group>"; };
+		454BDFAF1E61D9A00099C14A /* ZQWordString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQWordString.h; sourceTree = "<group>"; };
+		454BDFB01E61D9A00099C14A /* ZQWordString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQWordString.m; sourceTree = "<group>"; };
 		45A43E911E4C06E000C64CE2 /* ZQTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQTabbarController.m; sourceTree = "<group>"; };
 		45A43E921E4C06E000C64CE2 /* ZQTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQTabbarController.h; sourceTree = "<group>"; };
 		45A43E941E4C06EC00C64CE2 /* ZQHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQHomeController.m; sourceTree = "<group>"; };
@@ -328,14 +331,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		4504A6031E5DE50D00E6DBDA /* PublickString */ = {
+		4504A6031E5DE50D00E6DBDA /* PublicString */ = {
 			isa = PBXGroup;
 			children = (
 				4504A6041E5DE53C00E6DBDA /* ZQUrlString.h */,
 				4504A6051E5DE53C00E6DBDA /* ZQUrlString.m */,
 				4504A6071E5DE56600E6DBDA /* ZQImageNameString.h */,
 				4504A6081E5DE56600E6DBDA /* ZQImageNameString.m */,
+				454BDFAF1E61D9A00099C14A /* ZQWordString.h */,
+				454BDFB01E61D9A00099C14A /* ZQWordString.m */,
 			);
+			name = PublicString;
 			path = PublickString;
 			sourceTree = "<group>";
 		};
@@ -343,7 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				026F58271E5FCDEF0011FB8D /* Category */,
-				4504A6031E5DE50D00E6DBDA /* PublickString */,
+				4504A6031E5DE50D00E6DBDA /* PublicString */,
 				07F40F2C1E56D62C008338A2 /* Tools */,
 				070C9DC41E4D9A8C00BD3A54 /* Common */,
 				45A43E841E4C060900C64CE2 /* Main */,
@@ -659,6 +665,7 @@
 			files = (
 				024DC11C1E5C222400405561 /* ZQAccountTool.m in Sources */,
 				029FF3DB1E5E8C8C0098E024 /* ZQGlobleMessage.m in Sources */,
+				454BDFB11E61D9A00099C14A /* ZQWordString.m in Sources */,
 				026F582A1E5FCDF60011FB8D /* UIColor+ex.m in Sources */,
 				45A43E9F1E4C07A300C64CE2 /* ZQDiscoverController.m in Sources */,
 				07F40F391E56E701008338A2 /* ZQOauthRequest.m in Sources */,

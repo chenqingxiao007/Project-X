@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"新浪账号授权";
+    self.title = login_title;
     
     // 添加webView
     [self setupWebView];

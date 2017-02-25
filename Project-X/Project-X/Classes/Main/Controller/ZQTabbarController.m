@@ -24,24 +24,24 @@
     // Do any additional setup after loading the view.
     NSArray *childItemsArray = @[
                                  @{kClassKey:@"ZQHomeController",
-                                   kTitleKey:@"首页",
+                                   kTitleKey:tabbar_homeW,
                                    kImgKey:tabbar_home,
                                    kSelImgKey:tabbar_home_selected},
                                  @{kClassKey:@"ZQMessageController",
-                                   kTitleKey:@"消息",
+                                   kTitleKey:tabbar_message_centerW,
                                    kImgKey:tabbar_message_center,
                                    kSelImgKey:tabbar_message_center_selected},
                                  @{kClassKey:@"ZQAddController",
-                                   kTitleKey:@"添加",
+                                   kTitleKey:tabbar_add,
                                    kImgKey:@"",
                                    kSelImgKey:@""},
                                  @{kClassKey:@"ZQDiscoverController",
-                                   kTitleKey:@"发现",
+                                   kTitleKey:tabbar_discoverW,
                                    kImgKey:tabbar_discover,
                                    kSelImgKey:tabbar_discover_selected},
                                  @{
                                    kClassKey:@"ZQMyController",
-                                   kTitleKey:@"我的",
+                                   kTitleKey:tabbar_profileW,
                                    kImgKey:tabbar_profile,
                                    kSelImgKey:tabbar_profile_selected}
                                  ];

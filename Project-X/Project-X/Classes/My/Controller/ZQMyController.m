@@ -30,51 +30,51 @@
                              @"introduce":@""
                              }],
                        @[@{
-                             @"title":@"新的好友",
+                             @"title":my_cell_firstTitle,
                              @"icon":my_friend,
-                             @"introduce":@""
+                             @"introduce":my_cell_firstIntroduce
                              }],
                        @[@{
-                             @"title":@"我的相册",
+                             @"title":my_cell_secondTitle,
                              @"icon":my_album,
-                             @"introduce":@""
+                             @"introduce":my_cell_secondIntroduce
                              },
                          @{
-                             @"title":@"我的赞",
+                             @"title":my_cell_thirdTitle,
                              @"icon":my_praise,
-                             @"introduce":@""
+                             @"introduce":my_cell_thirdIntroduce
                              }],
                        @[@{
-                             @"title":@"微博钱包",
+                             @"title":my_cell_fourthTitle,
                              @"icon":my_purse,
-                             @"introduce":@"白拿5000元旅游基金"
+                             @"introduce":my_cell_fourthIntroduce
                              },
                         @{
-                             @"title":@"微博运动",
+                             @"title":my_cell_fifthTitle,
                              @"icon":my_sport,
-                             @"introduce":@"每天10000步，你达标了吗？"
+                             @"introduce":my_cell_fifthIntroduce
                              }],
                        @[@{
-                             @"title":@"粉丝服务",
+                             @"title":my_cell_sixthTitle,
                              @"icon":my_fansServe,
-                             @"introduce":@"写文章、发评论、转粉丝"
+                             @"introduce":my_cell_sixthIntroduce
                              },
                          @{
-                             @"title":@"粉丝头条",
+                             @"title":my_cell_sevenTitle,
                              @"icon":my_fansTrend,
-                             @"introduce":@"推广博文及账号的利器"
+                             @"introduce":my_cell_sevenIntroduce
                              }],
 
                        @[@{
-                             @"title":@"草稿箱",
+                             @"title":my_cell_eightTitle,
                              @"icon":my_draft,
-                             @"introduce":@""
+                             @"introduce":my_cell_eightIntroduce
                              }],
                        @[
                            @{
-                               @"title":@"更多",
+                               @"title":my_cell_nineTitle,
                                @"icon":my_more,
-                               @"introduce":@"收藏"
+                               @"introduce":my_cell_nineIntroduce
                                }]
                                ];
     }
