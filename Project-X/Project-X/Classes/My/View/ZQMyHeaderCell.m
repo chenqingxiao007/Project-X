@@ -45,7 +45,8 @@
         // 添加头像
         self.imageView_proflie = [[UIImageView alloc]init];
         //头像添加点击事件
-        [self.imageView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickImageView:)]];
+        self.imageView_proflie.userInteractionEnabled = YES;
+//        [self.imageView_proflie addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickImageView)]];
         [self addSubview:self.imageView_proflie];
         
         //添加箭头
@@ -227,6 +228,18 @@
 - (void)clickImageView{
     if (self.clipsToBounds) {
         self.ImageCliclBlock();
+    }
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([touch view] ==  self.imageView_proflie) {
+        if (self.ImageCliclBlock) {
+            self.ImageCliclBlock();
+        }
+        NSLog(@"点击了头像呀");
+    }else{
+        NSLog(@"NO");
+
     }
 }
 @end
