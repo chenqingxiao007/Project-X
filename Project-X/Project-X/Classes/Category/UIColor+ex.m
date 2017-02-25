@@ -63,6 +63,22 @@
 }
 
 
++(UIColor *)firstWordColor{
+    return [UIColor blackColor];
+}
++(UIColor *)secondWordColor{
+    return [UIColor colorWithWhite:0.200 alpha:1.000];
 
+}
++(UIColor *)thirdWordColor{
+    return [UIColor grayColor];
 
+}
++(UIColor *)orangeWordColor{
+    return [UIColor orangeColor];
+
+}
++(UIColor *)separateLineViewColor{
+    return [UIColor colorWithHexString:@"EFF1F1"];
+}
 @end

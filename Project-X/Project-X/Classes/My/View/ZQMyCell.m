@@ -28,12 +28,13 @@
         [self addSubview:self.imageView_icon];
         
         self.label_title = [[UILabel alloc]init];
+        self.label_title.textColor = [UIColor secondWordColor];
         self.label_title.font = [UIFont systemFontOfSize:15];
         [self addSubview:self.label_title];
         
         self.label_detail = [[UILabel alloc]init];
         self.label_detail.font = [UIFont systemFontOfSize:12];
-        self.label_detail.textColor = [UIColor grayColor];
+        self.label_detail.textColor = [UIColor thirdWordColor];
         [self addSubview:self.label_detail];
         
         self.imageView_arrow = [[UIImageView alloc]init];

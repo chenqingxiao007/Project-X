@@ -15,13 +15,13 @@
 - (void)setBottomMessage:(NSString *)bottomMessage{
     self.label_bottom.text = bottomMessage;
 }
-//- (void)setBottomColor:(UIColor *)bottomColor{
-//    self.label_bottom.textColor = bottomColor;
-//}
-//
-//- (void)setTopColor:(UIColor *)topColor{
-//    self.label_top.textColor = topColor;
-//}
+- (void)setBottomColor:(UIColor *)bottomColor{
+    self.label_bottom.textColor = bottomColor;
+}
+
+- (void)setTopColor:(UIColor *)topColor{
+    self.label_top.textColor = topColor;
+}
 - (void)setTopMessage:(NSString *)topMessage{
     self.label_top.text = topMessage;
 }
@@ -30,10 +30,6 @@
 - (id)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
-        self.topColor = [UIColor blackColor];
-        self.bottomColor = [UIColor grayColor];
-
-
         //创建两个label
         self.label_top = [[UILabel alloc]init];
         self.label_top.textAlignment = NSTextAlignmentCenter;

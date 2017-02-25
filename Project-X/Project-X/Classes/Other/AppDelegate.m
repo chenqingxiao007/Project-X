@@ -86,8 +86,7 @@
 - (void)setupNavBar{
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
     UINavigationBar *bar = [UINavigationBar appearance];
-    bar.tintColor = [UIColor blackColor];
-//    bar.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"navigationbar_background"]];
+    bar.tintColor = [UIColor firstWordColor];
         
 }
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation

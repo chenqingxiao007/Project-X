@@ -36,7 +36,7 @@
         
         //添加是否是认证用户文字
         self.label_verified = [[UILabel alloc]init];
-        self.label_verified.textColor = [UIColor orangeColor];
+        self.label_verified.textColor = [UIColor orangeWordColor];
         self.label_verified.font = [UIFont systemFontOfSize:12];
         [self addSubview:self.label_verified];
         
@@ -47,33 +47,26 @@
         //添加昵称
         self.label_name = [[UILabel alloc]init];
         self.label_name.font = [UIFont systemFontOfSize:15];
+        self.label_name.textColor = [UIColor firstWordColor];
         [self addSubview:self.label_name];
 
         //添加简介
         self.label_description = [[UILabel alloc]init];
         self.label_description.font = [UIFont systemFontOfSize:13];
-        self.label_description.textColor = [UIColor grayColor];
+        self.label_description.textColor = [UIColor thirdWordColor];
         [self addSubview:self.label_description];
         
         //添加中间灰色View
         self.garyView = [[UIView alloc]init];
-        self.garyView.backgroundColor = [UIColor colorWithHexString:@"EFF1F0"];
+        self.garyView.backgroundColor = [UIColor separateLineViewColor];
         [self addSubview:self.garyView];
         
         //添加微博btn
-        self.button_favourites = [[ZQMyHeaderBtn alloc]init];
-        self.button_favourites.bottomMessage = @"微博";
-        [self addSubview:self.button_favourites];
-        
+        self.button_favourites = [self addButtonWithMessage:@"微博"];
         //添加关注
-        self.button_friends = [[ZQMyHeaderBtn alloc]init];
-        self.button_friends.bottomMessage = @"关注";
-        [self addSubview:self.button_friends];
-        
+        self.button_friends = [self addButtonWithMessage:@"关注"];
         //添加关注
-        self.button_followers = [[ZQMyHeaderBtn alloc]init];
-        self.button_followers.bottomMessage = @"粉丝";
-        [self addSubview:self.button_followers];
+        self.button_followers = [self addButtonWithMessage:@"粉丝"];
     }
     return self;
 }
@@ -183,7 +176,7 @@
         }
         [self.label_verified sizeToFit];
         self.label_name.text = userMessage.screen_name;
-        self.label_description.text = [NSString stringWithFormat:@"简介%@",userMessage.WBdescription];
+        self.label_description.text = [NSString stringWithFormat:@"简介：%@",userMessage.WBdescription];
         
         //微博
         self.button_favourites.topMessage = [NSString stringWithFormat:@"%ld",(long)userMessage.favourites_count];
@@ -193,5 +186,21 @@
         self.button_followers.topMessage = [NSString stringWithFormat:@"%ld",(long)userMessage.followers_count];
     }
 }
-
+//添加按钮
+- (void)setUpBtnWithBtn:(ZQMyHeaderBtn *)button withBottomMessage:(NSString *)bottomMessage{
+    button = [[ZQMyHeaderBtn alloc]init];
+    button.bottomMessage = bottomMessage;
+    button.topColor = [UIColor firstWordColor];
+    button.bottomColor = [UIColor thirdWordColor];
+    [self addSubview:button];
+}
+//添加按钮
+- (ZQMyHeaderBtn *)addButtonWithMessage:(NSString *)bottomMessage{
+    ZQMyHeaderBtn *btn = [[ZQMyHeaderBtn alloc]init];
+    btn.bottomMessage = @"微博";
+    btn.topColor = [UIColor firstWordColor];
+    btn.bottomColor = [UIColor thirdWordColor];
+    [self addSubview:btn];
+    return btn;
+}
 @end
