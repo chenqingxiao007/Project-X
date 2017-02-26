@@ -11,6 +11,7 @@
 #import "ZQCellModel.h"
 #import "ZQMyHeaderCell.h"
 #import "ZQMyCell.h"
+#import "ZQProfileController.h"
 @interface ZQMyController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UITableViewCell *cell;
@@ -96,11 +97,11 @@
 }
 - (void)NavAddButton{
 
-    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc]initWithTitle:@"设置" style:UIBarButtonItemStylePlain target:self action:@selector(setBtnClick)];
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc]initWithTitle:my_nav_rightItem style:UIBarButtonItemStylePlain target:self action:@selector(setBtnClick)];
     rightBarItem.tintColor = [UIColor secondWordColor];
     self.navigationItem.rightBarButtonItem = rightBarItem;
     
-    UIBarButtonItem *leftBarItem = [[UIBarButtonItem alloc]initWithTitle:@"添加好友" style:UIBarButtonItemStylePlain target:self action:@selector(addFriendBtnClick)];
+    UIBarButtonItem *leftBarItem = [[UIBarButtonItem alloc]initWithTitle:my_nav_leftItem style:UIBarButtonItemStylePlain target:self action:@selector(addFriendBtnClick)];
     leftBarItem.tintColor = [UIColor secondWordColor];
     self.navigationItem.leftBarButtonItem = leftBarItem;
 }
@@ -139,6 +140,8 @@
         cell.userMessage = UserMessage;
         cell.ImageCliclBlock = ^{
             NSLog(@"点击图片");
+            ZQProfileController *vc = [[ZQProfileController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
         };
         cell.button_favourites.HeaderBtnBlock = ^{
             NSLog(@"点击微博");

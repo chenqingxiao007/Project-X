@@ -10,6 +10,11 @@
 
 @interface ZQImageNameString : NSObject
 
+#pragma mark -- nav
+//**返回按钮*/
+extern NSString *const navigationbar_back_withtext;
+extern NSString *const navigationbar_back_withtext_highlighted;//
+
 #pragma mark -- tabBar icon
 //**首页*/
 extern NSString *const tabbar_home;

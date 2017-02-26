@@ -10,6 +10,11 @@
 
 @implementation ZQImageNameString
 
+#pragma mark -- nav
+//**返回按钮*/
+NSString *const navigationbar_back_withtext = @"navigationbar_back_withtext";
+NSString *const navigationbar_back_withtext_highlighted = @"navigationbar_back_withtext_highlighted";//
+
 #pragma mark -tabbar
 NSString *const tabbar_home = @"tabbar_home";
 NSString *const tabbar_home_selected = @"tabbar_home_selected";
