@@ -32,7 +32,7 @@
 
 - (void)buildUI {
     
-    self.title = UserMessage.screen_name;
+    self.navigationItem.title = UserMessage.screen_name;
 
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.tableView];

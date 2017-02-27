@@ -29,6 +29,7 @@
 		078E1EEC1E6409700048C21A /* ZQHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EEB1E6409700048C21A /* ZQHomeModel.m */; };
 		078E1EEF1E640A5A0048C21A /* ZQWeiboModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EEE1E640A5A0048C21A /* ZQWeiboModel.m */; };
 		078E1EF31E6411E00048C21A /* ZQWeiboCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EF21E6411E00048C21A /* ZQWeiboCell.m */; };
+		078E1EF61E641B200048C21A /* ZQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EF51E641B200048C21A /* ZQNavigationController.m */; };
 		07F40F321E56D735008338A2 /* ZQNetWorkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F311E56D735008338A2 /* ZQNetWorkHelper.m */; };
 		07F40F351E56D871008338A2 /* ZQBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F341E56D871008338A2 /* ZQBaseRequest.m */; };
 		07F40F391E56E701008338A2 /* ZQOauthRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F381E56E701008338A2 /* ZQOauthRequest.m */; };
@@ -110,6 +111,8 @@
 		078E1EEE1E640A5A0048C21A /* ZQWeiboModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQWeiboModel.m; sourceTree = "<group>"; };
 		078E1EF11E6411E00048C21A /* ZQWeiboCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQWeiboCell.h; sourceTree = "<group>"; };
 		078E1EF21E6411E00048C21A /* ZQWeiboCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQWeiboCell.m; sourceTree = "<group>"; };
+		078E1EF41E641B200048C21A /* ZQNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQNavigationController.h; sourceTree = "<group>"; };
+		078E1EF51E641B200048C21A /* ZQNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQNavigationController.m; sourceTree = "<group>"; };
 		07F40F301E56D735008338A2 /* ZQNetWorkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQNetWorkHelper.h; sourceTree = "<group>"; };
 		07F40F311E56D735008338A2 /* ZQNetWorkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQNetWorkHelper.m; sourceTree = "<group>"; };
 		07F40F331E56D871008338A2 /* ZQBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQBaseRequest.h; sourceTree = "<group>"; };
@@ -475,6 +478,8 @@
 			children = (
 				45A43E921E4C06E000C64CE2 /* ZQTabbarController.h */,
 				45A43E911E4C06E000C64CE2 /* ZQTabbarController.m */,
+				078E1EF41E641B200048C21A /* ZQNavigationController.h */,
+				078E1EF51E641B200048C21A /* ZQNavigationController.m */,
 				0297885D1E640D0000CB751B /* ZQBaseViewController.h */,
 				0297885E1E640D0000CB751B /* ZQBaseViewController.m */,
 			);
@@ -755,6 +760,7 @@
 				45A43E931E4C06E000C64CE2 /* ZQTabbarController.m in Sources */,
 				026F58301E5FCF780011FB8D /* ZQMyHeaderBtn.m in Sources */,
 				4504A6061E5DE53C00E6DBDA /* ZQUrlString.m in Sources */,
+				078E1EF61E641B200048C21A /* ZQNavigationController.m in Sources */,
 				070C9D8C1E4874F300BD3A54 /* main.m in Sources */,
 				45A43EA81E4C08AB00C64CE2 /* ZQMyController.m in Sources */,
 				07F40F351E56D871008338A2 /* ZQBaseRequest.m in Sources */,

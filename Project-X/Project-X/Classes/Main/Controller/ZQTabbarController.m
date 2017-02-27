@@ -7,6 +7,7 @@
 //
 
 #import "ZQTabbarController.h"
+#import "ZQNavigationController.h"
 //宏
 #define kClassKey @"rootVCClassString"
 #define kTitleKey @"title"
@@ -49,7 +50,7 @@
     [childItemsArray enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL *stop){
         UIViewController *vc = [NSClassFromString(dict[kClassKey]) new];
         vc.title = dict[kTitleKey];
-        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+        ZQNavigationController *nav = [[ZQNavigationController alloc]initWithRootViewController:vc];
         UITabBarItem *item = nav.tabBarItem;
         item.title = dict[kTitleKey];
         item.image = [UIImage imageNamed:dict[kImgKey]];
