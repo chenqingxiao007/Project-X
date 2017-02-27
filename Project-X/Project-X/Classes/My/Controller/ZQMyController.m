@@ -87,12 +87,6 @@
     [self NavAddButton];
     //添加tableView
     [self setupTableView];
-    //设置我的页面cell数据
-    NSLog(@"userMessage%@",UserMessage.profile_image_url);
-    NSLog(@"userMessage%ld",(long)UserMessage.verified);
-    NSLog(@"userMessage%@",UserMessage.WBdescription);
-    NSLog(@"userMessage%ld",(long)UserMessage.friends_count);
-
 
 }
 - (void)NavAddButton{

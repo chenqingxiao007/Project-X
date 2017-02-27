@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZQProfileController : UIViewController
+@interface ZQProfileController : ZQBaseViewController
 
 @end

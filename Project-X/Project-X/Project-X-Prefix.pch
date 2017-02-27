@@ -19,6 +19,7 @@
 #import "UIColor+ex.h"
 #import "ZQWordString.h"
 #import "UIView+ZQExtension.h"
+#import "ZQBaseViewController.h"
 
 //**微博AppKey*/
 #define kWBAppKey @"3832862104"
