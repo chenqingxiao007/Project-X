@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface ZQWeiboModel : NSObject
+
+@property (nonatomic, copy) NSString *weibo_id;
+
 /**
  *  用户头像
  */

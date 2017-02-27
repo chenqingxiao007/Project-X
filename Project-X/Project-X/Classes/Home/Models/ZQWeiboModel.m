@@ -21,6 +21,7 @@
         self.thumbnail_pic = [dic valueForKey:@"thumbnail_pic"];
         self.pic_urls = [dic valueForKey:@"pic_urls"];
         self.created_at = [dic valueForKey:@"created_at"];
+        self.weibo_id = [dic valueForKey:@"id"];
         
     }
     return self;

@@ -39,10 +39,16 @@
     
 }
 
+- (void)refresh:(id)sender{
+    NSLog(@"%@",@"我在下拉刷新");
+    [self getNewWeibo];
+}
+
 - (void)getWeibo {
+    
+    
     NSDictionary *paramenters = @{@"access_token":Acount.access_token};
 
-    
     [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypeGet url:getFriensWeibo params:paramenters success:^(id responseObject) {
         ZQHomeModel *homeModel = [[ZQHomeModel alloc] initWithDict:responseObject];
         
@@ -52,6 +58,29 @@
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
     }];
+}
+
+- (void)getNewWeibo {
+    
+    ZQWeiboModel *newModel = self.listData.firstObject;
+
+    NSDictionary *paramenters = @{@"access_token":Acount.access_token,@"since_id":newModel.weibo_id};
+    
+    [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypeGet url:getFriensWeibo params:paramenters success:^(id responseObject) {
+        ZQHomeModel *homeModel = [[ZQHomeModel alloc] initWithDict:responseObject];
+        
+        
+        if (homeModel.weiboModels.count > 0) {
+            [self.listData insertObjects:[homeModel.weiboModels copy] atIndexes:[NSIndexSet indexSetWithIndex:0]];
+        }
+        
+        [self.tableView reloadData];
+        [self.tableView.refreshControl endRefreshing];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+        [self.tableView.refreshControl endRefreshing];
+    }];
+
 }
 
 #pragma mark - delegates
@@ -91,8 +120,13 @@
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+        [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+        _tableView.refreshControl = refreshControl;
     }
     return _tableView;
 }
+
+
 
 @end
