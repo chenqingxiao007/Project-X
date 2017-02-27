@@ -10,10 +10,14 @@
 #import "ZQAccount.h"
 #import "ZQAccountTool.h"
 #import "ZQNetWorkHelper.h"
+#import "ZQHomeModel.h"
 
 @interface ZQHomeController ()
 
 @property (nonatomic, strong) UITableView *tableView;
+
+@property (strong, nonatomic) NSMutableArray *listData;
+
 @end
 
 @implementation ZQHomeController
@@ -22,6 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self buildUI];
+    [self getWeibo];
 }
 
 - (void)buildUI {
@@ -33,6 +38,20 @@
     
 }
 
+- (void)getWeibo {
+    NSDictionary *paramenters = @{@"access_token":Acount.access_token};
+
+    
+    [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypeGet url:getFriensWeibo params:paramenters success:^(id responseObject) {
+        ZQHomeModel *homeModel = [[ZQHomeModel alloc] initWithDict:responseObject];
+        
+        self.listData = homeModel.weiboModels;
+        
+        [self.tableView reloadData];
+    } failure:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
 #pragma mark - getter and setter
 
 - (UITableView *)tableView {

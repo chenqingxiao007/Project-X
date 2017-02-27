@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface ZQUrlString : NSObject
-//**微博授权*/
+/**微博授权*/
 extern NSString *const oauthUrl;
-//**获取用户信息*/
+/**获取用户信息*/
 extern NSString *const getUsers;
+/**获取微博内容*/
+extern NSString *const getFriensWeibo;
+
 
 @end
