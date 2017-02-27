@@ -115,7 +115,7 @@
 }
 
 - (void)setupTableView{
-    UITableView *tableView = [[UITableView alloc]initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStyleGrouped];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStyleGrouped];
     self.tableView = tableView;
     [self.view addSubview:tableView];
     tableView.delegate = self;

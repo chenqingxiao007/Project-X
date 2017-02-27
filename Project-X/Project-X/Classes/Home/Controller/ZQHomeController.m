@@ -13,6 +13,7 @@
 
 @interface ZQHomeController ()
 
+@property (nonatomic, strong) UITableView *tableView;
 @end
 
 @implementation ZQHomeController
@@ -20,12 +21,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self buildUI];
+}
+
+- (void)buildUI {
+    
+    self.title = UserMessage.screen_name;
+
     self.view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.tableView];
     
 }
 
+#pragma mark - getter and setter
 
-
-
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height) style:UITableViewStylePlain];
+    }
+    return _tableView;
+}
 
 @end

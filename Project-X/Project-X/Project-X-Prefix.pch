@@ -18,8 +18,8 @@
 #import "ZQGlobleMessage.h"
 #import "UIColor+ex.h"
 #import "ZQWordString.h"
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "UIView+ZQExtension.h"
+
 //**微博AppKey*/
 #define kWBAppKey @"3832862104"
 #define kRedirectURI @"https://api.weibo.com/oauth2/default.html"
