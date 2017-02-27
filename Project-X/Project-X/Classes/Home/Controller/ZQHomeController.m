@@ -11,8 +11,9 @@
 #import "ZQAccountTool.h"
 #import "ZQNetWorkHelper.h"
 #import "ZQHomeModel.h"
+#import "ZQWeiboCell.h"
 
-@interface ZQHomeController ()
+@interface ZQHomeController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -52,11 +53,44 @@
         NSLog(@"%@",error);
     }];
 }
+
+#pragma mark - delegates
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.listData.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *cellIdentifer = @"reuseCell";
+    ZQWeiboCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifer];
+    if (!cell) {
+        cell = [[ZQWeiboCell alloc] init];
+    }
+    ZQWeiboModel *weiboModel = self.listData[indexPath.row];
+    cell.weiboModel = weiboModel;
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return cell.height;
+}
+
+
 #pragma mark - getter and setter
 
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height) style:UITableViewStylePlain];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
     }
     return _tableView;
 }

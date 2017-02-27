@@ -28,6 +28,7 @@
 		078E1EE81E63C6850048C21A /* UIView+ZQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EE71E63C6850048C21A /* UIView+ZQExtension.m */; };
 		078E1EEC1E6409700048C21A /* ZQHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EEB1E6409700048C21A /* ZQHomeModel.m */; };
 		078E1EEF1E640A5A0048C21A /* ZQWeiboModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EEE1E640A5A0048C21A /* ZQWeiboModel.m */; };
+		078E1EF31E6411E00048C21A /* ZQWeiboCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EF21E6411E00048C21A /* ZQWeiboCell.m */; };
 		07F40F321E56D735008338A2 /* ZQNetWorkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F311E56D735008338A2 /* ZQNetWorkHelper.m */; };
 		07F40F351E56D871008338A2 /* ZQBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F341E56D871008338A2 /* ZQBaseRequest.m */; };
 		07F40F391E56E701008338A2 /* ZQOauthRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F381E56E701008338A2 /* ZQOauthRequest.m */; };
@@ -107,6 +108,8 @@
 		078E1EEB1E6409700048C21A /* ZQHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQHomeModel.m; sourceTree = "<group>"; };
 		078E1EED1E640A5A0048C21A /* ZQWeiboModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQWeiboModel.h; sourceTree = "<group>"; };
 		078E1EEE1E640A5A0048C21A /* ZQWeiboModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQWeiboModel.m; sourceTree = "<group>"; };
+		078E1EF11E6411E00048C21A /* ZQWeiboCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQWeiboCell.h; sourceTree = "<group>"; };
+		078E1EF21E6411E00048C21A /* ZQWeiboCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQWeiboCell.m; sourceTree = "<group>"; };
 		07F40F301E56D735008338A2 /* ZQNetWorkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQNetWorkHelper.h; sourceTree = "<group>"; };
 		07F40F311E56D735008338A2 /* ZQNetWorkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQNetWorkHelper.m; sourceTree = "<group>"; };
 		07F40F331E56D871008338A2 /* ZQBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQBaseRequest.h; sourceTree = "<group>"; };
@@ -321,6 +324,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		078E1EF01E6411760048C21A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				078E1EF11E6411E00048C21A /* ZQWeiboCell.h */,
+				078E1EF21E6411E00048C21A /* ZQWeiboCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		07F40F2C1E56D62C008338A2 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,6 +445,7 @@
 		45A43E801E4C060900C64CE2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				078E1EF01E6411760048C21A /* Views */,
 				078E1EE91E6408720048C21A /* Models */,
 				45A43E811E4C060900C64CE2 /* Controller */,
 			);
@@ -726,6 +739,7 @@
 				07F40F391E56E701008338A2 /* ZQOauthRequest.m in Sources */,
 				078E1EE81E63C6850048C21A /* UIView+ZQExtension.m in Sources */,
 				4504A6091E5DE56600E6DBDA /* ZQImageNameString.m in Sources */,
+				078E1EF31E6411E00048C21A /* ZQWeiboCell.m in Sources */,
 				0297885F1E640D0000CB751B /* ZQBaseViewController.m in Sources */,
 				070C9D921E4874F300BD3A54 /* ViewController.m in Sources */,
 				029FF3D81E5E86090098E024 /* ZQMyHeaderCell.m in Sources */,
