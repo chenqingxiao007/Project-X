@@ -61,4 +61,9 @@ extern NSString *const my_cell_eightIntroduce;
 
 extern NSString *const my_cell_nineTitle;
 extern NSString *const my_cell_nineIntroduce;
+
+//我的个人中心
+extern NSString *const my_profile_home;
+extern NSString *const my_profile_favourites;
+extern NSString *const my_profile_album;
 @end

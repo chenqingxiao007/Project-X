@@ -29,5 +29,6 @@
 //**粉丝数*/
 @property (nonatomic, assign) NSInteger followers_count;
 
-
+////**性别*/
+//@property (nonatomic, assign) NSDictionary *insecurity;//sexual_content 0女 1男
 @end

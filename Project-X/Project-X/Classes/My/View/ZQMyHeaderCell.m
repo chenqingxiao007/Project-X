@@ -224,12 +224,7 @@
     [self addSubview:btn];
     return btn;
 }
-//clickImageView
-- (void)clickImageView{
-    if (self.clipsToBounds) {
-        self.ImageCliclBlock();
-    }
-}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     UITouch *touch = [[event allTouches] anyObject];
     if ([touch view] ==  self.imageView_proflie) {

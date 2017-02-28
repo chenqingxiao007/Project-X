@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#define kHeaderTopHeight 200          // header上部分的高度
+#define kHeaderSegmentHeight 40 // header的Sement高度
+#define kHeaderHeight kHeaderTopHeight + kHeaderSegmentHeight
 
 @interface ZQProfileController : ZQBaseViewController
 

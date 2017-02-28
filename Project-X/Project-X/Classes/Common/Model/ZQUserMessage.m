@@ -39,7 +39,7 @@
     [encoder encodeInteger:_favourites_count forKey:@"favourites_count"];
     [encoder encodeInteger:_friends_count forKey:@"friends_count"];
     [encoder encodeInteger:_followers_count forKey:@"followers_count"];
-
+//    [encoder encodeObject:_insecurity forKey:@"insecurity"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder
@@ -52,7 +52,7 @@
         self.favourites_count = [decoder decodeIntegerForKey:@"favourites_count"];
         self.friends_count = [decoder decodeIntegerForKey:@"friends_count"];
         self.followers_count = [decoder decodeIntegerForKey:@"followers_count"];
-
+//        self.insecurity = [decoder decodeObjectForKey:@"insecurity"];
     }
     return self;
 }

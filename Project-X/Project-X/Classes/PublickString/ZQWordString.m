@@ -55,4 +55,9 @@ NSString *const my_cell_eightIntroduce = @"";
 
 NSString *const my_cell_nineTitle = @"更多";
 NSString *const my_cell_nineIntroduce = @"收藏";
+
+//我的个人中心
+NSString *const my_profile_home = @"主页";
+NSString *const my_profile_favourites = @"微博";
+NSString *const my_profile_album = @"相册";
 @end

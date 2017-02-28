@@ -11,6 +11,8 @@
 		0213DAD81E5D8A4200FB9D48 /* ZQCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0213DAD71E5D8A4200FB9D48 /* ZQCellModel.m */; };
 		024DC1191E5C21F200405561 /* ZQAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 024DC1181E5C21F200405561 /* ZQAccount.m */; };
 		024DC11C1E5C222400405561 /* ZQAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 024DC11B1E5C222400405561 /* ZQAccountTool.m */; };
+		02617B0A1E6522880087657A /* ZQProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02617B091E6522880087657A /* ZQProfileHeaderView.m */; };
+		02617B0D1E6522AA0087657A /* LiuXSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02617B0C1E6522AA0087657A /* LiuXSegmentView.m */; };
 		026F582A1E5FCDF60011FB8D /* UIColor+ex.m in Sources */ = {isa = PBXBuildFile; fileRef = 026F58291E5FCDF60011FB8D /* UIColor+ex.m */; };
 		026F58301E5FCF780011FB8D /* ZQMyHeaderBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 026F582F1E5FCF780011FB8D /* ZQMyHeaderBtn.m */; };
 		026F58331E5FFCBB0011FB8D /* ZQMyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 026F58321E5FFCBB0011FB8D /* ZQMyCell.m */; };
@@ -74,6 +76,10 @@
 		024DC1181E5C21F200405561 /* ZQAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQAccount.m; sourceTree = "<group>"; };
 		024DC11A1E5C222400405561 /* ZQAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQAccountTool.h; sourceTree = "<group>"; };
 		024DC11B1E5C222400405561 /* ZQAccountTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQAccountTool.m; sourceTree = "<group>"; };
+		02617B081E6522880087657A /* ZQProfileHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQProfileHeaderView.h; sourceTree = "<group>"; };
+		02617B091E6522880087657A /* ZQProfileHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQProfileHeaderView.m; sourceTree = "<group>"; };
+		02617B0B1E6522AA0087657A /* LiuXSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiuXSegmentView.h; sourceTree = "<group>"; };
+		02617B0C1E6522AA0087657A /* LiuXSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuXSegmentView.m; sourceTree = "<group>"; };
 		026F58281E5FCDF60011FB8D /* UIColor+ex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ex.h"; sourceTree = "<group>"; };
 		026F58291E5FCDF60011FB8D /* UIColor+ex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ex.m"; sourceTree = "<group>"; };
 		026F582E1E5FCF780011FB8D /* ZQMyHeaderBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQMyHeaderBtn.h; sourceTree = "<group>"; };
@@ -192,6 +198,10 @@
 				026F582F1E5FCF780011FB8D /* ZQMyHeaderBtn.m */,
 				026F58311E5FFCBB0011FB8D /* ZQMyCell.h */,
 				026F58321E5FFCBB0011FB8D /* ZQMyCell.m */,
+				02617B0B1E6522AA0087657A /* LiuXSegmentView.h */,
+				02617B0C1E6522AA0087657A /* LiuXSegmentView.m */,
+				02617B081E6522880087657A /* ZQProfileHeaderView.h */,
+				02617B091E6522880087657A /* ZQProfileHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -741,12 +751,14 @@
 				026F582A1E5FCDF60011FB8D /* UIColor+ex.m in Sources */,
 				45A43E9F1E4C07A300C64CE2 /* ZQDiscoverController.m in Sources */,
 				078E1EEC1E6409700048C21A /* ZQHomeModel.m in Sources */,
+				02617B0A1E6522880087657A /* ZQProfileHeaderView.m in Sources */,
 				07F40F391E56E701008338A2 /* ZQOauthRequest.m in Sources */,
 				078E1EE81E63C6850048C21A /* UIView+ZQExtension.m in Sources */,
 				4504A6091E5DE56600E6DBDA /* ZQImageNameString.m in Sources */,
 				078E1EF31E6411E00048C21A /* ZQWeiboCell.m in Sources */,
 				0297885F1E640D0000CB751B /* ZQBaseViewController.m in Sources */,
 				070C9D921E4874F300BD3A54 /* ViewController.m in Sources */,
+				02617B0D1E6522AA0087657A /* LiuXSegmentView.m in Sources */,
 				029FF3D81E5E86090098E024 /* ZQMyHeaderCell.m in Sources */,
 				078E1EEF1E640A5A0048C21A /* ZQWeiboModel.m in Sources */,
 				45A43E961E4C06EC00C64CE2 /* ZQHomeController.m in Sources */,
