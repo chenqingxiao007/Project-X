@@ -14,6 +14,15 @@
 //**返回按钮*/
 extern NSString *const navigationbar_back_withtext;
 extern NSString *const navigationbar_back_withtext_highlighted;//
+extern NSString *const navigationbar_back_light;
+//**搜索*/
+extern NSString *const navigationbar_search;
+extern NSString *const navigationbar_search_dark;
+//**更多*/
+extern NSString *const navigationbar_more;
+extern NSString *const navigationbar_more_light;
+//**刷新*/
+extern NSString *const navigationbar_icon_refresh_white;
 
 #pragma mark -- tabBar icon
 //**首页*/
@@ -53,7 +62,6 @@ extern NSString *const my_fansTrend;
 extern NSString *const my_draft;
 //**更多*/
 extern NSString *const my_more;
-
 //**普通用户图标*/
 extern NSString *const my_commonUser;
 //**会员用户图标*/
@@ -63,5 +71,17 @@ extern NSString *const my_membership;
 extern NSString *const my_yellowarrow;
 //**灰色箭头图标*/
 extern NSString *const my_grayarrow;
+
+//**个人中心背景*/
+extern NSString *const profile_background;
+
+//**female图标*/
+extern NSString *const profile_female;
+//**male图标*/
+extern NSString *const profile_male;
+//**开通图标*/
+extern NSString *const profile_open_membership;
+//**开通会员图标*/
+extern NSString *const profile_membership_expired;
 
 @end

@@ -11,9 +11,14 @@
 @implementation ZQImageNameString
 
 #pragma mark -- nav
-//**返回按钮*/
 NSString *const navigationbar_back_withtext = @"navigationbar_back_withtext";
-NSString *const navigationbar_back_withtext_highlighted = @"navigationbar_back_withtext_highlighted";//
+NSString *const navigationbar_back_withtext_highlighted = @"navigationbar_back_withtext_highlighted";
+NSString *const navigationbar_back_light = @"navigationbar_back_light";
+NSString *const navigationbar_search = @"navigationbar_search";
+NSString *const navigationbar_search_dark = @"navigationbar_search_dark";
+NSString *const navigationbar_more = @"navigationbar_more";
+NSString *const navigationbar_more_light = @"navigationbar_more_light";
+NSString *const navigationbar_icon_refresh_white = @"navigationbar_icon_refresh_white";
 
 #pragma mark -tabbar
 NSString *const tabbar_home = @"tabbar_home";
@@ -44,4 +49,12 @@ NSString *const my_membership = @"my_membership";
 
 NSString *const my_yellowarrow = @"my_yellowarrow";
 NSString *const my_grayarrow = @"my_grayarrow";
+
+NSString *const profile_background = @"profile_background";
+
+NSString *const profile_female = @"profile_female";
+NSString *const profile_male = @"profile_male";
+
+NSString *const profile_open_membership = @"profile_open_membership";
+NSString *const profile_membership_expired = @"profile_membership_expired";
 @end
