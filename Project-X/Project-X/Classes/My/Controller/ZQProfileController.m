@@ -9,7 +9,7 @@
 #import "ZQProfileController.h"
 #import "ZQProfileHeaderView.h"
 #import "LiuXSegmentView.h"
-@interface ZQProfileController ()
+@interface ZQProfileController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 //**用来显示用户名的导航栏，只有当分页栏定在顶部时，才显示*/
 @property (nonatomic, weak) UIView *navigationView;
@@ -35,12 +35,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blueColor];
-    
+    [self setUpTableView];
     [self setupNavigationView];
     [self.view addSubview:self.headerView];
 
 }
+- (void)setUpTableView{
+    UITableView *tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStyleGrouped];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    [self.view addSubview:tableView];
+    self.tableView = tableView;
+    tableView.contentInset = UIEdgeInsetsMake(kHeaderHeight - 64, 0, 0, 0);
 
+}
 - (void)setupNavigationView
 {
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
@@ -55,6 +63,7 @@
     [navigationView addSubview:titleLabel];
     
     navigationView.alpha = 0;
+    navigationView.backgroundColor = [UIColor redColor];
     [self.view addSubview:navigationView];
     self.navigationView = navigationView;
 }
@@ -71,5 +80,65 @@
         _headerView.userMessage = UserMessage;
     }
     return _headerView;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 10;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    cell.textLabel.text = [NSString stringWithFormat:@"测试%ld",(long)indexPath.row];
+    return cell;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 5;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 1;
+}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat offsetY = scrollView.contentOffset.y + scrollView.contentInset.top;//偏移的y
+
+    NSLog(@"...... %f",offsetY);
+
+    if (offsetY == 0) {
+        return;
+    }
+    if (offsetY < 0) {
+        CGFloat scale = 1.0;
+        scale = MIN(1.2, 1 - offsetY / 200);
+        self.headerView.bgImageView.transform = CGAffineTransformMakeScale(scale, scale);
+
+        if (offsetY == -64) {
+            return;
+        }
+        self.headerView.frame = CGRectMake(0, -offsetY, SCREEN_WIDTH, kHeaderHeight);
+
+    }
+    if (offsetY > 0) {
+        //处理图片
+
+        if (offsetY>72 && offsetY<136) {
+            //显示导航栏
+            self.navigationView.alpha = (offsetY-72)/64;
+            [self.view bringSubviewToFront:self.navigationView];
+        }if (offsetY >= 136) {
+            //固定headViewFrame
+            self.navigationView.alpha = 1;
+            self.headerView.frame = CGRectMake(0, -136, SCREEN_WIDTH, kHeaderHeight);
+        }else{
+            //0-72
+            if (offsetY>8) {
+                self.navigationView.alpha = (offsetY-72)/64;
+
+            }else{
+                self.navigationView.alpha = 0;
+
+            }
+            self.headerView.frame = CGRectMake(0, -offsetY, SCREEN_WIDTH, kHeaderHeight);
+        }
+    }
 }
 @end

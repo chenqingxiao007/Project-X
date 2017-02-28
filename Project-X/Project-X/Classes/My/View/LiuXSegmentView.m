@@ -64,11 +64,11 @@
         for (int i=0; i<titleArray.count; i++) {
             UIButton *btn=[UIButton buttonWithType:UIButtonTypeCustom];
             btn.frame=CGRectMake(_btn_w*i, 0, _btn_w, self.frame.size.height-4);
-            btn.tag=i+1;
+            btn.tag=i;
             [btn setTitle:titleArray[i] forState:UIControlStateNormal];
             [btn setTitleColor:_titleNomalColor forState:UIControlStateNormal];
             [btn setTitleColor:_titleSelectColor forState:UIControlStateSelected];
-            if (btn.tag == 1||btn.tag == titleArray.count) {
+            if (btn.tag == 0||btn.tag == titleArray.count-1) {
                 btn.userInteractionEnabled = NO;
             }else{
                 btn.userInteractionEnabled = YES;
@@ -97,7 +97,7 @@
         self.block(btn.tag);
     }
     
-    if (btn.tag==_defaultIndex-1) {
+    if (btn.tag==_defaultIndex) {
         return;
     }else{
         _titleBtn.selected=!_titleBtn.selected;
@@ -154,7 +154,7 @@
         btn.titleLabel.font=_titleFont;
         _selectLine.backgroundColor=_titleSelectColor;
         
-        if (btn.tag-1==_defaultIndex) {
+        if (btn.tag-1==_defaultIndex-1) {
             _titleBtn=btn;
             btn.selected=YES;
         }else{

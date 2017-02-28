@@ -9,7 +9,6 @@
 #import "ZQProfileHeaderView.h"
 #import "SDWebImageManager.h"
 @interface ZQProfileHeaderView()
-@property (nonatomic, strong) UIImageView *bgImageView;
 @property (nonatomic, strong) UIImageView *imageView_icon;
 @property (nonatomic, strong) UILabel *label_name;
 //@property (nonatomic, strong) UIImageView *imageView_sex;

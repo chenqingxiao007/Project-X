@@ -14,5 +14,6 @@
 
 @property (nonatomic, strong) LiuXSegmentView *segmentView;
 @property (strong, nonatomic) ZQUserMessage *userMessage;
+@property (nonatomic, strong) UIImageView *bgImageView;
 
 @end
