@@ -4,7 +4,7 @@
 //
 //  Created by crfchina-mac-mini-1000 on 2017/2/24.
 //  Copyright © 2017年 陈擎霄. All rights reserved.
-//
+//**两个文字 上下左右显示btn*/
 
 #import <UIKit/UIKit.h>
 

@@ -82,8 +82,8 @@
 		02617B0C1E6522AA0087657A /* LiuXSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiuXSegmentView.m; sourceTree = "<group>"; };
 		026F58281E5FCDF60011FB8D /* UIColor+ex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ex.h"; sourceTree = "<group>"; };
 		026F58291E5FCDF60011FB8D /* UIColor+ex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ex.m"; sourceTree = "<group>"; };
-		026F582E1E5FCF780011FB8D /* ZQMyHeaderBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQMyHeaderBtn.h; sourceTree = "<group>"; };
-		026F582F1E5FCF780011FB8D /* ZQMyHeaderBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQMyHeaderBtn.m; sourceTree = "<group>"; };
+		026F582E1E5FCF780011FB8D /* ZQMyHeaderBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZQMyHeaderBtn.h; path = ../../My/View/ZQMyHeaderBtn.h; sourceTree = "<group>"; };
+		026F582F1E5FCF780011FB8D /* ZQMyHeaderBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZQMyHeaderBtn.m; path = ../../My/View/ZQMyHeaderBtn.m; sourceTree = "<group>"; };
 		026F58311E5FFCBB0011FB8D /* ZQMyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQMyCell.h; sourceTree = "<group>"; };
 		026F58321E5FFCBB0011FB8D /* ZQMyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQMyCell.m; sourceTree = "<group>"; };
 		0297885D1E640D0000CB751B /* ZQBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQBaseViewController.h; sourceTree = "<group>"; };
@@ -194,8 +194,6 @@
 			children = (
 				029FF3D61E5E86090098E024 /* ZQMyHeaderCell.h */,
 				029FF3D71E5E86090098E024 /* ZQMyHeaderCell.m */,
-				026F582E1E5FCF780011FB8D /* ZQMyHeaderBtn.h */,
-				026F582F1E5FCF780011FB8D /* ZQMyHeaderBtn.m */,
 				026F58311E5FFCBB0011FB8D /* ZQMyCell.h */,
 				026F58321E5FFCBB0011FB8D /* ZQMyCell.m */,
 				02617B0B1E6522AA0087657A /* LiuXSegmentView.h */,
@@ -227,6 +225,8 @@
 		024DC1161E5C21C600405561 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				026F582E1E5FCF780011FB8D /* ZQMyHeaderBtn.h */,
+				026F582F1E5FCF780011FB8D /* ZQMyHeaderBtn.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -615,7 +615,7 @@
 				TargetAttributes = {
 					070C9D861E4874F300BD3A54 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = LKLUL3G769;
+						DevelopmentTeam = 75D8L8RTM5;
 						ProvisioningStyle = Automatic;
 					};
 					070C9D9F1E4874F300BD3A54 = {
@@ -929,7 +929,8 @@
 			baseConfigurationReference = E69E40B647895E1D40DB3003 /* Pods-Project-X.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LKLUL3G769;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 75D8L8RTM5;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Project-X/Project-X-Prefix.pch";
 				INFOPLIST_FILE = "Project-X/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -945,7 +946,8 @@
 			baseConfigurationReference = 24A9900B465FDCA77EC5331F /* Pods-Project-X.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = LKLUL3G769;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 75D8L8RTM5;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Project-X/Project-X-Prefix.pch";
 				INFOPLIST_FILE = "Project-X/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
