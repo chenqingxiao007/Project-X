@@ -34,6 +34,9 @@
     // 当都设置为nil的时候，导航栏会使用默认的样式，即还原导航栏样式
     [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = nil;
+    [self.moreBtn removeFromSuperview];
+    [self.searchBtn removeFromSuperview];
+
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -175,4 +178,6 @@
         }
     }
 }
+
+
 @end
