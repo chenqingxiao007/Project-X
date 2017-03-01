@@ -81,7 +81,7 @@
         [self addSubview:self.garyView];
         
         //添加微博btn
-        self.button_favourites = [self addButtonWithMessage:my_cell_favourites];
+        self.button_statuses = [self addButtonWithMessage:my_cell_statuses];
         //添加关注
         self.button_friends = [self addButtonWithMessage:my_cell_friends];
         //添加关注
@@ -145,7 +145,7 @@
     }];
     
     //微博 Btn frame
-    [self.button_favourites mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.button_statuses mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.garyView.mas_bottom);
         make.bottom.equalTo(self.mas_bottom);
         make.left.equalTo(self.mas_left);
@@ -156,14 +156,14 @@
         make.centerX.equalTo(self.mas_centerX);
         make.top.equalTo(self.garyView.mas_bottom);
         make.bottom.equalTo(self.mas_bottom);
-        make.width.equalTo(self.button_favourites.mas_width);
+        make.width.equalTo(self.button_statuses.mas_width);
     }];
     //粉丝 Btn frame
     [self.button_followers mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.garyView.mas_bottom);
         make.bottom.equalTo(self.mas_bottom);
         make.right.equalTo(self.mas_right);
-        make.width.equalTo(self.button_favourites);
+        make.width.equalTo(self.button_statuses);
     }];
 
     
@@ -198,7 +198,7 @@
         self.label_description.text = [NSString stringWithFormat:@"简介：%@",userMessage.WBdescription];
         
         //微博
-        self.button_favourites.topMessage = [NSString stringWithFormat:@"%ld",(long)userMessage.favourites_count];
+        self.button_statuses.topMessage = [NSString stringWithFormat:@"%ld",(long)userMessage.statuses_count];
         //关注
         self.button_friends.topMessage = [NSString stringWithFormat:@"%ld",(long)userMessage.friends_count];
         //粉丝

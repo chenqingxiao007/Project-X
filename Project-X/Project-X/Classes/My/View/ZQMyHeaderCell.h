@@ -16,7 +16,7 @@
 @property (strong, nonatomic) ZQUserMessage *userMessage;
 
 //**微博*/
-@property (nonatomic, strong) ZQMyHeaderBtn *button_favourites;
+@property (nonatomic, strong) ZQMyHeaderBtn *button_statuses;
 //**关注*/
 @property (nonatomic, strong) ZQMyHeaderBtn *button_friends;
 //**粉丝*/

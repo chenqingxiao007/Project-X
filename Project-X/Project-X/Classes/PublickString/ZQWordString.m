@@ -23,7 +23,7 @@ NSString *const tabbar_profileW = @"我";
 NSString *const my_nav_leftItem = @"添加好友";
 NSString *const my_nav_rightItem = @"设置";
 //cell的title
-NSString *const my_cell_favourites = @"微博";
+NSString *const my_cell_statuses = @"微博";
 NSString *const my_cell_friends = @"关注";
 NSString *const my_cell_followers = @"粉丝";
 NSString *const my_cell_verifiedYES = @"认证用户";
@@ -58,6 +58,6 @@ NSString *const my_cell_nineIntroduce = @"收藏";
 
 //我的个人中心
 NSString *const my_profile_home = @"主页";
-NSString *const my_profile_favourites = @"微博";
+NSString *const my_profile_statuses = @"微博";
 NSString *const my_profile_album = @"相册";
 @end

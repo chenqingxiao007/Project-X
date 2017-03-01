@@ -21,6 +21,8 @@
 @property (nonatomic, copy) NSString *WBdescription;
 
 //**微博数*/
+@property (nonatomic, assign) NSInteger statuses_count;
+
 @property (nonatomic, assign) NSInteger favourites_count;
 
 //**关注数*/

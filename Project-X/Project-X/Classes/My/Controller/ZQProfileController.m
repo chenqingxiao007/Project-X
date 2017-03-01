@@ -100,7 +100,7 @@
     if (_headerView == nil) {
         _headerView = [[ZQProfileHeaderView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, kHeaderHeight)];
         
-        _headerView.segmentView = [[LiuXSegmentView alloc]initWithFrame:CGRectMake(0, kHeaderHeight - kHeaderSegmentHeight, SCREEN_WIDTH, kHeaderSegmentHeight) titles:@[@"",my_profile_home,my_profile_favourites,my_profile_album,@""]  clickBlick:^(NSInteger index) {
+        _headerView.segmentView = [[LiuXSegmentView alloc]initWithFrame:CGRectMake(0, kHeaderHeight - kHeaderSegmentHeight, SCREEN_WIDTH, kHeaderSegmentHeight) titles:@[@"",my_profile_home,my_profile_statuses,my_profile_album,@""]  clickBlick:^(NSInteger index) {
             //点击事件 index从1开始 234对应主页微博相册
             NSLog(@"-----%ld",index);
         }];

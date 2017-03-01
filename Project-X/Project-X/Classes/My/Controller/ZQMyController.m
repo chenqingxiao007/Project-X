@@ -137,7 +137,7 @@
             ZQProfileController *vc = [[ZQProfileController alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
         };
-        cell.button_favourites.HeaderBtnBlock = ^{
+        cell.button_statuses.HeaderBtnBlock = ^{
             NSLog(@"点击微博");
         };
         cell.button_followers.HeaderBtnBlock = ^{
