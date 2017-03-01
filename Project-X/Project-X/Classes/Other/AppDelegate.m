@@ -62,6 +62,11 @@
     if ([response isKindOfClass:WBAuthorizeResponse.class]) {
         ZQAccount *account = [ZQAccount accountWithDic:response.userInfo];
         [[ZQAccountTool shareAccountTool] saveAccount:account];
+        
+        UINavigationController *nav = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+        
+        [(ZQLoginViewController *)nav.childViewControllers[0] changeRootVC];
+        
     }
 }
 

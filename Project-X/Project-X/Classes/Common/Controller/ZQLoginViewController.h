@@ -10,4 +10,6 @@
 
 @interface ZQLoginViewController : UIViewController
 
+- (void)changeRootVC;
+
 @end

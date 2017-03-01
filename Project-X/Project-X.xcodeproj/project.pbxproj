@@ -537,8 +537,8 @@
 		45A43E901E4C060900C64CE2 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				45A43E971E4C070600C64CE2 /* AppDelegate.m */,
 				45A43E981E4C070600C64CE2 /* AppDelegate.h */,
+				45A43E971E4C070600C64CE2 /* AppDelegate.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -615,7 +615,7 @@
 				TargetAttributes = {
 					070C9D861E4874F300BD3A54 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 75D8L8RTM5;
+						DevelopmentTeam = LKLUL3G769;
 						ProvisioningStyle = Automatic;
 					};
 					070C9D9F1E4874F300BD3A54 = {
@@ -930,7 +930,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 75D8L8RTM5;
+				DEVELOPMENT_TEAM = LKLUL3G769;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Project-X/Project-X-Prefix.pch";
 				INFOPLIST_FILE = "Project-X/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -947,7 +947,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 75D8L8RTM5;
+				DEVELOPMENT_TEAM = LKLUL3G769;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Project-X/Project-X-Prefix.pch";
 				INFOPLIST_FILE = "Project-X/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

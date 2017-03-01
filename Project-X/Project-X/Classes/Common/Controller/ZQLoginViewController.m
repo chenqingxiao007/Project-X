@@ -11,6 +11,8 @@
 #import "ZQTabbarController.h"
 #import "ZQAccount.h"
 #import "ZQAccountTool.h"
+#import "MBProgressHUD.h"
+
 @interface ZQLoginViewController ()<UIWebViewDelegate, CAAnimationDelegate>
 
 @property (nonatomic, weak) UIWebView *webView;
@@ -27,7 +29,11 @@
     [super viewDidLoad];
     
     self.title = login_title;
-    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     if ([WeiboSDK isCanSSOInWeiboApp]) {
         WBAuthorizeRequest *request = [WBAuthorizeRequest request];
         request.redirectURI = kRedirectURI;
@@ -36,8 +42,8 @@
         // 添加webView
         [self setupWebView];
     }
-    
 }
+
 - (void)setupWebView{
     UIWebView *webView = [[UIWebView alloc] init];
     webView.frame = self.view.bounds;
@@ -60,8 +66,7 @@
 
 #pragma mark - UIWebView Delegate Methods
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-    {
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
         // 获取code后
         NSString *urlString = request.URL.absoluteString;
         NSRange range = [urlString rangeOfString:@"code="];
@@ -83,20 +88,10 @@
                 // 2.保存到沙盒
                 [[ZQAccountTool shareAccountTool] saveAccount:account];
                 
-                CATransition *transition = [CATransition animation];
-                transition.duration = 1.0f;
-                transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-                transition.type = @"pageCurl";
-                transition.subtype = kCATransitionFromRight;
-                transition.delegate = self;
-                
-                [[UIApplication sharedApplication].keyWindow.layer addAnimation:transition forKey:nil];
-                
-                ZQTabbarController *tabBarVC = [[ZQTabbarController alloc] init];
-                [[UIApplication sharedApplication].delegate window].rootViewController = tabBarVC;
                 //登录成功 获取用户信息
                 [self getUsers];
                 NSLog(@"登录成功");
+                [self changeRootVC];
                 
             } failure:^(NSError *error) {
                 NSLog(@"%@",error);
@@ -107,8 +102,24 @@
         }
 
         return YES;
-    }
+}
+
+- (void)changeRootVC {
     
+    CATransition *transition = [CATransition animation];
+    transition.duration = 1.0f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = @"pageCurl";
+    transition.subtype = kCATransitionFromRight;
+    transition.delegate = self;
+    
+    [[UIApplication sharedApplication].keyWindow.layer addAnimation:transition forKey:nil];
+    
+    ZQTabbarController *tabBarVC = [[ZQTabbarController alloc] init];
+    [[UIApplication sharedApplication].delegate window].rootViewController = tabBarVC;
+
+}
+
 - (void)getUsers{
     
     if (Acount) {
