@@ -14,6 +14,9 @@
 //**用来显示用户名的导航栏，只有当分页栏定在顶部时，才显示*/
 @property (nonatomic, weak) UIView *navigationView;
 @property (nonatomic, strong) ZQProfileHeaderView *headerView;
+@property (nonatomic, strong) UIButton *moreBtn;
+@property (nonatomic, strong) UIButton *searchBtn;
+
 @end
 
 @implementation ZQProfileController
@@ -51,6 +54,22 @@
 }
 - (void)setupNavigationView
 {
+    //添加两个按钮到window
+    UIButton *moreBtn = [[UIButton alloc]init];
+    self.moreBtn = moreBtn;
+    [moreBtn setBackgroundImage:[UIImage imageNamed:navigationbar_more_light] forState:UIControlStateNormal];
+    [self.moreBtn addTarget:self action:@selector(moreBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [[UIApplication sharedApplication].windows.lastObject addSubview:moreBtn];
+    moreBtn.frame = CGRectMake(SCREEN_WIDTH-32, 31, 22,22);
+
+    //添加两个按钮到window
+    UIButton *searchBtn = [[UIButton alloc]init];
+    self.searchBtn = searchBtn;
+    [searchBtn setBackgroundImage:[UIImage imageNamed:navigationbar_search_dark] forState:UIControlStateNormal];
+    [self.searchBtn addTarget:self action:@selector(searchBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [[UIApplication sharedApplication].windows.lastObject addSubview:searchBtn];
+    searchBtn.frame = CGRectMake(SCREEN_WIDTH-71, 31, 22,22);
+    
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     UIView *navigationView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 64)];
@@ -61,11 +80,20 @@
     titleLabel.font = [UIFont systemFontOfSize:17];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     [navigationView addSubview:titleLabel];
-    
     navigationView.alpha = 0;
-    navigationView.backgroundColor = [UIColor redColor];
+//   添加底部黑线
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, 63, SCREEN_WIDTH, 1)];
+    lineView.backgroundColor = [UIColor separateLineViewColor];
+    [navigationView addSubview:lineView];
     [self.view addSubview:navigationView];
     self.navigationView = navigationView;
+}
+- (void)moreBtnClick{
+    NSLog(@"点击更多按钮");
+}
+- (void)searchBtnClick{
+    NSLog(@"点击搜索按钮");
+
 }
 #pragma mark getter
 - (ZQProfileHeaderView *)headerView{
@@ -107,15 +135,15 @@
         return;
     }
     if (offsetY < 0) {
+        //下拉
         CGFloat scale = 1.0;
-        scale = MIN(1.2, 1 - offsetY / 200);
+        scale = MIN(1.1, 1 - offsetY / 200);
         self.headerView.bgImageView.transform = CGAffineTransformMakeScale(scale, scale);
 
         if (offsetY == -64) {
             return;
         }
         self.headerView.frame = CGRectMake(0, -offsetY, SCREEN_WIDTH, kHeaderHeight);
-
     }
     if (offsetY > 0) {
         //处理图片
@@ -127,8 +155,14 @@
         }if (offsetY >= 136) {
             //固定headViewFrame
             self.navigationView.alpha = 1;
+            self.navigationController.navigationBar.tintColor = [UIColor grayColor];
+            [self.searchBtn setBackgroundImage:[UIImage imageNamed:navigationbar_search] forState:UIControlStateNormal];
+            [self.moreBtn setBackgroundImage:[UIImage imageNamed:navigationbar_more] forState:UIControlStateNormal];
             self.headerView.frame = CGRectMake(0, -136, SCREEN_WIDTH, kHeaderHeight);
         }else{
+            self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+            [self.searchBtn setBackgroundImage:[UIImage imageNamed:navigationbar_search_dark] forState:UIControlStateNormal];
+            [self.moreBtn setBackgroundImage:[UIImage imageNamed:navigationbar_more_light] forState:UIControlStateNormal];
             //0-72
             if (offsetY>8) {
                 self.navigationView.alpha = (offsetY-72)/64;
