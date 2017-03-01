@@ -28,9 +28,14 @@
     
     self.title = login_title;
     
-    // 添加webView
-    [self setupWebView];
-    
+    if ([WeiboSDK isCanSSOInWeiboApp]) {
+        WBAuthorizeRequest *request = [WBAuthorizeRequest request];
+        request.redirectURI = kRedirectURI;
+        [WeiboSDK sendRequest:request];
+    }else {
+        // 添加webView
+        [self setupWebView];
+    }
     
 }
 - (void)setupWebView{
@@ -51,6 +56,8 @@
     NSLog(@"--%@", request.URL);
 
 }
+
+
 #pragma mark - UIWebView Delegate Methods
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -64,7 +71,6 @@
             NSString *code = [urlString substringFromIndex:(range.location + range.length)];
             
             // 给新浪发送POST请求获取access_token
-            
             NSDictionary *paramenters = @{@"client_id":kWBAppKey,
                                    @"client_secret":kWBAppSecret,
                                    @"grant_type":@"authorization_code",
