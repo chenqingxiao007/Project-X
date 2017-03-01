@@ -79,9 +79,12 @@ extern NSString *const profile_background;
 extern NSString *const profile_female;
 //**male图标*/
 extern NSString *const profile_male;
+//**不确定性别图标*/
+extern NSString *const profile_unchecked;
 //**开通图标*/
 extern NSString *const profile_open_membership;
 //**开通会员图标*/
 extern NSString *const profile_membership_expired;
-
+//**编辑图标*/
+extern NSString *const my_pofile_edit;
 @end

@@ -215,7 +215,7 @@
 }
 //添加按钮
 - (ZQMyHeaderBtn *)addButtonWithMessage:(NSString *)bottomMessage{
-    ZQMyHeaderBtn *btn = [[ZQMyHeaderBtn alloc]init];
+    ZQMyHeaderBtn *btn = [ZQMyHeaderBtn initWithButtonType:TypeUpBottom];
     btn.bottomMessage = bottomMessage;
     btn.topColor = [UIColor firstWordColor];
     btn.bottomColor = [UIColor thirdWordColor];

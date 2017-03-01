@@ -54,7 +54,10 @@ NSString *const profile_background = @"profile_background";
 
 NSString *const profile_female = @"profile_female";
 NSString *const profile_male = @"profile_male";
+NSString *const profile_unchecked = @"profile_unchecked";
+
 
 NSString *const profile_open_membership = @"profile_open_membership";
 NSString *const profile_membership_expired = @"profile_membership_expired";
+NSString *const my_pofile_edit = @"my_pofile_edit";
 @end

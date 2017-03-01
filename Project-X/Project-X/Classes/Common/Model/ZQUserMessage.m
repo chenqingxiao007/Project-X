@@ -18,11 +18,10 @@
     [encoder encodeInteger:_verified forKey:@"verified"];
     [encoder encodeObject:_WBdescription forKey:@"description"];
     [encoder encodeInteger:_favourites_count forKey:@"favourites_count"];
-        [encoder encodeInteger:_statuses_count forKey:@"statuses_count"];
-    
+    [encoder encodeInteger:_statuses_count forKey:@"statuses_count"];
     [encoder encodeInteger:_friends_count forKey:@"friends_count"];
     [encoder encodeInteger:_followers_count forKey:@"followers_count"];
-//    [encoder encodeObject:_insecurity forKey:@"insecurity"];
+    [encoder encodeObject:_gender forKey:@"gender"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder
@@ -36,7 +35,7 @@
         self.friends_count = [decoder decodeIntegerForKey:@"friends_count"];
         self.followers_count = [decoder decodeIntegerForKey:@"followers_count"];
         self.statuses_count = [decoder decodeIntegerForKey:@"statuses_count"];
-//        self.insecurity = [decoder decodeObjectForKey:@"insecurity"];
+        self.gender = [decoder decodeObjectForKey:@"gender"];
     }
     return self;
 }

@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ZQMyHeaderBtn : UIView
-
+typedef NS_ENUM(NSInteger, ButtonType) {
+    TypeLeftRight,//左右形势
+    TypeUpBottom,//上下形式
+    Other//可以点击有标示箭头的形式
+};
 //**点击view回调block*/
 @property (nonatomic, copy) void(^HeaderBtnBlock)();
 
@@ -20,4 +24,5 @@
 @property (strong, nonatomic) UIFont *bottomFont;
 @property (strong, nonatomic) UIFont *topFont;
 
++ (instancetype)initWithButtonType:(ButtonType)buttonType;
 @end
