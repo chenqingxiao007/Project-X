@@ -8,7 +8,7 @@
 
 #import "ZQNetWorkHelper.h"
 #import <AFNetworking/AFNetworking.h>
-
+#import "ZQAccountTool.h"
 @implementation ZQNetWorkHelper
 
 + (instancetype)sharedNetWorkHelper{
@@ -72,5 +72,36 @@
     
 }
 
-
++ (void)getUsers{
+    
+    if (Acount) {
+        NSDictionary *paramenters = @{@"access_token":Acount.access_token,
+                                      @"uid":Acount.uid};
+        [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypeGet url:getUsers params:paramenters success:^(id responseObject) {
+            //
+            NSLog(@"responseObject%@",responseObject);
+            
+            ZQUserMessage *userMessage = [ZQUserMessage mj_objectWithKeyValues:responseObject];
+            //存储
+            NSData *userMessageData = [NSKeyedArchiver archivedDataWithRootObject:userMessage];
+            [[NSUserDefaults standardUserDefaults] setObject:userMessageData forKey:@"theuserMessage"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            //获取
+            //获得保存数据
+            NSData *getuserMessageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"theuserMessage"];
+            
+            
+            //转成模型获取数据
+            ZQUserMessage *getuserMessage =   [NSKeyedUnarchiver unarchiveObjectWithData:getuserMessageData];
+            UserMessage = getuserMessage;
+            NSLog(@"userMessage%@",userMessage.screen_name);
+        } failure:^(NSError *error) {
+            //
+            NSLog(@"失败了");
+        }];
+        
+    }
+    
+}
 @end

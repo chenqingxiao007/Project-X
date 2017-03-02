@@ -21,5 +21,6 @@ typedef NS_ENUM(NSUInteger, ZQInvokeType) {
 
 - (void)invokeWithType:(ZQInvokeType)invokeType url:(NSString *)url params:(NSDictionary *)params success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 
-
+//获取用户信息请求
++ (void)getUsers;
 @end

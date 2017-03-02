@@ -38,6 +38,7 @@
         WBAuthorizeRequest *request = [WBAuthorizeRequest request];
         request.redirectURI = kRedirectURI;
         [WeiboSDK sendRequest:request];
+        //获取count 并且获取用户信息
     }else {
         // 添加webView
         [self setupWebView];
@@ -89,7 +90,7 @@
                 [[ZQAccountTool shareAccountTool] saveAccount:account];
                 
                 //登录成功 获取用户信息
-                [self getUsers];
+                [ZQNetWorkHelper getUsers];
                 NSLog(@"登录成功");
                 [self changeRootVC];
                 
@@ -120,36 +121,4 @@
 
 }
 
-- (void)getUsers{
-    
-    if (Acount) {
-        NSDictionary *paramenters = @{@"access_token":Acount.access_token,
-                                      @"uid":Acount.uid};
-        [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypeGet url:getUsers params:paramenters success:^(id responseObject) {
-            //
-            NSLog(@"responseObject%@",responseObject);
-         
-            ZQUserMessage *userMessage = [ZQUserMessage mj_objectWithKeyValues:responseObject];
-            //存储
-            NSData *userMessageData = [NSKeyedArchiver archivedDataWithRootObject:userMessage];
-            [[NSUserDefaults standardUserDefaults] setObject:userMessageData forKey:@"theuserMessage"];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-            
-            //获取
-            //获得保存数据
-            NSData *getuserMessageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"theuserMessage"];
-            
-            
-            //转成模型获取数据
-            ZQUserMessage *getuserMessage =   [NSKeyedUnarchiver unarchiveObjectWithData:getuserMessageData];
-            UserMessage = getuserMessage;
-            NSLog(@"userMessage%@",userMessage.screen_name);
-        } failure:^(NSError *error) {
-            //
-            NSLog(@"失败了");
-        }];
-
-    }
-    
-}
 @end

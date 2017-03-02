@@ -10,7 +10,7 @@
 #import "ZQLoginViewController.h"
 #import "ZQTabbarController.h"
 #import "ZQAccountTool.h"
-
+#import "ZQNetWorkHelper.h"
 @interface AppDelegate ()
 
 @end
@@ -62,13 +62,14 @@
     if ([response isKindOfClass:WBAuthorizeResponse.class]) {
         ZQAccount *account = [ZQAccount accountWithDic:response.userInfo];
         [[ZQAccountTool shareAccountTool] saveAccount:account];
-        
+        [ZQNetWorkHelper getUsers];
         UINavigationController *nav = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
         
         [(ZQLoginViewController *)nav.childViewControllers[0] changeRootVC];
         
     }
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
