@@ -88,7 +88,7 @@
     //头像
     [self.imageView_icon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.bgImageView.mas_centerX);
-        make.top.mas_equalTo(55);
+        make.top.mas_equalTo(50);
         make.size.mas_equalTo(CGSizeMake(60,60));
 
     }];
