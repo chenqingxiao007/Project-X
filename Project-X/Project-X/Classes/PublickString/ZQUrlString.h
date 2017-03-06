@@ -15,6 +15,6 @@ extern NSString *const oauthUrl;
 extern NSString *const getUsers;
 /**获取微博内容*/
 extern NSString *const getFriensWeibo;
-
-
+/**获取用户的粉丝数、关注数、微博数*/
+extern NSString *const getUsersCount;
 @end

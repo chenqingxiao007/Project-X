@@ -12,10 +12,11 @@
 #import "ZQMyHeaderCell.h"
 #import "ZQMyCell.h"
 #import "ZQProfileController.h"
+#import "ZQUserCountsModel.h"
+#import "ZQNetWorkHelper.h"
 @interface ZQMyController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UITableViewCell *cell;
-
 @property (nonatomic, strong) NSArray *dataArray;
 @end
 
@@ -87,7 +88,28 @@
     [self NavAddButton];
     //添加tableView
     [self setupTableView];
+    //加载数据
+    [self setupData];
 
+}
+- (void)setupData{
+    if (Acount) {
+        NSDictionary *paramenters = @{@"access_token":Acount.access_token,
+                                      @"uids":Acount.uid,};
+
+        [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypeGet url:getUsersCount params:paramenters success:^(id responseObject) {
+            //
+            NSDictionary *dict = responseObject;
+   
+            ZQUserCountsModel *model = [ZQUserCountsModel mj_objectWithKeyValues:dict];
+            NSLog(@"responseObject%@",responseObject);
+
+            NSLog(@"model%@",model);
+        } failure:^(NSError *error) {
+            //
+        }];
+
+    }
 }
 - (void)NavAddButton{
 

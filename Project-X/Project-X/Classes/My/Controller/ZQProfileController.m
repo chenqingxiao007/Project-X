@@ -106,6 +106,7 @@
         _headerView.segmentView = [[LiuXSegmentView alloc]initWithFrame:CGRectMake(0, kHeaderHeight - kHeaderSegmentHeight, SCREEN_WIDTH, kHeaderSegmentHeight) titles:@[@"",my_profile_home,my_profile_statuses,my_profile_album,@""]  clickBlick:^(NSInteger index) {
             //点击事件 index从1开始 234对应主页微博相册
             NSLog(@"-----%ld",index);
+            if (index == 3);
         }];
         [_headerView addSubview:_headerView.segmentView];
         _headerView.userMessage = UserMessage;
@@ -151,17 +152,17 @@
     if (offsetY > 0) {
         //处理图片
 
-        if (offsetY>72 && offsetY<136) {
+        if (offsetY>72 && offsetY<118) {
             //显示导航栏
             self.navigationView.alpha = (offsetY-72)/64;
             [self.view bringSubviewToFront:self.navigationView];
-        }if (offsetY >= 136) {
+        }if (offsetY >= 118) {
             //固定headViewFrame
             self.navigationView.alpha = 1;
             self.navigationController.navigationBar.tintColor = [UIColor grayColor];
             [self.searchBtn setBackgroundImage:[UIImage imageNamed:navigationbar_search] forState:UIControlStateNormal];
             [self.moreBtn setBackgroundImage:[UIImage imageNamed:navigationbar_more] forState:UIControlStateNormal];
-            self.headerView.frame = CGRectMake(0, -136, SCREEN_WIDTH, kHeaderHeight);
+            self.headerView.frame = CGRectMake(0, -118, SCREEN_WIDTH, kHeaderHeight);
         }else{
             self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
             [self.searchBtn setBackgroundImage:[UIImage imageNamed:navigationbar_search_dark] forState:UIControlStateNormal];
@@ -179,5 +180,7 @@
     }
 }
 
-
+//点击相册
+- (void)alumBtnClick{
+}
 @end

@@ -8,7 +8,6 @@
 
 #import "ZQNetWorkHelper.h"
 #import <AFNetworking/AFNetworking.h>
-#import "ZQAccountTool.h"
 @implementation ZQNetWorkHelper
 
 + (instancetype)sharedNetWorkHelper{

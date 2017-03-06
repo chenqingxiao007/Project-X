@@ -13,5 +13,5 @@
 NSString *const oauthUrl        = @"https://api.weibo.com/oauth2/access_token";
 NSString *const getUsers        = @"https://api.weibo.com/2/users/show.json";
 NSString *const getFriensWeibo  = @"https://api.weibo.com/2/statuses/friends_timeline.json";
-
+NSString *const getUsersCount = @"https://api.weibo.com/2/users/counts.json";
 @end

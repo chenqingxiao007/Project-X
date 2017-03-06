@@ -10,7 +10,6 @@
 #import "ZQNetWorkHelper.h"
 #import "ZQTabbarController.h"
 #import "ZQAccount.h"
-#import "ZQAccountTool.h"
 #import "MBProgressHUD.h"
 
 @interface ZQLoginViewController ()<UIWebViewDelegate, CAAnimationDelegate>

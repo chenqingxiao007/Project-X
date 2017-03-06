@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "ZQLoginViewController.h"
 #import "ZQTabbarController.h"
-#import "ZQAccountTool.h"
 #import "ZQNetWorkHelper.h"
 @interface AppDelegate ()
 

@@ -8,7 +8,6 @@
 
 #import "ZQHomeController.h"
 #import "ZQAccount.h"
-#import "ZQAccountTool.h"
 #import "ZQNetWorkHelper.h"
 #import "ZQHomeModel.h"
 #import "ZQWeiboCell.h"
