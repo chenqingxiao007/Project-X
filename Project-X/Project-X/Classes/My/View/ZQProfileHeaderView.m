@@ -92,8 +92,9 @@
         make.size.mas_equalTo(CGSizeMake(60,60));
 
     }];
-    self.imageView_icon.layer.masksToBounds =YES;
-    self.imageView_icon.layer.cornerRadius =30;
+    //此处代码消耗性能 是离屏渲染（off-screen-rendering）
+//    self.imageView_icon.layer.masksToBounds =YES;
+//    self.imageView_icon.layer.cornerRadius =30;
     //name label
     CGFloat nameLabelWidth = CGRectGetWidth(self.label_name.frame);
     [self.label_name mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -174,6 +175,8 @@
             //下载进度
         } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
             if (image) {
+                //on-screen-rendering
+                image =  [image imageWithCornerRadius:30];
                 self.imageView_icon.image = image;
             }
             if (error) {
