@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0213DAD11E5D75C400FB9D48 /* ZQUserMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0213DAD01E5D75C400FB9D48 /* ZQUserMessage.m */; };
 		0213DAD81E5D8A4200FB9D48 /* ZQCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0213DAD71E5D8A4200FB9D48 /* ZQCellModel.m */; };
+		023589521E6E58240013AA18 /* UIImage+EX.m in Sources */ = {isa = PBXBuildFile; fileRef = 023589511E6E58240013AA18 /* UIImage+EX.m */; };
 		024DC1191E5C21F200405561 /* ZQAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 024DC1181E5C21F200405561 /* ZQAccount.m */; };
 		024DC11C1E5C222400405561 /* ZQAccountTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 024DC11B1E5C222400405561 /* ZQAccountTool.m */; };
 		02617B0A1E6522880087657A /* ZQProfileHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02617B091E6522880087657A /* ZQProfileHeaderView.m */; };
@@ -73,6 +74,8 @@
 		0213DAD01E5D75C400FB9D48 /* ZQUserMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQUserMessage.m; sourceTree = "<group>"; };
 		0213DAD61E5D8A4200FB9D48 /* ZQCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQCellModel.h; sourceTree = "<group>"; };
 		0213DAD71E5D8A4200FB9D48 /* ZQCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQCellModel.m; sourceTree = "<group>"; };
+		023589501E6E58240013AA18 /* UIImage+EX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+EX.h"; sourceTree = "<group>"; };
+		023589511E6E58240013AA18 /* UIImage+EX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EX.m"; sourceTree = "<group>"; };
 		024DC1171E5C21F200405561 /* ZQAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQAccount.h; sourceTree = "<group>"; };
 		024DC1181E5C21F200405561 /* ZQAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQAccount.m; sourceTree = "<group>"; };
 		024DC11A1E5C222400405561 /* ZQAccountTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQAccountTool.h; sourceTree = "<group>"; };
@@ -243,6 +246,8 @@
 				026F58291E5FCDF60011FB8D /* UIColor+ex.m */,
 				078E1EE61E63C67D0048C21A /* UIView+ZQExtension.h */,
 				078E1EE71E63C6850048C21A /* UIView+ZQExtension.m */,
+				023589501E6E58240013AA18 /* UIImage+EX.h */,
+				023589511E6E58240013AA18 /* UIImage+EX.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -763,6 +768,7 @@
 				4504A6091E5DE56600E6DBDA /* ZQImageNameString.m in Sources */,
 				078E1EF31E6411E00048C21A /* ZQWeiboCell.m in Sources */,
 				0297885F1E640D0000CB751B /* ZQBaseViewController.m in Sources */,
+				023589521E6E58240013AA18 /* UIImage+EX.m in Sources */,
 				070C9D921E4874F300BD3A54 /* ViewController.m in Sources */,
 				02617B0D1E6522AA0087657A /* LiuXSegmentView.m in Sources */,
 				029FF3D81E5E86090098E024 /* ZQMyHeaderCell.m in Sources */,

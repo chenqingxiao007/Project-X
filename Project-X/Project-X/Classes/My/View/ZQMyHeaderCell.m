@@ -97,8 +97,8 @@
         make.left.equalTo(self).offset(10);
         make.size.mas_equalTo(CGSizeMake(60,60));
     }];
-    self.imageView_proflie.layer.masksToBounds =YES;
-    self.imageView_proflie.layer.cornerRadius =30;
+//    self.imageView_proflie.layer.masksToBounds =YES;
+//    self.imageView_proflie.layer.cornerRadius =30;
     
     //箭头frame
     [self.imageView_arrow mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -176,6 +176,7 @@
             //下载进度
         } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
             if (image) {
+                image = [image imageWithCornerRadius:30];
                 self.imageView_proflie.image = image;
             }
             if (error) {
