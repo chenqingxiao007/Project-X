@@ -29,6 +29,9 @@
 		070C9DA51E4874F300BD3A54 /* Project_XTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9DA41E4874F300BD3A54 /* Project_XTests.m */; };
 		070C9DB01E4874F300BD3A54 /* Project_XUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9DAF1E4874F300BD3A54 /* Project_XUITests.m */; };
 		070C9DCA1E4D9B5000BD3A54 /* ZQLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9DC91E4D9B5000BD3A54 /* ZQLoginViewController.m */; };
+		073C85221ED42426001037DA /* JSPatchPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073C85211ED42426001037DA /* JSPatchPlatform.framework */; };
+		073C85241ED424E0001037DA /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073C85231ED424E0001037DA /* JavaScriptCore.framework */; };
+		073C85261ED4253E001037DA /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 073C85251ED4253E001037DA /* libz.1.dylib */; };
 		078E1EE81E63C6850048C21A /* UIView+ZQExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EE71E63C6850048C21A /* UIView+ZQExtension.m */; };
 		078E1EEC1E6409700048C21A /* ZQHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EEB1E6409700048C21A /* ZQHomeModel.m */; };
 		078E1EEF1E640A5A0048C21A /* ZQWeiboModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EEE1E640A5A0048C21A /* ZQWeiboModel.m */; };
@@ -115,6 +118,9 @@
 		070C9DC81E4D9B5000BD3A54 /* ZQLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQLoginViewController.h; sourceTree = "<group>"; };
 		070C9DC91E4D9B5000BD3A54 /* ZQLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQLoginViewController.m; sourceTree = "<group>"; };
 		070C9DCB1E4D9BD200BD3A54 /* Project-X-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Project-X-Prefix.pch"; sourceTree = "<group>"; };
+		073C85211ED42426001037DA /* JSPatchPlatform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSPatchPlatform.framework; sourceTree = "<group>"; };
+		073C85231ED424E0001037DA /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		073C85251ED4253E001037DA /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		078E1EE61E63C67D0048C21A /* UIView+ZQExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZQExtension.h"; sourceTree = "<group>"; };
 		078E1EE71E63C6850048C21A /* UIView+ZQExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZQExtension.m"; sourceTree = "<group>"; };
 		078E1EEA1E6409700048C21A /* ZQHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQHomeModel.h; sourceTree = "<group>"; };
@@ -165,7 +171,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073C85261ED4253E001037DA /* libz.1.dylib in Frameworks */,
+				073C85241ED424E0001037DA /* JavaScriptCore.framework in Frameworks */,
 				895C66D7E6B14CC6E756912C /* libPods-Project-X.a in Frameworks */,
+				073C85221ED42426001037DA /* JSPatchPlatform.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +297,7 @@
 		070C9D8A1E4874F300BD3A54 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				073C85211ED42426001037DA /* JSPatchPlatform.framework */,
 				070C9D931E4874F300BD3A54 /* Main.storyboard */,
 				070C9D961E4874F300BD3A54 /* Assets.xcassets */,
 				070C9D981E4874F300BD3A54 /* LaunchScreen.storyboard */,
@@ -385,6 +395,8 @@
 		2D491521DEAA88015E13C4DD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				073C85251ED4253E001037DA /* libz.1.dylib */,
+				073C85231ED424E0001037DA /* JavaScriptCore.framework */,
 				777ADF6EA3969746523FE52B /* libPods-Project-X.a */,
 			);
 			name = Frameworks;
@@ -625,7 +637,7 @@
 				TargetAttributes = {
 					070C9D861E4874F300BD3A54 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 75D8L8RTM5;
+						DevelopmentTeam = MLX7PU7VRR;
 						ProvisioningStyle = Automatic;
 					};
 					070C9D9F1E4874F300BD3A54 = {
@@ -942,7 +954,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 75D8L8RTM5;
+				DEVELOPMENT_TEAM = MLX7PU7VRR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Project-X",
+					"$(PROJECT_DIR)/Project-X/Classes/Other",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Project-X/Project-X-Prefix.pch";
 				INFOPLIST_FILE = "Project-X/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -959,7 +976,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 75D8L8RTM5;
+				DEVELOPMENT_TEAM = MLX7PU7VRR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Project-X",
+					"$(PROJECT_DIR)/Project-X/Classes/Other",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Project-X/Project-X-Prefix.pch";
 				INFOPLIST_FILE = "Project-X/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

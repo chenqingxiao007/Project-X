@@ -27,6 +27,11 @@
 #define kRedirectURI @"https://api.weibo.com/oauth2/default.html"
 #define kWBAppSecret @"9960128e13524858599950707c7192ba"
 
+/** JSPatch Key */
+#define kJSPatchAppKey @"4ad81cb9b653f103"
+
+
+
 #define GlobleMessage [ZQGlobleMessage shareInstence]
 #define UserMessage GlobleMessage.userMessage//获取用户的信息
 #define Acount [ZQAccountTool shareAccountTool].account //授权成功获取的信息

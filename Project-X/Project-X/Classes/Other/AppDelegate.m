@@ -10,6 +10,8 @@
 #import "ZQLoginViewController.h"
 #import "ZQTabbarController.h"
 #import "ZQNetWorkHelper.h"
+#import <JSPatchPlatform/JSPatch.h>
+
 @interface AppDelegate ()
 
 @end
@@ -20,7 +22,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     //注册微博appkey
+    [self setJSPatch];
     [self setupWeibo];
+    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        CQAlert *alert = [[CQAlert alloc] init];
+//        [alert showAlertWithString:@"哈哈哈"];
+//    });
    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -50,6 +58,14 @@
     [self setupNavBar];
     
     return YES;
+}
+
+- (void)setJSPatch {
+    
+    [JSPatch startWithAppKey:kJSPatchAppKey];
+    [JSPatch setupRSAPublicKey:@"-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC0MxTcJmVsLZsrG5J87YmLNga0\n/QVE1qcCGYOjzOUq7U4p8tXCysHtP7Evmu9p/rhlRhMLBKeJyPnz3zh7jaJR0dcG\nNLa6Dr1YET8Mdz2rq7+9IoPu2WoGNpVvllu14CTlT2Pat2b5D5BhrWtT8BwOiwdU\nTvZwCJb1eWYWB52NiwIDAQAB\n-----END PUBLIC KEY-----"];
+    [JSPatch sync];
+
 }
 
 - (void)setupWeibo{
