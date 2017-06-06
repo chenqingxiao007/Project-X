@@ -37,6 +37,7 @@
 		078E1EEF1E640A5A0048C21A /* ZQWeiboModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EEE1E640A5A0048C21A /* ZQWeiboModel.m */; };
 		078E1EF31E6411E00048C21A /* ZQWeiboCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EF21E6411E00048C21A /* ZQWeiboCell.m */; };
 		078E1EF61E641B200048C21A /* ZQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EF51E641B200048C21A /* ZQNavigationController.m */; };
+		07CAD1F61EDE9DEF00AD3E9F /* helloAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CAD1F51EDE9DEF00AD3E9F /* helloAlert.framework */; };
 		07F40F321E56D735008338A2 /* ZQNetWorkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F311E56D735008338A2 /* ZQNetWorkHelper.m */; };
 		07F40F351E56D871008338A2 /* ZQBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F341E56D871008338A2 /* ZQBaseRequest.m */; };
 		07F40F391E56E701008338A2 /* ZQOauthRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F381E56E701008338A2 /* ZQOauthRequest.m */; };
@@ -131,6 +132,7 @@
 		078E1EF21E6411E00048C21A /* ZQWeiboCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQWeiboCell.m; sourceTree = "<group>"; };
 		078E1EF41E641B200048C21A /* ZQNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQNavigationController.h; sourceTree = "<group>"; };
 		078E1EF51E641B200048C21A /* ZQNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQNavigationController.m; sourceTree = "<group>"; };
+		07CAD1F51EDE9DEF00AD3E9F /* helloAlert.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = helloAlert.framework; sourceTree = "<group>"; };
 		07F40F301E56D735008338A2 /* ZQNetWorkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQNetWorkHelper.h; sourceTree = "<group>"; };
 		07F40F311E56D735008338A2 /* ZQNetWorkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQNetWorkHelper.m; sourceTree = "<group>"; };
 		07F40F331E56D871008338A2 /* ZQBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQBaseRequest.h; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				073C85261ED4253E001037DA /* libz.1.dylib in Frameworks */,
 				073C85241ED424E0001037DA /* JavaScriptCore.framework in Frameworks */,
 				895C66D7E6B14CC6E756912C /* libPods-Project-X.a in Frameworks */,
+				07CAD1F61EDE9DEF00AD3E9F /* helloAlert.framework in Frameworks */,
 				073C85221ED42426001037DA /* JSPatchPlatform.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,6 +564,7 @@
 			children = (
 				45A43E981E4C070600C64CE2 /* AppDelegate.h */,
 				45A43E971E4C070600C64CE2 /* AppDelegate.m */,
+				07CAD1F51EDE9DEF00AD3E9F /* helloAlert.framework */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -962,7 +966,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Project-X/Project-X-Prefix.pch";
 				INFOPLIST_FILE = "Project-X/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "chenqingxiao007.Project-X";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -984,7 +988,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Project-X/Project-X-Prefix.pch";
 				INFOPLIST_FILE = "Project-X/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "chenqingxiao007.Project-X";
 				PRODUCT_NAME = "$(TARGET_NAME)";

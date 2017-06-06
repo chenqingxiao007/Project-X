@@ -1,0 +1,6 @@
+framework module helloAlert {
+  umbrella header "helloAlert.h"
+
+  export *
+  module * { export * }
+}

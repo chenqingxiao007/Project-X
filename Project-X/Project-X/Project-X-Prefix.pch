@@ -39,6 +39,9 @@
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 #define kTopBarHeight 64 // 状态栏+导航栏的高度
+
+// iOS 11
+
 //**定义字号*/
 #define First_font [UIFont systemFontOfSize:15]
 #define Second_font [UIFont systemFontOfSize:14]

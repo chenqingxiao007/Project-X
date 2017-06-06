@@ -11,6 +11,7 @@
 #import "ZQTabbarController.h"
 #import "ZQNetWorkHelper.h"
 #import <JSPatchPlatform/JSPatch.h>
+#import <helloAlert/helloAlert.h>
 
 @interface AppDelegate ()
 
@@ -43,7 +44,7 @@
         //获得保存数据
         NSData *getuserMessageData = [[NSUserDefaults standardUserDefaults] objectForKey:@"theuserMessage"];
         //转成模型获取数据
-        ZQUserMessage *getuserMessage =   [NSKeyedUnarchiver unarchiveObjectWithData:getuserMessageData];
+        ZQUserMessage *getuserMessage = [NSKeyedUnarchiver unarchiveObjectWithData:getuserMessageData];
         UserMessage = getuserMessage;
 
     }else{
@@ -56,6 +57,8 @@
     }
 
     [self setupNavBar];
+    
+    [CXAlert showAlertWithString:@"哈哈哈,弄好啦！"];
     
     return YES;
 }

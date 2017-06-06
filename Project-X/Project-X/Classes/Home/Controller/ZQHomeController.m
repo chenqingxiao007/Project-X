@@ -11,6 +11,7 @@
 #import "ZQNetWorkHelper.h"
 #import "ZQHomeModel.h"
 #import "ZQWeiboCell.h"
+#import <JSPatchPlatform/JPEngine.h>
 
 @interface ZQHomeController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -27,6 +28,24 @@
     // Do any additional setup after loading the view.
     [self buildUI];
     [self getWeibo];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    NSString *titleStr = @"呵呵哒";
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:titleStr message:nil delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil, nil];
+//    [alertView show];
+    
+//    [JPEngine startEngine];
+    
+    // 直接执行js
+//    [JPEngine evaluateScript:@"\
+//     var alertView = require('UIAlertView').alloc().init();\
+//     alertView.setTitle('Alert');\
+//     alertView.setMessage('AlertView from js'); \
+//     alertView.addButtonWithTitle('OK');\
+//     alertView.show(); \
+//     "];
+    
 }
 
 - (void)buildUI {
