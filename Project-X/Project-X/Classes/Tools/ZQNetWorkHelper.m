@@ -11,6 +11,12 @@
 @implementation ZQNetWorkHelper
 
 + (instancetype)sharedNetWorkHelper{
+    
+   
+    
+    
+    
+    
     static id sharedInstance = nil;
     
     static dispatch_once_t onceToken;

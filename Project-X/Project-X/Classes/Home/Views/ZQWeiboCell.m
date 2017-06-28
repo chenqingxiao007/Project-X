@@ -29,6 +29,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.width = SCREEN_WIDTH;
+        self.backgroundColor = [UIColor lightGrayColor];
         [self addSubview:self.profile_image_url_imageView];
         [self addSubview:self.screen_name_label];
         [self addSubview:self.text_label];
@@ -75,6 +76,7 @@
         _profile_image_url_imageView = [[UIImageView alloc] init];
         _profile_image_url_imageView.frame = CGRectMake(10, 10, 40, 40);
         _profile_image_url_imageView.layer.cornerRadius = 20;
+        _profile_image_url_imageView.layer.masksToBounds = YES;
     }
     return _profile_image_url_imageView;
 }
@@ -92,6 +94,7 @@
         _text_label = [[UILabel alloc] init];
         _text_label.width = SCREEN_WIDTH - 75;
         _text_label.numberOfLines = 0;
+        _text_label.textColor = [UIColor orangeWordColor];
     }
     return _text_label;
 }

@@ -81,9 +81,11 @@
         ZQAccount *account = [ZQAccount accountWithDic:response.userInfo];
         [[ZQAccountTool shareAccountTool] saveAccount:account];
         [ZQNetWorkHelper getUsers];
-        UINavigationController *nav = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
         
-        [(ZQLoginViewController *)nav.childViewControllers[0] changeRootVC];
+        AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        UIViewController *rootViewController = appdelegate.window.rootViewController;
+        
+        [rootViewController.childViewControllers[0] changeRootVC];
         
     }
 }
