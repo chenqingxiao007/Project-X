@@ -29,7 +29,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         self.width = SCREEN_WIDTH;
-        self.backgroundColor = [UIColor lightGrayColor];
+        self.backgroundColor = [UIColor whiteColor];
         [self addSubview:self.profile_image_url_imageView];
         [self addSubview:self.screen_name_label];
         [self addSubview:self.text_label];

@@ -22,6 +22,7 @@
 #import "ZQBaseViewController.h"
 #import "ZQAccountTool.h"
 #import "UIImage+EX.h"
+#import "YYKit.h"
 //**微博AppKey*/
 #define kWBAppKey @"3832862104"
 #define kRedirectURI @"https://api.weibo.com/oauth2/default.html"
