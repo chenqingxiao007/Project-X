@@ -61,6 +61,7 @@
 
 - (void)setJPushWithOption:(NSDictionary *)launchOptions {
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
+    
     entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
         // 可以添加自定义categories
@@ -68,6 +69,14 @@
         // NSSet<UIUserNotificationCategory *> *categories for iOS8 and iOS9
     }
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
+    
+    // 设置别名
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [JPUSHService setTags:nil alias:@"chenqingxiao" fetchCompletionHandle:^(int iResCode, NSSet *iTags, NSString *iAlias) {
+            
+            
+        }];
+    });
     
     [JPUSHService setupWithOption:launchOptions appKey:kJPushAppKey channel:@"AppStore" apsForProduction:NO advertisingIdentifier:nil];
     
