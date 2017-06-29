@@ -10,10 +10,14 @@
 #import "ZQLoginViewController.h"
 #import "ZQTabbarController.h"
 #import "ZQNetWorkHelper.h"
+#import "JPUSHService.h"
 #import <JSPatchPlatform/JSPatch.h>
-#import <helloAlert/helloAlert.h>
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import <UserNotifications/UserNotifications.h>
+#endif
 
-@interface AppDelegate ()
+@interface AppDelegate ()<JPUSHRegisterDelegate>
+
 
 @end
 
@@ -21,15 +25,12 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    //注册微博appkey
-    [self setJSPatch];
-    [self setupWeibo];
     
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        CQAlert *alert = [[CQAlert alloc] init];
-//        [alert showAlertWithString:@"哈哈哈"];
-//    });
+    [self setJSPatch];
+    //注册微博appkey
+    [self setWeibo];
+    [self setJPushWithOption:launchOptions];
+    
    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -50,28 +51,35 @@
     }else{
         // 未授权加载授权页面
         ZQLoginViewController *loginVC = [[ZQLoginViewController alloc] init];
-
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];
         
         self.window.rootViewController = nav;
     }
-
     [self setupNavBar];
-    
-    [CXAlert showAlertWithString:@"哈哈哈,弄好啦！"];
-    
     return YES;
 }
 
-- (void)setJSPatch {
+- (void)setJPushWithOption:(NSDictionary *)launchOptions {
+    JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
+    entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+        // 可以添加自定义categories
+        // NSSet<UNNotificationCategory *> *categories for iOS10 or later
+        // NSSet<UIUserNotificationCategory *> *categories for iOS8 and iOS9
+    }
+    [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
     
-    [JSPatch startWithAppKey:kJSPatchAppKey];
-    [JSPatch setupRSAPublicKey:@"-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC0MxTcJmVsLZsrG5J87YmLNga0\n/QVE1qcCGYOjzOUq7U4p8tXCysHtP7Evmu9p/rhlRhMLBKeJyPnz3zh7jaJR0dcG\nNLa6Dr1YET8Mdz2rq7+9IoPu2WoGNpVvllu14CTlT2Pat2b5D5BhrWtT8BwOiwdU\nTvZwCJb1eWYWB52NiwIDAQAB\n-----END PUBLIC KEY-----"];
-    [JSPatch sync];
-
+    [JPUSHService setupWithOption:launchOptions appKey:kJPushAppKey channel:@"AppStore" apsForProduction:NO advertisingIdentifier:nil];
+    
 }
 
-- (void)setupWeibo{
+- (void)setJSPatch {
+    [JSPatch startWithAppKey:kJSPatchAppKey];
+    [JSPatch setupRSAPublicKey:kJSPatchAppPublicKey];
+    [JSPatch sync];
+}
+
+- (void)setWeibo{
     [WeiboSDK enableDebugMode:YES];
     [WeiboSDK registerApp:kWBAppKey];
 }
@@ -116,6 +124,44 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma mark - 极光方法
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    /// Required - 注册 DeviceToken
+    [JPUSHService registerDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    //Optional
+    NSLog(@"did Fail To Register For Remote Notifications With Error: %@", error);
+}
+
+- (void) jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    NSDictionary * userInfo = response.notification.request.content.userInfo;
+    if (@available(iOS 10.0, *)) {
+        if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+            [JPUSHService handleRemoteNotification:userInfo];
+        }
+    } else {
+        // Fallback on earlier versions
+    }
+    completionHandler();  // 系统要求执行这个方法
+    
+}
+
+- (void) jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(NSInteger))completionHandler {
+    NSDictionary * userInfo = notification.request.content.userInfo;
+    if (@available(iOS 10.0, *)) {
+        if([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
+            [JPUSHService handleRemoteNotification:userInfo];
+        }
+    } else {
+        // Fallback on earlier versions
+    }
+    completionHandler(UNNotificationPresentationOptionAlert); // 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以选择设置
+    
+}
+
 #pragma mark - setupNavBar
 - (void)setupNavBar{
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;

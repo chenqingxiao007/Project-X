@@ -22,7 +22,6 @@
 		029FF3DB1E5E8C8C0098E024 /* ZQGlobleMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 029FF3DA1E5E8C8C0098E024 /* ZQGlobleMessage.m */; };
 		02C1DD2F1E6D468A00C31FBB /* ZQUserCountsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 02C1DD2E1E6D468A00C31FBB /* ZQUserCountsModel.m */; };
 		070C9D8C1E4874F300BD3A54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9D8B1E4874F300BD3A54 /* main.m */; };
-		070C9D921E4874F300BD3A54 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070C9D911E4874F300BD3A54 /* ViewController.m */; };
 		070C9D951E4874F300BD3A54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070C9D931E4874F300BD3A54 /* Main.storyboard */; };
 		070C9D971E4874F300BD3A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 070C9D961E4874F300BD3A54 /* Assets.xcassets */; };
 		070C9D9A1E4874F300BD3A54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 070C9D981E4874F300BD3A54 /* LaunchScreen.storyboard */; };
@@ -37,7 +36,6 @@
 		078E1EEF1E640A5A0048C21A /* ZQWeiboModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EEE1E640A5A0048C21A /* ZQWeiboModel.m */; };
 		078E1EF31E6411E00048C21A /* ZQWeiboCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EF21E6411E00048C21A /* ZQWeiboCell.m */; };
 		078E1EF61E641B200048C21A /* ZQNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078E1EF51E641B200048C21A /* ZQNavigationController.m */; };
-		07CAD1F61EDE9DEF00AD3E9F /* helloAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07CAD1F51EDE9DEF00AD3E9F /* helloAlert.framework */; };
 		07F40F321E56D735008338A2 /* ZQNetWorkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F311E56D735008338A2 /* ZQNetWorkHelper.m */; };
 		07F40F351E56D871008338A2 /* ZQBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F341E56D871008338A2 /* ZQBaseRequest.m */; };
 		07F40F391E56E701008338A2 /* ZQOauthRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F40F381E56E701008338A2 /* ZQOauthRequest.m */; };
@@ -105,8 +103,6 @@
 		02C1DD2E1E6D468A00C31FBB /* ZQUserCountsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQUserCountsModel.m; sourceTree = "<group>"; };
 		070C9D871E4874F300BD3A54 /* Project-X.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project-X.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		070C9D8B1E4874F300BD3A54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		070C9D901E4874F300BD3A54 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		070C9D911E4874F300BD3A54 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		070C9D941E4874F300BD3A54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		070C9D961E4874F300BD3A54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		070C9D991E4874F300BD3A54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -133,7 +129,7 @@
 		078E1EF21E6411E00048C21A /* ZQWeiboCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQWeiboCell.m; sourceTree = "<group>"; };
 		078E1EF41E641B200048C21A /* ZQNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQNavigationController.h; sourceTree = "<group>"; };
 		078E1EF51E641B200048C21A /* ZQNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQNavigationController.m; sourceTree = "<group>"; };
-		07CAD1F51EDE9DEF00AD3E9F /* helloAlert.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = helloAlert.framework; sourceTree = "<group>"; };
+		079555D81F04A0B300AE6814 /* Project-X.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Project-X.entitlements"; sourceTree = "<group>"; };
 		07F40F301E56D735008338A2 /* ZQNetWorkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQNetWorkHelper.h; sourceTree = "<group>"; };
 		07F40F311E56D735008338A2 /* ZQNetWorkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZQNetWorkHelper.m; sourceTree = "<group>"; };
 		07F40F331E56D871008338A2 /* ZQBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZQBaseRequest.h; sourceTree = "<group>"; };
@@ -175,7 +171,6 @@
 			files = (
 				073C85261ED4253E001037DA /* libz.1.dylib in Frameworks */,
 				073C85241ED424E0001037DA /* JavaScriptCore.framework in Frameworks */,
-				07CAD1F61EDE9DEF00AD3E9F /* helloAlert.framework in Frameworks */,
 				073C85221ED42426001037DA /* JSPatchPlatform.framework in Frameworks */,
 				C9FB9303D994A04A4A646AE3 /* libPods-Project-X.a in Frameworks */,
 			);
@@ -290,8 +285,6 @@
 			isa = PBXGroup;
 			children = (
 				45A43E731E4C060900C64CE2 /* Classes */,
-				070C9D901E4874F300BD3A54 /* ViewController.h */,
-				070C9D911E4874F300BD3A54 /* ViewController.m */,
 				070C9D8A1E4874F300BD3A54 /* Supporting Files */,
 			);
 			path = "Project-X";
@@ -302,6 +295,7 @@
 			children = (
 				073C85211ED42426001037DA /* JSPatchPlatform.framework */,
 				070C9D931E4874F300BD3A54 /* Main.storyboard */,
+				079555D81F04A0B300AE6814 /* Project-X.entitlements */,
 				070C9D961E4874F300BD3A54 /* Assets.xcassets */,
 				070C9D981E4874F300BD3A54 /* LaunchScreen.storyboard */,
 				070C9D9B1E4874F300BD3A54 /* Info.plist */,
@@ -555,7 +549,6 @@
 			children = (
 				45A43E981E4C070600C64CE2 /* AppDelegate.h */,
 				45A43E971E4C070600C64CE2 /* AppDelegate.m */,
-				07CAD1F51EDE9DEF00AD3E9F /* helloAlert.framework */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -642,6 +635,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = MLX7PU7VRR;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					070C9D9F1E4874F300BD3A54 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -769,7 +767,6 @@
 				078E1EF31E6411E00048C21A /* ZQWeiboCell.m in Sources */,
 				0297885F1E640D0000CB751B /* ZQBaseViewController.m in Sources */,
 				023589521E6E58240013AA18 /* UIImage+EX.m in Sources */,
-				070C9D921E4874F300BD3A54 /* ViewController.m in Sources */,
 				02617B0D1E6522AA0087657A /* LiuXSegmentView.m in Sources */,
 				029FF3D81E5E86090098E024 /* ZQMyHeaderCell.m in Sources */,
 				078E1EEF1E640A5A0048C21A /* ZQWeiboModel.m in Sources */,
@@ -941,6 +938,7 @@
 			baseConfigurationReference = 672751003907CB57A729CB3D /* Pods-Project-X.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Project-X/Project-X.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = MLX7PU7VRR;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -963,6 +961,7 @@
 			baseConfigurationReference = 0F2ACDC060CA931B8116B39F /* Pods-Project-X.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Project-X/Project-X.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = MLX7PU7VRR;
 				FRAMEWORK_SEARCH_PATHS = (

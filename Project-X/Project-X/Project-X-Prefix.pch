@@ -30,7 +30,11 @@
 
 /** JSPatch Key */
 #define kJSPatchAppKey @"4ad81cb9b653f103"
+#define kJSPatchAppPublicKey @"-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC0MxTcJmVsLZsrG5J87YmLNga0\n/QVE1qcCGYOjzOUq7U4p8tXCysHtP7Evmu9p/rhlRhMLBKeJyPnz3zh7jaJR0dcG\nNLa6Dr1YET8Mdz2rq7+9IoPu2WoGNpVvllu14CTlT2Pat2b5D5BhrWtT8BwOiwdU\nTvZwCJb1eWYWB52NiwIDAQAB\n-----END PUBLIC KEY-----"
 
+
+/** JPush Key */
+#define kJPushAppKey @"c4eefc3622500f02ea297630"
 
 
 #define GlobleMessage [ZQGlobleMessage shareInstence]
