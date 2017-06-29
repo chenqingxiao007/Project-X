@@ -31,8 +31,18 @@
     // self.bestAttemptContent.title = [NSString stringWithFormat:@"%@ [modified]", self.bestAttemptContent.title];
     
     // read content
-    [self readContent:self.bestAttemptContent.body];
     
+    NSDictionary *userInfo = request.content.userInfo;
+    if ([userInfo objectForKey:@"speed"]) {
+        NSString *speedStr = [userInfo objectForKey:@"speed"];
+        if ([speedStr floatValue]) {
+            [self readContent:self.bestAttemptContent.body speed:[speedStr floatValue] * 0.5];
+        }else {
+            [self readContent:self.bestAttemptContent.body speed:AVSpeechUtteranceDefaultSpeechRate];
+        }
+    }else {
+        [self readContent:self.bestAttemptContent.body speed:AVSpeechUtteranceDefaultSpeechRate];
+    }
     
     /** download images
      NSString *url = request.content.userInfo[@"attach"];
@@ -60,12 +70,13 @@
      **/
 }
 
-- (void)readContent:(NSString*)str{
+- (void)readContent:(NSString*)str speed:(float)speed{
     //AVSpeechUtterance: 可以假想成要说的一段话
     AVSpeechUtterance * aVSpeechUtterance = [[AVSpeechUtterance alloc] initWithString:str];
     
-    aVSpeechUtterance.rate = AVSpeechUtteranceDefaultSpeechRate;
+//    aVSpeechUtterance.rate = AVSpeechUtteranceDefaultSpeechRate;
     
+    aVSpeechUtterance.rate = speed;
     //AVSpeechSynthesisVoice: 可以假想成人的声音
     aVSpeechUtterance.voice =[AVSpeechSynthesisVoice voiceWithLanguage:@"zh-CN"];
     
