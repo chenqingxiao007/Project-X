@@ -77,9 +77,9 @@
 //    aVSpeechUtterance.rate = AVSpeechUtteranceDefaultSpeechRate;
     
     aVSpeechUtterance.rate = speed;
-    //AVSpeechSynthesisVoice: 可以假想成人的声音
+    //AVSpeechSynthesisVoice: 可以假想为人的声音
     aVSpeechUtterance.voice =[AVSpeechSynthesisVoice voiceWithLanguage:@"zh-CN"];
-    
+    aVSpeechUtterance.volume = 1.0;
     //发音
     [self.aVSpeechSynthesizer speakUtterance:aVSpeechUtterance];
     
@@ -110,8 +110,16 @@
 
 - (AVSpeechSynthesizer *)aVSpeechSynthesizer{
     if (!_aVSpeechSynthesizer) {
+        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+        [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
+        
+        
+        
         _aVSpeechSynthesizer = [[AVSpeechSynthesizer alloc] init];
         _aVSpeechSynthesizer.delegate = self;
+        
+        
+        
     }
     return _aVSpeechSynthesizer;
 }
