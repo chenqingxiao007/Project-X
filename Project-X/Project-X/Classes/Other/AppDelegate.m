@@ -141,7 +141,7 @@
     NSString *str = [[NSString alloc] initWithData:deviceToken encoding:NSUTF8StringEncoding];
     NSLog(@"%@",str);
     NSString *strDeviceToken = [[[[deviceToken description] stringByReplacingOccurrencesOfString: @"<" withString: @""]                  stringByReplacingOccurrencesOfString: @">" withString: @""] stringByReplacingOccurrencesOfString: @" " withString: @""];
-    NSLog(@"%@",@"");
+    NSLog(@"%@",strDeviceToken);
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {

@@ -10,7 +10,7 @@
 #import<AVFoundation/AVFoundation.h>
 
 
-@interface NotificationService ()
+@interface NotificationService ()<AVSpeechSynthesizerDelegate>
 
 @property (nonatomic, strong) void (^contentHandler)(UNNotificationContent *contentToDeliver);
 @property (nonatomic, strong) UNMutableNotificationContent *bestAttemptContent;
