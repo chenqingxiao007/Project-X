@@ -18,5 +18,7 @@ pod 'JPush', ‘3.0.5’
 
 pod 'YYKit'
 
+pod 'MJRefresh'
+
 inhibit_all_warnings!
 end

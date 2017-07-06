@@ -70,7 +70,7 @@
     [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypeGet url:getFriensWeibo params:paramenters success:^(id responseObject) {
         ZQHomeModel *homeModel = [[ZQHomeModel alloc] initWithDict:responseObject];
         
-        self.listData = homeModel.weiboModels;
+        self.listData = [homeModel.weiboModels mutableCopy];
         
         [self.tableView reloadData];
     } failure:^(NSError *error) {
@@ -87,11 +87,9 @@
     [[ZQNetWorkHelper sharedNetWorkHelper] invokeWithType:ZQInvokeTypeGet url:getFriensWeibo params:paramenters success:^(id responseObject) {
         ZQHomeModel *homeModel = [[ZQHomeModel alloc] initWithDict:responseObject];
         
-        
         if (homeModel.weiboModels.count > 0) {
             [self.listData insertObjects:[homeModel.weiboModels copy] atIndexes:[NSIndexSet indexSetWithIndex:0]];
         }
-        
         [self.tableView reloadData];
         [self.tableView.refreshControl endRefreshing];
     } failure:^(NSError *error) {

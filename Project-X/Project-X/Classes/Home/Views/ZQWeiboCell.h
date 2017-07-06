@@ -12,4 +12,5 @@
 @interface ZQWeiboCell : UITableViewCell
 
 @property (strong, nonatomic) ZQWeiboModel *weiboModel;
+
 @end
